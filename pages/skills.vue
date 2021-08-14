@@ -1,0 +1,220 @@
+<template>
+  <v-container class="mx-12">
+    <v-row
+      justify="space-between"
+      class="my-7"
+      v-for="(_, rowNumber) in Math.ceil(skillGroups.length / 2)"
+      :key="rowNumber"
+    >
+      <v-col
+        v-for="(skillGroup, i) in skillGroups.slice(
+          rowNumber * 2,
+          rowNumber * 2 + 2
+        )"
+        :key="i"
+        class="mx-12"
+        ><skill-container
+          :id="skillGroup.id"
+          :title="skillGroup.title"
+          :skills="skillGroup.skills"
+        ></skill-container
+      ></v-col>
+    </v-row>
+    <div class="mx-16">
+      <v-row align="center" class="mb-1 mx-0 mt-0"
+        ><v-card
+          width="20"
+          height="20"
+          color="secondary lighten-2"
+          class="rounded-sm"
+        ></v-card>
+        <p class="ml-3 my-0 secondary--text text--lighten-2">
+          Currently In Use
+        </p>
+      </v-row>
+      <v-row align="center" class="mb-1 mx-0 mt-0"
+        ><v-card
+          width="20"
+          height="20"
+          color="accent lighten-4"
+          class="rounded-sm"
+        ></v-card>
+        <p class="ml-3 my-0 accent--text text--lighten-4">
+          Currently Not In Use
+        </p>
+      </v-row>
+    </div>
+  </v-container>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      skillGroups: [
+        {
+          id: 'backend-skills',
+          title: 'Backend',
+          skills: [
+            {
+              name: '.Net Core',
+              icon: 'devicon-dotnetcore-plain',
+              isActive: true,
+            },
+            {
+              name: '<p class="ma-0">PostgreSQL</p><p class="ma-0">pgAdmin</p>',
+              icon: 'devicon-postgresql-plain-wordmark',
+              isActive: true,
+            },
+            {
+              name: 'Nginx',
+              icon: 'devicon-nginx-original',
+              isActive: true,
+            },
+            {
+              name: 'Django',
+              icon: 'devicon-django-plain',
+              isActive: false,
+            },
+          ],
+        },
+        {
+          id: 'video-game-development-skills',
+          title: 'Video Game Development',
+          skills: [
+            {
+              name: 'Unity',
+              icon: 'mdi-unity',
+              isActive: true,
+            },
+          ],
+        },
+        {
+          id: 'frontend-skills',
+          title: 'Frontend',
+          skills: [
+            {
+              name: 'Nuxt.js',
+              icon: 'mdi-nuxt',
+              isActive: true,
+            },
+            {
+              name: 'Vue.js',
+              icon: 'devicon-vuejs-plain-wordmark',
+              isActive: true,
+            },
+
+            {
+              name: 'HTML',
+              icon: 'devicon-html5-plain-wordmark',
+              isActive: true,
+            },
+            {
+              name: 'CSS',
+              icon: 'devicon-css3-plain-wordmark',
+              isActive: true,
+            },
+          ],
+        },
+        {
+          id: 'version-control-skills',
+          title: 'Version Control',
+          skills: [
+            {
+              name: 'Git',
+              icon: 'devicon-git-plain-wordmark',
+              isActive: true,
+            },
+            {
+              name: 'GitHub',
+              icon: 'devicon-github-original-wordmark',
+              isActive: true,
+            },
+            {
+              name: 'GitLab',
+              icon: 'devicon-gitlab-plain-wordmark',
+              isActive: true,
+            },
+          ],
+        },
+        {
+          id: 'operating-system-skills',
+          title: 'Operating System',
+          skills: [
+            {
+              name: 'Windows',
+              icon: 'devicon-windows8-original',
+              isActive: true,
+            },
+            {
+              name: 'Ubuntu',
+              icon: 'devicon-ubuntu-plain-wordmark',
+              isActive: true,
+            },
+          ],
+        },
+        {
+          id: 'ide-skills',
+          title: 'IDE',
+          skills: [
+            {
+              name: 'Visual Studio',
+              icon: 'devicon-visualstudio-plain',
+              isActive: true,
+            },
+            {
+              name: 'Visual Studio Code',
+              icon: 'devicon-vscode-plain-wordmark',
+              isActive: true,
+            },
+            {
+              name: 'PyCharm',
+              icon: 'devicon-pycharm-plain',
+              isActive: true,
+            },
+          ],
+        },
+        {
+          id: 'programing-and-scripting-language-skills',
+          title: 'Programing & Scripting Language',
+          skills: [
+            {
+              name: 'C#',
+              icon: 'devicon-csharp-plain',
+              isActive: true,
+            },
+            {
+              name: 'Python',
+              icon: 'devicon-python-plain-wordmark',
+              isActive: true,
+            },
+            {
+              name: 'JavaScript',
+              icon: 'devicon-javascript-plain',
+              isActive: true,
+            },
+            {
+              name: 'c',
+              icon: 'devicon-c-plain',
+              isActive: false,
+            },
+            {
+              name: 'c++',
+              icon: 'devicon-cplusplus-plain',
+              isActive: false,
+            },
+            {
+              name: 'java',
+              icon: 'devicon-java-plain',
+              isActive: false,
+            },
+          ],
+        },
+      ],
+    }
+  },
+}
+</script>
+
+<style scoped>
+</style>
