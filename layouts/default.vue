@@ -1,8 +1,8 @@
 <template>
-  <v-app dark>
+  <v-app>
     <TheNavigation />
     <v-main>
-      <v-container fluid fill-height>
+      <v-container fluid fill-height class="primary lighten-0">
         <Nuxt />
       </v-container>
     </v-main>

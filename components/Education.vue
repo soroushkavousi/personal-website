@@ -1,61 +1,67 @@
 <template>
-  <v-row>
-    <v-col cols="10" class="bring-timeline-to-mid">
-      <v-timeline>
-        <v-timeline-item
-          v-for="(education, i) in educations"
-          :key="i"
-          :color="contentColor1"
-          right
-        >
-          <v-card
-            elevation="10"
-            :width="timeLineCardWidth"
-            :max-width="timeLineCardWidth"
-            tile
-            outlined
+  <v-container class="mx-12">
+    <h1 class="accent--text text--lighten-2 text-h3 mb-16">#EDUCATION</h1>
+    <v-row>
+      <v-col cols="10">
+        <v-timeline>
+          <v-timeline-item
+            v-for="(education, i) in educations"
+            :key="i"
+            :color="contentColor1"
+            right
           >
             <v-card
+              elevation="10"
+              :width="timeLineCardWidth"
+              :max-width="timeLineCardWidth"
               tile
-              height="200"
-              color="grey lighten-1"
-              class="d-flex justify-center"
+              outlined
             >
               <v-card
                 tile
+                height="200"
                 color="grey lighten-1"
-                class="d-flex flex-column justify-center"
-                v-for="(image, i) in education.images"
-                :key="i"
-                :href="image.website"
+                class="d-flex justify-center"
               >
-                <v-img
-                  class="d-inline-block"
-                  :max-width="timeLineCardWidth / education.images.length"
-                  max-height="200"
-                  :src="image.src"
-                  light
-                  contain
-                ></v-img>
+                <v-card
+                  tile
+                  color="grey lighten-1"
+                  class="d-flex flex-column justify-center"
+                  v-for="(image, i) in education.images"
+                  :key="i"
+                  :href="image.website"
+                >
+                  <v-img
+                    class="d-inline-block"
+                    :max-width="timeLineCardWidth / education.images.length"
+                    max-height="200"
+                    :src="image.src"
+                    light
+                    contain
+                  ></v-img>
+                </v-card>
               </v-card>
+              <v-card-title>
+                <p :class="`${textColor1}`">{{ education.title }}</p>
+              </v-card-title>
+              <v-card-text>
+                <span
+                  v-html="education.location"
+                  :class="`${textColor2}`"
+                ></span>
+              </v-card-text>
             </v-card>
-            <v-card-title>
-              <p :class="`${textColor1}`">{{ education.title }}</p>
-            </v-card-title>
-            <v-card-text>
-              <span v-html="education.location" :class="`${textColor2}`"></span>
-            </v-card-text>
-          </v-card>
-          <template v-slot:opposite>
-            <span
-              :class="`headline font-weight-bold ${textColor1}`"
-              v-text="education.date"
-            ></span>
-          </template>
-        </v-timeline-item>
-      </v-timeline>
-    </v-col>
-  </v-row>
+            <template v-slot:opposite>
+              <span
+                :class="`headline font-weight-bold ${textColor1}`"
+                v-text="education.date"
+              ></span>
+            </template>
+          </v-timeline-item>
+        </v-timeline>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -151,6 +157,6 @@ export default {
 }
 
 .bring-timeline-to-mid {
-  margin-left: -120px;
+  /* margin-left: -120px; */
 }
 </style>

@@ -1,38 +1,62 @@
 <template>
-  <v-navigation-drawer permanent fixed app width="280" color="primary darken-2">
+  <v-navigation-drawer permanent fixed app width="272" color="primary darken-1">
     <div class="fill-height d-flex flex-column justify-center">
       <v-list nav>
         <v-list-item class="d-flex justify-center ma-0">
-          <v-list-item-avatar class="mx-auto" size="160">
+          <v-list-item-avatar class="mx-auto" size="150">
             <v-img src="images/global/soroush.jpg" class="mx-auto"></v-img>
           </v-list-item-avatar>
         </v-list-item>
-        <v-list-item class="d-flex justify-center mb-10">
-          <h1 class="secondary--text text--lighten-2">Soroush Kavousi</h1>
+        <v-list-item class="d-flex justify-center mb-14">
+          <h1 class="accent--text text--lighten-1 text-h5 font-weight-light">
+            Soroush Kavousi
+          </h1>
         </v-list-item>
 
         <v-list-item-group v-model="selectedItemId">
           <v-list-item
-            v-for="(item, i) in items"
+            v-for="(section, i) in sections"
             :key="i"
-            :to="item.to"
+            :to="{ path: '/', hash: section.hash }"
             router
             exact
             ripple
-            :value="item.title"
+            :value="section.title"
             class="mb-1"
           >
             <v-list-item-content
-              class="text-center font-weight-medium py-1"
+              class="text-center font-weight-light py-1"
               :class="{
-                'text--disabled': item.routeName !== $route.name,
+                'text--disabled': section.routeName !== $route.name,
               }"
             >
-              <v-list-item-title v-text="item.title" />
+              <v-list-item-title
+                v-text="section.title"
+                class="text-overline secondary--text"
+              />
             </v-list-item-content>
           </v-list-item>
         </v-list-item-group>
       </v-list>
+    </div>
+    <div class="darkmode">
+      <v-tooltip v-if="!$vuetify.theme.dark" bottom>
+        <template v-slot:activator="{ on }">
+          <v-btn v-on="on" color="info" small fab @click="darkMode">
+            <v-icon class="mr-1">mdi-moon-waxing-crescent</v-icon>
+          </v-btn>
+        </template>
+        <span>Dark Mode On</span>
+      </v-tooltip>
+
+      <v-tooltip v-else bottom>
+        <template v-slot:activator="{ on }">
+          <v-btn v-on="on" color="info" small fab @click="darkMode">
+            <v-icon color="yellow">mdi-white-balance-sunny</v-icon>
+          </v-btn>
+        </template>
+        <span>Dark Mode Off</span>
+      </v-tooltip>
     </div>
   </v-navigation-drawer>
 </template>
@@ -43,36 +67,36 @@ import { mapGetters, mapMutations } from 'vuex'
 export default {
   data() {
     return {
-      items: [
+      sections: [
         {
           routeName: 'about',
           title: 'ABOUT',
-          to: '/about',
+          hash: '#about',
         },
         {
           routeName: 'projects',
           title: 'PROJECTS',
-          to: '/projects',
-        },
-        {
-          routeName: 'experience',
-          title: 'EXPERIENCE',
-          to: '/experience',
-        },
-        {
-          routeName: 'education',
-          title: 'EDUCATION',
-          to: '/education',
+          hash: '#projects',
         },
         {
           routeName: 'skills',
           title: 'SKILLS',
-          to: '/skills',
+          hash: '#skills',
+        },
+        {
+          routeName: 'education',
+          title: 'EDUCATION',
+          hash: '#education',
+        },
+        {
+          routeName: 'experience',
+          title: 'EXPERIENCE',
+          hash: '#experience',
         },
         {
           routeName: 'interests',
           title: 'INTERESTS',
-          to: '/interests',
+          hash: '#interests',
         },
       ],
       selectedItemId: null,
@@ -82,6 +106,9 @@ export default {
     ...mapMutations({
       setSelectedPageIndex: 'setSelectedPageIndex',
     }),
+    darkMode() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark
+    },
   },
   watch: {},
   computed: {
@@ -91,4 +118,9 @@ export default {
 </script>
 
 <style scoped>
+.darkmode {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+}
 </style>

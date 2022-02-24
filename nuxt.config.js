@@ -20,14 +20,53 @@ export default {
 
   router: {
     extendRoutes(routes, resolve) {
-      routes.push({
-        name: 'index-about',
-        path: '/',
-        redirect: '/about',
-      })
+      // routes.push({
+      //   name: 'index-about',
+      //   path: '/',
+      //   redirect: '/about',
+      // })
       // router.scrollBehavior (to, from, savedPosition) {
       //   // ...
       // }
+    },
+    // scrollBehavior(to) {
+    //   if (to.hash) {
+    //     return window.scrollTo({
+    //       top: document.querySelector(to.hash).offsetTop + window.innerHeight,
+    //       behavior: 'smooth',
+    //     })
+    //   }
+    //   return window.scrollTo({ top: 0, behavior: 'smooth' })
+    // },
+    scrollBehavior: async (to, from, savedPosition) => {
+      if (savedPosition) {
+        return savedPosition
+      }
+
+      const findEl = async (hash, x) => {
+        return (
+          document.querySelector(hash) ||
+          new Promise((resolve, reject) => {
+            if (x > 50) {
+              return resolve()
+            }
+            setTimeout(() => {
+              resolve(findEl(hash, ++x || 1))
+            }, 100)
+          })
+        )
+      }
+
+      if (to.hash) {
+        let el = await findEl(to.hash)
+        if ('scrollBehavior' in document.documentElement.style) {
+          return window.scrollTo({ top: el.offsetTop, behavior: 'smooth' })
+        } else {
+          return window.scrollTo(0, el.offsetTop)
+        }
+      }
+
+      return { x: 0, y: 0 }
     },
   },
 
@@ -74,10 +113,22 @@ export default {
       options: { customProperties: true },
       dark: true,
       themes: {
+        light: {
+          // primary: colors.grey.darken4,
+          primary: '#0077b6',
+          accent: '#dcdcea',
+          secondary: '#caf0f8',
+          info: colors.teal.lighten1,
+          warning: colors.amber.base,
+          error: colors.deepOrange.accent4,
+          success: colors.green.accent3,
+        },
         dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
+          // primary: colors.grey.darken4,
+          primary: '#1f2028',
+          // accent: '#34d3d9',
+          accent: '#de7737',
+          secondary: '#e6e9ee',
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,

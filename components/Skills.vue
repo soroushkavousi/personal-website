@@ -1,5 +1,6 @@
 <template>
   <v-container class="mx-12">
+    <h1 class="accent--text text--lighten-2 text-h3 mb-16">#SKILLS</h1>
     <v-row
       justify="space-between"
       class="my-7"
