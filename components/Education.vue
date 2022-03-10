@@ -2,13 +2,14 @@
   <v-container class="mx-12">
     <h1 class="accent--text text--lighten-2 text-h3 mb-16">#EDUCATION</h1>
     <v-row>
-      <v-col cols="10">
+      <v-col cols="6">
         <v-timeline>
           <v-timeline-item
             v-for="(education, i) in educations"
             :key="i"
             :color="contentColor1"
             right
+            fill-dot
           >
             <v-card
               elevation="10"
@@ -16,16 +17,17 @@
               :max-width="timeLineCardWidth"
               tile
               outlined
+              class="ml-10"
             >
               <v-card
                 tile
-                height="200"
-                color="grey lighten-1"
+                height="160"
+                color="secondary darken-0"
                 class="d-flex justify-center"
               >
                 <v-card
                   tile
-                  color="grey lighten-1"
+                  color="secondary darken-0"
                   class="d-flex flex-column justify-center"
                   v-for="(image, i) in education.images"
                   :key="i"
@@ -34,7 +36,7 @@
                   <v-img
                     class="d-inline-block"
                     :max-width="timeLineCardWidth / education.images.length"
-                    max-height="200"
+                    max-height="160"
                     :src="image.src"
                     light
                     contain
@@ -51,12 +53,6 @@
                 ></span>
               </v-card-text>
             </v-card>
-            <template v-slot:opposite>
-              <span
-                :class="`headline font-weight-bold ${textColor1}`"
-                v-text="education.date"
-              ></span>
-            </template>
           </v-timeline-item>
         </v-timeline>
       </v-col>
@@ -87,8 +83,8 @@ export default {
               website: 'https://ce.aut.ac.ir/en',
             },
           ],
-          location:
-            '<p><a href="https://ce.aut.ac.ir/en">Amirkabir University of Technology</a>, Tehran, Iran (Ranked 85th in Computer Science [U.S. News])</p>',
+          location: `<p><a href="https://ce.aut.ac.ir/en" class="vit">Amirkabir University of Technology</a>, Tehran, Iran 
+            (<a href="https://www.usnews.com/education/best-global-universities/amirkabir-university-of-technology-aut-506266">Ranked 253th in Computer Science [U.S. News]</a>)</p>`,
         },
         {
           date: '2009 - 2013',
@@ -98,15 +94,16 @@ export default {
               website:
                 'https://en.wikipedia.org/wiki/National_Organization_for_Development_of_Exceptional_Talents',
             },
-            {
-              src: 'images/logos/salam-logo.webp',
-              website: 'http://yousefabad.salamsch.com/hschool',
-            },
+            // {
+            //   src: 'images/logos/salam-logo.webp',
+            //   website: 'http://yousefabad.salamsch.com/hschool',
+            // },
           ],
           title: 'High School Diploma in Mathematics and Physics',
-          location: `<p><a href="http://yousefabad.salamsch.com/hschool">Salam IranZamin High School</a>, Tehran, Iran. [2011-2013]</p>
-            <p class="ma-0"><a href="https://en.wikipedia.org/wiki/National_Organization_for_Development_of_Exceptional_Talents">Shahid Beheshti (NODET) High School</a>, Gonbad Kavus, Iran. [2009-2011]</p>
-            <p class="text-caption ml-2 font-weight-regular very-small-text">- Affiliated with the National Organization for the Development of Exceptional Talents</p>`,
+          location: `
+            <p class="ma-0">Shahid Beheshti (NODET) High School, Gonbad Kavus, Iran.</p>
+            <p><a href="https://en.wikipedia.org/wiki/National_Organization_for_Development_of_Exceptional_Talents" class="vit ml-2">- Affiliated with the National Organization for the Development of Exceptional Talents</a></p>
+            <p><a href="http://yousefabad.salamsch.com/hschool">Salam IranZamin High School</a>, Tehran, Iran.</p>`,
         },
       ],
     }
@@ -116,27 +113,24 @@ export default {
       return `primary lighten-1`
     },
     textColor1() {
-      return `primary--text text--lighten-1`
+      return `secondary--text text--lighten-1`
     },
     contentColor2() {
-      return `primary lighten-4`
+      return `primary lighten-3`
     },
     textColor2() {
-      return `primary--text text--lighten-4`
+      return `secondary--text text--lighten-4`
     },
-  },
-  beforeMount() {
-    // var elements = document.getElementsByClassName('v-timeline-item__opposite')
-    // console.log('That element:')
-    // console.dir(elements)
-    // console.dir(elements[0])
-    // console.dir(elements[0].classList)
-    // elements[0].classList.add('test')
   },
 }
 </script>
 
 <style scoped>
+::v-deep .vit {
+  text-decoration: none;
+  color: var(--v-accent-lighten2) !important;
+}
+
 ::v-deep p > a {
   text-decoration: none;
   color: var(--v-secondary-base) !important;
@@ -144,7 +138,7 @@ export default {
 
 ::v-deep p > a:hover,
 ::v-deep p > a:active {
-  color: var(--v-secondary-lighten3) !important;
+  color: var(--v-accent-lighten3) !important;
 }
 
 ::v-deep .no-content-link {
@@ -153,10 +147,6 @@ export default {
 }
 
 ::v-deep .very-small-text {
-  font-size: 0.7rem !important;
-}
-
-.bring-timeline-to-mid {
-  /* margin-left: -120px; */
+  font-size: 0.9rem !important;
 }
 </style>

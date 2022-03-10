@@ -1,26 +1,28 @@
 <template>
   <v-container class="pa-0" id="page-top">
-    <section class="my-16 py-3" id="about">
+    <section class="my-3 py-7" id="about">
       <About />
     </section>
 
-    <section class="my-16 py-3" id="projects">
+    <div class="py-3"></div>
+
+    <section class="my-16 py-7" id="projects">
       <Projects />
     </section>
 
-    <section class="my-16 py-3" id="skills">
+    <section class="my-3 py-7" id="skills">
       <Skills />
     </section>
 
-    <section class="my-16 py-3" id="education">
+    <section class="my-3 py-7" id="education">
       <Education />
     </section>
 
-    <section class="my-16 py-3" id="experience">
+    <section class="my-3 py-7" id="experience">
       <Experience />
     </section>
 
-    <section class="my-16 py-3" id="interests">
+    <section class="my-3 py-7" id="interests">
       <Interests />
     </section>
   </v-container>

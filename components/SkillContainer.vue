@@ -2,7 +2,9 @@
   <v-row :id="id" justify="center">
     <v-col>
       <v-btn text :href="`#${id}`" class="mb-2">
-        <h1 class="text-h6 primary--text text--lighten-1 font-weight-regular">
+        <h1
+          class="text-h6 seccondary--text text--lighten-1 font-weight-regular"
+        >
           {{ title }}
         </h1>
       </v-btn>
@@ -46,10 +48,10 @@ export default {
   data() {
     return {
       colors: {
-        activeShape: 'secondary lighten-2',
-        activeText: 'secondary--text text--lighten-1',
-        inactiveShape: 'accent lighten-4',
-        inactiveText: 'accent--text text--lighten-4',
+        activeShape: 'accent lighten-2',
+        activeText: 'accent--text text--lighten-2',
+        inactiveShape: 'secondary darken-2',
+        inactiveText: 'secondary--text text--darken-2',
       },
     }
   },

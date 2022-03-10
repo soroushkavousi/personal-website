@@ -26,21 +26,19 @@
         ><v-card
           width="20"
           height="20"
-          color="secondary lighten-2"
+          color="accent lighten-2"
           class="rounded-sm"
         ></v-card>
-        <p class="ml-3 my-0 secondary--text text--lighten-2">
-          Currently In Use
-        </p>
+        <p class="ml-3 my-0 accent--text text--lighten-2">Currently In Use</p>
       </v-row>
       <v-row align="center" class="mb-1 mx-0 mt-0"
         ><v-card
           width="20"
           height="20"
-          color="accent lighten-4"
+          color="secondary darken-2"
           class="rounded-sm"
         ></v-card>
-        <p class="ml-3 my-0 accent--text text--lighten-4">
+        <p class="ml-3 my-0 secondary--text text--darken-2">
           Currently Not In Use
         </p>
       </v-row>
@@ -142,6 +140,11 @@ export default {
           id: 'operating-system-skills',
           title: 'Operating System',
           skills: [
+            {
+              name: 'Docker',
+              icon: 'devicon-docker-plain-wordmark',
+              isActive: true,
+            },
             {
               name: 'Windows',
               icon: 'devicon-windows8-original',

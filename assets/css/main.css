@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 400;
+  /* font-display: swap !important; */
+  src: url('~assets/fonts/OpenSans.ttf') format('truetype');
+  /* src: url('~assets/fonts/OpenSans.ttf'); */
+}
+
+* {
+    font-family: "OpenSans";
+}

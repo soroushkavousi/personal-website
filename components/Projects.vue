@@ -1,23 +1,64 @@
 <template>
-  <v-container class="mx-12">
-    <h1 class="accent--text text--lighten-2 text-h3 mb-16">#PROJECTS</h1>
-    <v-row justify="center" class="mb-16 mt-0">
-      <v-col cols="8">
-        <v-card color="primary" tile class="lighten-1 pa-16">
-          <div>I'm Soroush Kavousi.</div>
-          <div>I'm Soroush Kavousi.</div>
-          <div>I'm Soroush Kavousi.</div>
-          <div>I'm Soroush Kavousi.</div>
-          <div>I'm Soroush Kavousi.</div>
-          <div>I'm Soroush Kavousi.</div>
-        </v-card>
-      </v-col>
+  <v-container>
+    <h1 class="accent--text text--lighten-2 text-h3 mb-14 ml-16">#PROJECTS</h1>
+
+    <v-row justify="center" class="my-7">
+      <the-project
+        :title="fireplaceApiData.title"
+        :stack="fireplaceApiData.stack"
+        :links="fireplaceApiData.links"
+        :views="fireplaceApiData.views"
+      >
+        <template v-slot:description>
+          <p>
+            This project is the backend side of Fireplace. It serves an api for
+            an android application.
+          </p>
+          <p>Fireplace itself is a discussion application.</p>
+        </template>
+      </the-project>
     </v-row>
   </v-container>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      fireplaceApiData: {
+        title: 'Fireplace Api',
+        stack: ['ASP.NET Core', 'PostgreSQL', 'Nginx', 'Docker'],
+        links: [
+          {
+            name: 'Website',
+            // icon: 'mdi-account-circle',
+            icon: 'mdi-web',
+            address: 'https://api.fireplace.bitiano.com/docs',
+          },
+        ],
+        views: [
+          {
+            image: 'images/projects/fireplace-api/swagger-top.png',
+            title: 'Swagger Page',
+            description: `<p class="ma-0 pa-0">With the swagger UI, you can easily interact with the API and learn it. 
+              It shows all routes, inputs, outputs, and errors. 
+              It also generates a <i><a href="https://api.fireplace.bitiano.com/docs/v0.1/swagger.json" target="_blank">swagger.json</a></i> which describes the schema of the API that can be imported into your app.</p>`,
+          },
+          {
+            image: 'images/global/soroush.jpg',
+            title: 'Swagger Page',
+            description: '<p>Test 2</p>',
+          },
+          {
+            image: 'images/global/soroush.jpg',
+            title: 'Swagger Page',
+            description: '<p>Test 3</p>',
+          },
+        ],
+      },
+    }
+  },
+}
 </script>
 
 <style lang="scss" scoped>

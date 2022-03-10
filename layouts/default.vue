@@ -33,3 +33,28 @@ export default {
   },
 }
 </script>
+
+<style>
+a {
+  text-decoration: none;
+}
+
+p a {
+  color: var(--v-accent-lighten2) !important;
+}
+
+p a:hover,
+p a:active {
+  color: var(--v-accent-lighten3) !important;
+}
+
+/* ::v-deep i a {
+  text-decoration: none;
+  color: var(--v-accent-lighten2) !important;
+}
+
+::v-deep p a:hover,
+::v-deep p a:active {
+  color: var(--v-accent-lighten3) !important;
+} */
+</style>

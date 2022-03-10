@@ -3,9 +3,11 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    // titleTemplate: '%s - resume-web',
     titleTemplate: 'Soroush Kavousi',
     title: 'Soroush Kavousi',
+    htmlAttrs: {
+      lang: 'en',
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -14,64 +16,19 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      // { rel: 'stylesheet', href: 'devicon.min.css' },
+      {
+        rel: 'stylesheet',
+        href: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css',
+      },
     ],
   },
 
-  router: {
-    extendRoutes(routes, resolve) {
-      // routes.push({
-      //   name: 'index-about',
-      //   path: '/',
-      //   redirect: '/about',
-      // })
-      // router.scrollBehavior (to, from, savedPosition) {
-      //   // ...
-      // }
-    },
-    // scrollBehavior(to) {
-    //   if (to.hash) {
-    //     return window.scrollTo({
-    //       top: document.querySelector(to.hash).offsetTop + window.innerHeight,
-    //       behavior: 'smooth',
-    //     })
-    //   }
-    //   return window.scrollTo({ top: 0, behavior: 'smooth' })
-    // },
-    scrollBehavior: async (to, from, savedPosition) => {
-      if (savedPosition) {
-        return savedPosition
-      }
-
-      const findEl = async (hash, x) => {
-        return (
-          document.querySelector(hash) ||
-          new Promise((resolve, reject) => {
-            if (x > 50) {
-              return resolve()
-            }
-            setTimeout(() => {
-              resolve(findEl(hash, ++x || 1))
-            }, 100)
-          })
-        )
-      }
-
-      if (to.hash) {
-        let el = await findEl(to.hash)
-        if ('scrollBehavior' in document.documentElement.style) {
-          return window.scrollTo({ top: el.offsetTop, behavior: 'smooth' })
-        } else {
-          return window.scrollTo(0, el.offsetTop)
-        }
-      }
-
-      return { x: 0, y: 0 }
-    },
-  },
-
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['@/assets/css/main.css', 'devicon/devicon.min.css'],
+  css: [
+    '@/assets/css/main.css',
+    // 'devicon/devicon.min.css',
+    // 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css',
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -81,29 +38,12 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
-    // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
-  ],
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
-
-  // PWA module configuration: https://go.nuxtjs.dev/pwa
-  pwa: {
-    manifest: {
-      lang: 'en',
-    },
-  },
+  modules: [],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
