@@ -1,22 +1,33 @@
 <template>
-  <v-container>
-    <v-row justify="center" class="mb-16 mt-0">
-      <v-col cols="4" class="mx-0 pa-0">
+  <v-container fluid>
+    <v-row justify="center" class="my-5 fill-height">
+      <v-col
+        xl="4"
+        lg="5"
+        md="5"
+        sm="5"
+        class="d-flex justify-center ma-0 pa-0 fill-height"
+      >
         <v-card
-          color="primary lighten-1"
+          color="primary darken-1"
           tile
-          :height="height"
-          class="fill-height pa-6 d-flex flex-column justify-space-between"
+          width="100%"
+          class="fill-height px-5 py-4 d-flex flex-column justify-space-between"
         >
           <div>
-            <v-card-title class="text-h4 mb-3">{{ title }}</v-card-title>
-            <v-card-text>
+            <v-card-title
+              class="text-lg-h4 text-sm-body-2 font-weight-black ma-0"
+            >
+              {{ title }}
+            </v-card-title>
+            <v-card-text class="my-2 text-lg-body-2 text-sm-caption">
+              <!-- <p class="mb-2">Description:</p> -->
               <slot name="description"></slot>
             </v-card-text>
           </div>
           <div>
             <v-divider></v-divider>
-            <v-card-text class="my-2 py-2">
+            <v-card-text class="">
               <p class="mb-1">Stack:</p>
               <v-chip
                 class="text-caption ma-1"
@@ -26,7 +37,7 @@
               >
             </v-card-text>
             <v-divider></v-divider>
-            <v-card-text class="my-2 py-2">
+            <v-card-text class="">
               <p class="mb-1">Links:</p>
               <v-chip-group column class="mt-0">
                 <v-chip
@@ -47,66 +58,40 @@
           </div>
         </v-card>
       </v-col>
-      <v-card
-        color="primary lighten-0"
-        tile
-        :height="height"
-        :width="carouselWidth"
-      >
-        <!-- <v-col cols="6" class="mx-0 px-0"> -->
-        <v-carousel v-model="model" height="100%">
-          <v-carousel-item eager v-for="(view, i) in views" :key="i">
-            <v-responsive
-              :aspect-ratio="16 / 9"
-              :height="viewImageHeight"
-              :max-height="viewImageHeight"
-              :max-width="carouselWidth"
-            >
-              <v-img
-                contain
-                :src="view.image"
-                class="ma-0"
-                position="center top"
-                :aspect-ratio="16 / 9"
-                :height="viewImageHeight"
-                :max-height="viewImageHeight"
-                :max-width="carouselWidth"
-              ></v-img>
-            </v-responsive>
-
-            <v-card
-              color="primary lighten-0"
-              tile
-              elevation="5"
-              :height="viewDescriptionHeight"
-              :width="carouselWidth"
-            >
-              <div
-                fill-height
-                class="
-                  py-3
-                  px-5
-                  ma-0
-                  d-flex
-                  flex-column
-                  justify-space-around
-                  align-content-space-between
-                  fill-height
-                "
-              >
-                <v-card-title class="text-subtitle-1 pa-0 ma-0">
-                  {{ view.title }}
-                </v-card-title>
-                <v-card-text class="ma-0 pa-0"
-                  ><div v-html="view.description" class="text-caption"></div
-                ></v-card-text>
-              </div>
-            </v-card>
-          </v-carousel-item>
-        </v-carousel>
-        <!-- </v-col> -->
-      </v-card>
+      <v-col xl="5" lg="6" md="6" sm="6" class="ma-0 pa-0 fill-height">
+        <the-project-carousel :views="views"></the-project-carousel>
+      </v-col>
     </v-row>
+    <!-- <v-row justify="center" v-if="imageDialog == true">
+      <v-dialog v-model="imageDialog" persistent width="60%">
+        <v-card>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="blue darken-1" text @click="imageDialog = false">
+              Close
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+        <v-responsive :aspect-ratio="16 / 9">
+          <v-img
+            contain
+            :src="views[model].image"
+            class="ma-0"
+            position="center top"
+            :aspect-ratio="16 / 9"
+            @click="imageDialog = false"
+          ></v-img>
+        </v-responsive>
+        <v-card>
+          <v-card-title>
+            <span class="text-h5">{{ views[model].title }}</span>
+          </v-card-title>
+          <v-card-text>
+            <div v-html="views[model].description" class="text-caption"></div>
+          </v-card-text>
+        </v-card>
+      </v-dialog>
+    </v-row> -->
   </v-container>
 </template>
 
@@ -116,13 +101,18 @@ export default {
   data() {
     return {
       model: 0,
-      colors: ['primary', 'secondary', 'yellow darken-2', 'red', 'orange'],
-      height: 550,
+      viewRatio: 16 / 9,
+      viewWidth: '50%',
+      height: this.width / this.ratio,
       carouselActionBarHeight: 50,
       viewDescriptionHeight: 120,
+      imageDialog: false,
     }
   },
   computed: {
+    viewHeight() {
+      return this.width / this.ratio
+    },
     viewImageHeight() {
       return (
         this.height - this.viewDescriptionHeight - this.carouselActionBarHeight
@@ -136,4 +126,13 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.view-inside {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100% !important;
+  height: 60vh !important;
+}
 </style>

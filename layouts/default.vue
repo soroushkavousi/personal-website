@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <TheNavigation />
+    <TheNavigation width="20%" />
     <v-main>
       <v-container fluid fill-height class="primary lighten-0">
         <Nuxt />

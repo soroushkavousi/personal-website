@@ -11,10 +11,13 @@
       >
         <template v-slot:description>
           <p>
-            This project is the backend side of Fireplace. It serves an api for
-            an android application.
+            Fireplace API is a web API that is the backend side of the project
+            Fireplace. It contains complex models and various sign-in methods.
           </p>
-          <p>Fireplace itself is a discussion application.</p>
+          <p>
+            Fireplace itself is a discussion application which has communities,
+            posts, and comments just like Reddit.
+          </p>
         </template>
       </the-project>
     </v-row>
@@ -26,7 +29,7 @@ export default {
   data() {
     return {
       fireplaceApiData: {
-        title: 'Fireplace Api',
+        title: '1. Fireplace API',
         stack: ['ASP.NET Core', 'PostgreSQL', 'Nginx', 'Docker'],
         links: [
           {
@@ -40,17 +43,24 @@ export default {
           {
             image: 'images/projects/fireplace-api/swagger-top.png',
             title: 'Swagger Page',
-            description: `<p class="ma-0 pa-0">With the swagger UI, you can easily interact with the API and learn it. 
-              It shows all routes, inputs, outputs, and errors. 
+            description: `<p class="ma-0 pa-0">With the swagger UI, you can easily interact with the API and learn it.
+              It shows all routes, inputs, outputs, and errors.
               It also generates a <i><a href="https://api.fireplace.bitiano.com/docs/v0.1/swagger.json" target="_blank">swagger.json</a></i> which describes the schema of the API that can be imported into your app.</p>`,
           },
           {
-            image: 'images/global/soroush.jpg',
-            title: 'Swagger Page',
-            description: '<p>Test 2</p>',
+            image: 'images/projects/fireplace-api/models.png',
+            // image: require('@/assets/images/projects/fireplace-api/models.png'),
+            title: 'Models',
+            description: '<p>In this picture you can see the API models.</p>',
           },
+          // {
+          //   // image: 'images/projects/fireplace-api/models.png',
+          //   image: require('@/assets/images/projects/fireplace-api/models.png'),
+          //   title: 'Models assets',
+          //   description: '<p></p>',
+          // },
           {
-            image: 'images/global/soroush.jpg',
+            image: 'images/projects/fireplace-api/swagger-top.png',
             title: 'Swagger Page',
             description: '<p>Test 3</p>',
           },
