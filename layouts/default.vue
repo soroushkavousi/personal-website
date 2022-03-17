@@ -1,8 +1,13 @@
 <template>
   <v-app>
-    <TheNavigation width="20%" />
+    <TheNavigation ref="navigation" />
     <v-main>
-      <v-container fluid fill-height class="primary lighten-0">
+      <v-container
+        fluid
+        fill-height
+        class="primary lighten-0"
+        @click="onMainContainerClicked"
+      >
         <Nuxt />
       </v-container>
     </v-main>
@@ -12,7 +17,9 @@
 <script>
 export default {
   data() {
-    return {}
+    return {
+      isOutsideClicked: false,
+    }
   },
   watch: {
     $route(to, from) {
@@ -29,7 +36,11 @@ export default {
   },
   created() {
     console.log('mounted')
-    // this.$router.replace('about')
+  },
+  methods: {
+    onMainContainerClicked() {
+      this.$refs.navigation.outsideClicked()
+    },
   },
 }
 </script>

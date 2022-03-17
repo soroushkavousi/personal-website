@@ -1,13 +1,29 @@
 <template>
   <v-navigation-drawer
     v-model="drawer"
-    :mini-variant.sync="mini"
+    :mini-variant="mini"
+    :mini-variant-width="miniVariantWidth"
     permanent
-    app
-    :width="width"
+    :width="300"
+    :app="$vuetify.breakpoint.mdAndDown ? false : true"
+    :fixed="true"
     color="primary darken-1"
   >
-    <div v-if="mini == false">
+    <template #prepend>
+      <div :class="navControlStyle" @click.stop="doManualOpenOrClose">
+        <v-btn icon>
+          <v-icon size="50" v-if="mini == false">mdi-chevron-left</v-icon>
+          <v-avatar v-else>
+            <v-img
+              contain
+              src="images/global/soroush.jpg"
+              class="mx-auto"
+            ></v-img>
+          </v-avatar>
+        </v-btn>
+      </div>
+    </template>
+    <div v-if="mini == false" class="fill-height">
       <div class="fill-height d-flex flex-column justify-center">
         <v-list nav>
           <v-list-item class="d-flex justify-center ma-0">
@@ -31,6 +47,7 @@
               ripple
               :value="section.title"
               class="mb-1"
+              @click="outsideClicked"
             >
               <v-list-item-content
                 class="text-center font-weight-light py-1"
@@ -48,32 +65,34 @@
         </v-list>
       </div>
     </div>
-    <div v-else class="fill-height">
-      <div class="d-flex justify-center py-16 fill-height">
-        <v-btn icon @click.stop="mini = !mini" class="mr-1">
-          <v-icon class="text-h3">mdi-chevron-right</v-icon>
-        </v-btn>
-      </div>
+    <div
+      v-else
+      class="fill-height d-flex flex-column justify-center"
+      @click.stop="doManualOpenOrClose"
+    >
+      <v-icon dense size="50" :style="{}">mdi-chevron-right</v-icon>
     </div>
-    <div class="darkmode">
-      <v-tooltip v-if="!$vuetify.theme.dark" bottom>
-        <template v-slot:activator="{ on }">
-          <v-btn v-on="on" color="info" small fab @click="darkMode">
-            <v-icon class="mr-1">mdi-moon-waxing-crescent</v-icon>
-          </v-btn>
-        </template>
-        <span>Dark Mode On</span>
-      </v-tooltip>
+    <template #append>
+      <div :class="darkModeIconStyle">
+        <v-tooltip v-if="!$vuetify.theme.dark" bottom>
+          <template v-slot:activator="{ on }">
+            <v-btn v-on="on" color="primary" small fab @click="darkMode">
+              <v-icon class="mr-1">mdi-moon-waxing-crescent</v-icon>
+            </v-btn>
+          </template>
+          <span>Dark Mode On</span>
+        </v-tooltip>
 
-      <v-tooltip v-else bottom>
-        <template v-slot:activator="{ on }">
-          <v-btn v-on="on" color="info" small fab @click="darkMode">
-            <v-icon color="yellow">mdi-white-balance-sunny</v-icon>
-          </v-btn>
-        </template>
-        <span>Dark Mode Off</span>
-      </v-tooltip>
-    </div>
+        <v-tooltip v-else bottom>
+          <template v-slot:activator="{ on }">
+            <v-btn v-on="on" color="primary" small fab @click="darkMode">
+              <v-icon color="yellow">mdi-white-balance-sunny</v-icon>
+            </v-btn>
+          </template>
+          <span>Dark Mode Off</span>
+        </v-tooltip>
+      </div>
+    </template>
   </v-navigation-drawer>
 </template>
 
@@ -81,12 +100,15 @@
 import { mapGetters, mapMutations } from 'vuex'
 
 export default {
-  props: ['width'],
+  props: [],
   data() {
     return {
       drawer: true,
-      mini: true,
+      mini: false,
+      manualMini: false,
+      manualWidth: 0,
       selectedItemId: null,
+      miniVariantWidth: 56,
       sections: [
         {
           routeName: 'about',
@@ -128,10 +150,57 @@ export default {
     darkMode() {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark
     },
+    minimizeBelowLarge() {
+      if (this.manualWidth == this.$vuetify.breakpoint.width) {
+        return
+      }
+      if (this.$vuetify.breakpoint.mdAndDown) {
+        this.mini = true
+      } else {
+        this.mini = false
+      }
+    },
+    outsideClicked() {
+      if (this.mini) return
+      this.manualWidth = 0
+      this.minimizeBelowLarge()
+    },
+    doManualOpenOrClose() {
+      this.mini = !this.mini
+      this.manualMini = true
+      this.manualWidth = this.$vuetify.breakpoint.width
+    },
   },
-  watch: {},
+  watch: {
+    'window.innerWidth'(newValue, oldValue) {
+      console.log(`TEST | newValue: ${newValue}`)
+    },
+  },
   computed: {
     ...mapGetters(['selectedPageIndex']),
+    navControlStyle() {
+      return {
+        'd-flex': true,
+        'mt-5': true,
+        'justify-end': this.mini == false,
+        'mr-4': this.mini == false,
+        'justify-center': this.mini == true,
+        'mr-0': this.mini == true,
+      }
+    },
+    darkModeIconStyle() {
+      return {
+        'd-flex': true,
+        'mb-5': true,
+        'justify-start': this.mini == false,
+        'ml-4': this.mini == false,
+        'justify-center': this.mini == true,
+        'mr-0': this.mini == true,
+      }
+    },
+  },
+  mounted() {
+    this.intervalid1 = setInterval(this.minimizeBelowLarge, 100)
   },
 }
 </script>
