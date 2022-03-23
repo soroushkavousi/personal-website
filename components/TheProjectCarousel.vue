@@ -1,45 +1,68 @@
 <template>
-  <v-card color="primary lighten-0" tile class="fill">
-    <!-- <v-col cols="6" class="mx-0 px-0"> -->
-    <v-carousel v-model="model" height="100%">
-      <v-carousel-item eager v-for="(view, i) in views" :key="i" class="fill">
-        <div class="d-flex flex-column fill-height">
+  <v-card
+    color="primary lighten-0"
+    tile
+    class="ma-0 pa-0"
+    :height="$vuetify.breakpoint.smAndDown ? 'auto' : height"
+    :width="carouselMaxWidth"
+    ref="rootCard"
+  >
+    <!-- @change="$emit('update:model', $event.target.value)" -->
+    <v-carousel v-model="index" class="fill" height="auto">
+      <v-carousel-item
+        eager
+        v-for="(view, i) in views"
+        :key="i"
+        class="fill"
+        :style="carouselItemStyle"
+      >
+        <div class="d-flex flex-column fill">
           <v-responsive
             :aspect-ratio="viewRatio"
-            class="fill-width flex-grow-0"
+            class="fill-width flex-grow-0 overflow-y-auto"
             width="100%"
             height="auto"
+            :max-height="viewMaxHeight"
+            ref="carousel"
           >
-            <a :href="view.image" target="_blank" class="fill">
-              <v-img
-                contain
-                :src="view.image"
-                class="ma-0"
-                position="center top"
-                :aspect-ratio="viewRatio"
-                width="100%"
-              ></v-img>
-            </a>
+            <!-- <a :href="view.image" target="_blank" class="fill"> -->
+            <v-img
+              contain
+              :src="view.image"
+              class="ma-0 pa-0"
+              position="center top"
+              :aspect-ratio="viewRatio"
+              width="100%"
+              height="100%"
+              @click="$emit('viewClicked', index)"
+            ></v-img>
+            <!-- </a> -->
           </v-responsive>
 
           <v-card
             color="primary lighten-0"
             tile
             width="100%"
-            min-height="180"
+            height="auto"
+            :min-height="descriptionMinHeight"
+            :max-height="descriptionMaxHeight"
             class="
               px-5
               ma-0
+              py-3
               d-flex
-              flex-column flex-grow-1
+              flex-column
               justify-content-center justify-center
-              carousel-item
+              overflow-y-auto overflow-x-hidden
             "
           >
             <v-card-title class="text-sm-body-2 text-lg-body-1 pa-0 ma-0 mb-2">
               {{ view.title }}
             </v-card-title>
-            <v-card-text class="mt-0 mb-0 mx-1 pa-0">
+            <v-card-text
+              class="mt-0 mb-0 mx-1 pa-0"
+              :style="{ height: 'max-content', 'min-height': '2rem' }"
+            >
               <div v-html="view.description" class="text-caption"></div>
             </v-card-text>
           </v-card>
@@ -51,53 +74,57 @@
 
 <script>
 export default {
-  props: ['views'],
+  props: ['height', 'views', 'initialIndex'],
+  emits: ['viewClicked'],
   data() {
     return {
-      model: 0,
       viewRatio: 16 / 9,
-      viewWidth: '50%',
-      height: this.width / this.ratio,
-      carouselActionBarHeight: 50,
-      viewDescriptionHeight: 120,
-      imageDialog: false,
+      controlsHeight: 50,
+      descriptionMinHeight: 150,
+      descriptionMaxHeight: 0,
+      index: 0,
     }
   },
+  methods: {
+    changeIndex(index) {
+      this.index = index
+    },
+    onResize() {
+      this.descriptionMaxHeight =
+        this.height -
+        this.$refs.carousel[0].$el.clientHeight -
+        this.controlsHeight
+    },
+  },
+  mounted() {
+    this.index = this.initialIndex
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize)
+    })
+    this.onResize()
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.onResize)
+  },
   computed: {
-    viewHeight() {
-      return this.width / this.ratio
+    carouselItemStyle() {
+      return {
+        'padding-bottom': `${this.controlsHeight}px !important`,
+      }
     },
-    viewImageHeight() {
-      return (
-        this.height - this.viewDescriptionHeight - this.carouselActionBarHeight
-      )
+    viewMaxHeight() {
+      return this.height - this.descriptionMinHeight - this.controlsHeight
     },
-    carouselWidth() {
-      return this.viewRatio * this.viewImageHeight
+    carouselMaxWidth() {
+      return this.viewMaxHeight * this.viewRatio
     },
   },
 }
 </script>
 
 <style lang="css" scoped>
-.container {
-  /* padding-top: 1px !important; */
-}
-
-.v-responsive__content {
-  /* display: flex !important; */
-}
-
-.carousel-item {
-  padding-bottom: 50px;
-}
-
-.fill-width {
-  width: 100% !important;
-}
-
-.fill {
-  width: 100% !important;
-  height: 100% !important;
+::v-deep p {
+  height: max-content;
+  overflow: auto;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container fluid class="px-10">
     <h1 class="accent--text text--lighten-2 text-h3 mb-14 ml-16">#PROJECTS</h1>
 
     <v-row justify="center" class="my-7">
@@ -49,20 +49,8 @@ export default {
           },
           {
             image: 'images/projects/fireplace-api/models.png',
-            // image: require('@/assets/images/projects/fireplace-api/models.png'),
             title: 'Models',
             description: '<p>In this picture you can see the API models.</p>',
-          },
-          // {
-          //   // image: 'images/projects/fireplace-api/models.png',
-          //   image: require('@/assets/images/projects/fireplace-api/models.png'),
-          //   title: 'Models assets',
-          //   description: '<p></p>',
-          // },
-          {
-            image: 'images/projects/fireplace-api/swagger-top.png',
-            title: 'Swagger Page',
-            description: '<p>Test 3</p>',
           },
         ],
       },

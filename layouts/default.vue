@@ -1,7 +1,11 @@
 <template>
   <v-app>
     <TheNavigation ref="navigation" />
-    <v-main>
+    <v-main
+      :style="{
+        'padding-left': $vuetify.breakpoint.mdAndDown ? '56px' : 'auto',
+      }"
+    >
       <v-container
         fluid
         fill-height
@@ -46,6 +50,15 @@ export default {
 </script>
 
 <style>
+.fill-width {
+  width: 100% !important;
+}
+
+.fill {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 a {
   text-decoration: none;
 }

@@ -1,5 +1,5 @@
 <template>
-  <v-container class="pa-0" id="page-top">
+  <v-container fluid class="pa-0" id="page-top">
     <section class="my-3 py-7" id="about">
       <About />
     </section>
