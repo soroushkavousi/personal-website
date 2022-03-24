@@ -3,11 +3,11 @@
     color="primary lighten-0"
     tile
     class="ma-0 pa-0"
-    :height="$vuetify.breakpoint.smAndDown ? 'auto' : height"
+    :height="height"
     :width="carouselMaxWidth"
+    :min-width="400"
     ref="rootCard"
   >
-    <!-- @change="$emit('update:model', $event.target.value)" -->
     <v-carousel v-model="index" class="fill" height="auto">
       <v-carousel-item
         eager
@@ -25,7 +25,6 @@
             :max-height="viewMaxHeight"
             ref="carousel"
           >
-            <!-- <a :href="view.image" target="_blank" class="fill"> -->
             <v-img
               contain
               :src="view.image"
@@ -35,8 +34,26 @@
               width="100%"
               height="100%"
               @click="$emit('viewClicked', index)"
-            ></v-img>
-            <!-- </a> -->
+            >
+              <div id="view-maximize-description">
+                <v-tooltip top class="mb-n10">
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-icon
+                      v-bind="attrs"
+                      v-on="on"
+                      class="mx-auto px-auto"
+                      size="35"
+                      color="primary  "
+                    >
+                      mdi-fullscreen
+                    </v-icon>
+                  </template>
+                  <span class="secondary--text text--lighten-1"
+                    >Full screen</span
+                  >
+                </v-tooltip>
+              </div>
+            </v-img>
           </v-responsive>
 
           <v-card
@@ -90,6 +107,7 @@ export default {
       this.index = index
     },
     onResize() {
+      if (this.height == 'auto') this.descriptionMaxHeight = 'auto'
       this.descriptionMaxHeight =
         this.height -
         this.$refs.carousel[0].$el.clientHeight -
@@ -113,9 +131,11 @@ export default {
       }
     },
     viewMaxHeight() {
+      if (this.height == 'auto') return
       return this.height - this.descriptionMinHeight - this.controlsHeight
     },
     carouselMaxWidth() {
+      if (this.height == 'auto') return '100%'
       return this.viewMaxHeight * this.viewRatio
     },
   },
@@ -126,5 +146,11 @@ export default {
 ::v-deep p {
   height: max-content;
   overflow: auto;
+}
+
+#view-maximize-description {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
 </style>

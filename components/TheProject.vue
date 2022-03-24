@@ -11,7 +11,7 @@
         xl="4"
         lg="4"
         md="4"
-        sm="9"
+        sm="10"
         class="d-flex justify-center ma-0 pa-0 mb-10"
         :class="{
           'mr-10': $vuetify.breakpoint.smAndDown ? false : true,
@@ -22,6 +22,7 @@
           tile
           width="100%"
           :min-height="600"
+          :min-width="300"
           height="auto"
           class="
             px-5
@@ -47,7 +48,6 @@
             <v-card-text
               class="my-2 text-md-body-2 text-sm-subtitle-2 overflow-y-auto"
             >
-              <!-- <p class="mb-2">Description:</p> -->
               <slot name="description"></slot>
             </v-card-text>
           </div>
@@ -88,13 +88,13 @@
       </v-col>
       <the-project-carousel
         class="d-flex"
-        :height="height"
+        :height="$vuetify.breakpoint.smAndDown ? 'auto' : height"
         :views="views"
         @viewClicked="viewClicked"
         ref="carousel"
       ></the-project-carousel>
     </v-row>
-    <v-dialog v-model="carouselDialog" width="80%" fullscreen>
+    <v-dialog v-model="carouselDialog" fullscreen>
       <v-overlay color="black" opacity="0.85">
         <v-row justify="end">
           <v-btn
@@ -106,40 +106,17 @@
             Close
           </v-btn>
         </v-row>
-        <v-row justify="center" class="my-10 flex-shrink-0">
+        <v-row justify="center" class="mt-10 flex-shrink-0">
           <the-project-carousel
+            class="d-flex"
+            :height="dialogHeight"
             :views="views"
             @viewClicked="carouselDialog = false"
             :initialIndex="carouselIndex"
             ref="dialogCarousel"
-            :style="{ height: '75vh', width: '75vw' }"
           ></the-project-carousel
         ></v-row>
       </v-overlay>
-      <!-- <the-project-carousel :views="views" ></the-project-carousel> -->
-      <!-- <v-row justify="center">
-        <v-responsive :aspect-ratio="viewRatio"
-              class="fill-width flex-grow-0"
-              width="100%"
-              height="auto">
-          <v-img
-            contain
-            :src="views[model].image"
-            class="ma-0"
-            position="center top"
-            :aspect-ratio="viewRatio"
-            @click="carouselDialog = false"
-          ></v-img>
-        </v-responsive>
-        <v-card>
-          <v-card-title>
-            <span class="text-h5">{{ views[model].title }}</span>
-          </v-card-title>
-          <v-card-text>
-            <div v-html="views[model].description" class="text-caption"></div>
-          </v-card-text>
-        </v-card>
-      </v-row> -->
     </v-dialog>
   </v-container>
 </template>
@@ -153,10 +130,77 @@ export default {
       carouselIndex: 0,
       carouselDialog: false,
       windowWidth: 0,
+      dialogHeight: 650,
     }
   },
   computed: {},
   methods: {
+    calculateHeight() {
+      let height
+      if (this.windowWidth < this.$store.state.sm) {
+        height = 550
+        return height
+      } else if (this.windowWidth < this.$store.state.md) {
+        height = this.$calculateCurrentY(
+          this.windowWidth,
+          this.$store.state.sm,
+          this.$store.state.md,
+          485,
+          600
+        )
+        return height
+      } else {
+        height = this.$calculateCurrentY(
+          this.windowWidth,
+          this.$store.state.md,
+          this.$store.state.lg,
+          530,
+          600
+        )
+        return height
+      }
+    },
+    calculateDialogHeight() {
+      let height
+      if (this.windowWidth < this.$store.state.xs) {
+        height = this.$calculateCurrentY(
+          this.windowWidth,
+          0,
+          this.$store.state.xs,
+          200,
+          500
+        )
+      } else if (this.windowWidth < this.$store.state.sm) {
+        console.log(`test 1`)
+        height = this.$calculateCurrentY(
+          this.windowWidth,
+          this.$store.state.xs,
+          this.$store.state.sm,
+          500,
+          650
+        )
+      } else if (this.windowWidth < this.$store.state.md) {
+        console.log(`test 2`)
+        height = this.$calculateCurrentY(
+          this.windowWidth,
+          this.$store.state.sm,
+          this.$store.state.md,
+          700,
+          800
+        )
+      } else {
+        console.log(`test 3`)
+        height = this.$calculateCurrentY(
+          this.windowWidth,
+          this.$store.state.md,
+          this.$store.state.lg,
+          750,
+          790
+        )
+      }
+      console.log(`calculateDialogHeight: ${height}`)
+      return height
+    },
     viewClicked(carouselIndex) {
       console.log(`carouselIndex: ${carouselIndex}`)
       this.carouselIndex = carouselIndex
@@ -172,6 +216,8 @@ export default {
     },
     onResize() {
       this.windowWidth = window.innerWidth
+      this.height = this.calculateHeight()
+      this.dialogHeight = this.calculateDialogHeight()
     },
   },
   watch: {
@@ -180,33 +226,7 @@ export default {
         `The Project => carouselIndex: ${this.carouselIndex} | newValue: ${newValue} | oldValue: ${oldValue}`
       )
     },
-    windowWidth(newWidth, oldWidth) {
-      let height
-      if (newWidth < this.$store.state.sm) {
-        height = 550
-        this.height = height
-      } else if (newWidth < this.$store.state.md) {
-        height = this.$calculateCurrentY(
-          newWidth,
-          this.$store.state.sm,
-          this.$store.state.md,
-          485,
-          600
-        )
-        this.height = height
-        // height = 0.45 * newWidth
-        // this.height = this.$clamp(height, 550, 600)
-      } else {
-        height = this.$calculateCurrentY(
-          newWidth,
-          this.$store.state.md,
-          this.$store.state.lg,
-          530,
-          624
-        )
-        this.height = height
-      }
-    },
+    windowWidth(newWidth, oldWidth) {},
   },
   mounted() {
     this.$nextTick(() => {

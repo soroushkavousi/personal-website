@@ -52,6 +52,11 @@ export default {
             title: 'Models',
             description: '<p>In this picture you can see the API models.</p>',
           },
+          {
+            image: 'images/projects/fireplace-api/swagger-top.png',
+            title: 'Test',
+            description: `<p>This is just a test!</p>`,
+          },
         ],
       },
     }
