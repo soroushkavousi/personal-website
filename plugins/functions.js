@@ -19,9 +19,6 @@ export default (context, inject) => {
     let ratio = (cx - x1) / (x2 - x1)
     let yRange = y2 - y1
     let cy = ratio * yRange + y1
-    console.log(
-      `cx: ${cx} | (x1, x2): (${x1}, ${x2}) | (y1, y2): (${y1}, ${y2}) | ratio: ${ratio} | yRange: ${yRange} | cy ${cy}`
-    )
     return cy
   }
 }

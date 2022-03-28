@@ -23,7 +23,7 @@
       </v-row>
 
       <v-row justify="center" class="ma-0 align-center">
-        <v-col xl="3" lg="5" md="7" sm="12">
+        <v-col xl="3" lg="5" md="7" sm="7">
           <v-card color="primary" tile class="lighten-1 px-6 py-9">
             <v-card-title
               class="
@@ -44,12 +44,13 @@
             <v-card-text class="secondary--text text--lighten-2 px-6">
               <v-row class="my-0">
                 <v-col
-                  cols="3"
+                  md="3"
+                  sm="10"
                   class="px-0 py-0 text-overline font-weight-bold"
                 >
                   Email:
                 </v-col>
-                <v-col cols="8" class="px-0 py-0 d-flex align-center">
+                <v-col md="8" sm="10" class="px-0 py-0 d-flex align-center">
                   <p class="ma-0 pa-0">
                     <a
                       href="mailto:soroushkavousi.me@gmail.com"
@@ -62,11 +63,15 @@
               </v-row>
 
               <v-row class="my-0">
-                <v-col cols="3" class="px-0 py-0 text-overline font-weight-bold"
+                <v-col
+                  md="3"
+                  sm="10"
+                  class="px-0 py-0 text-overline font-weight-bold"
                   >Phone:
                 </v-col>
                 <v-col
-                  cols="8"
+                  md="8"
+                  sm="10"
                   class="px-0 py-0 text-body-2 d-flex align-center"
                 >
                   <div class="px-0 py-auto">+98 9120910637</div>

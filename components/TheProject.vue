@@ -11,7 +11,7 @@
         xl="4"
         lg="4"
         md="4"
-        sm="10"
+        sm="8"
         class="d-flex justify-center ma-0 pa-0 mb-10"
         :class="{
           'mr-10': $vuetify.breakpoint.smAndDown ? false : true,
@@ -23,7 +23,7 @@
           width="100%"
           :min-height="600"
           :min-width="300"
-          height="auto"
+          :height="$vuetify.breakpoint.smAndDown ? 'auto' : '100%'"
           class="
             px-5
             py-4
@@ -36,7 +36,7 @@
           <div>
             <v-card-title
               class="
-                text-xl-h4 text-lg-h5 text-md-h5
+                text-xl-h4 text-lg-h5 text-md-h5 text-sm-h4
                 font-weight-black
                 ma-0
                 accent--text
@@ -139,15 +139,17 @@ export default {
       let height
       if (this.windowWidth < this.$store.state.sm) {
         height = 550
+        console.log(`#1 - height: ${height}`)
         return height
       } else if (this.windowWidth < this.$store.state.md) {
         height = this.$calculateCurrentY(
           this.windowWidth,
           this.$store.state.sm,
           this.$store.state.md,
-          485,
+          400,
           600
         )
+        console.log(`#2 - height: ${height}`)
         return height
       } else {
         height = this.$calculateCurrentY(
@@ -157,6 +159,7 @@ export default {
           530,
           600
         )
+        console.log(`#3 - height: ${height}`)
         return height
       }
     },
@@ -171,7 +174,6 @@ export default {
           500
         )
       } else if (this.windowWidth < this.$store.state.sm) {
-        console.log(`test 1`)
         height = this.$calculateCurrentY(
           this.windowWidth,
           this.$store.state.xs,
@@ -180,7 +182,6 @@ export default {
           650
         )
       } else if (this.windowWidth < this.$store.state.md) {
-        console.log(`test 2`)
         height = this.$calculateCurrentY(
           this.windowWidth,
           this.$store.state.sm,
@@ -189,7 +190,6 @@ export default {
           800
         )
       } else {
-        console.log(`test 3`)
         height = this.$calculateCurrentY(
           this.windowWidth,
           this.$store.state.md,

@@ -6,7 +6,7 @@
 
     <div class="py-3"></div>
 
-    <section class="my-16 py-7" id="projects">
+    <section class="my-3 py-7" id="projects">
       <Projects />
     </section>
 

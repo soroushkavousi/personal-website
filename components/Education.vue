@@ -1,6 +1,6 @@
 <template>
-  <v-container fluid class="px-12">
-    <h1 class="accent--text text--lighten-2 text-h3 mb-16">#EDUCATION</h1>
+  <v-container fluid>
+    <h1 class="accent--text text--lighten-2 text-h3 mb-14 ml-16">#EDUCATION</h1>
     <v-row>
       <v-col cols="6">
         <v-timeline>
