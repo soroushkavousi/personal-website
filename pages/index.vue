@@ -1,29 +1,33 @@
 <template>
   <v-container fluid class="pa-0" id="page-top">
     <section class="my-3 py-7" id="about">
-      <About />
+      <about />
     </section>
 
     <div class="py-3"></div>
 
     <section class="my-3 py-7" id="projects">
-      <Projects />
+      <projects />
     </section>
 
     <section class="my-3 py-7" id="skills">
-      <Skills />
-    </section>
-
-    <section class="my-3 py-7" id="education">
-      <Education />
+      <skills />
     </section>
 
     <section class="my-3 py-7" id="experience">
-      <Experience />
+      <experience />
+    </section>
+
+    <section class="my-3 py-7" id="education">
+      <education />
+    </section>
+
+    <section class="my-3 py-7" id="honors">
+      <honors />
     </section>
 
     <section class="my-3 py-7" id="interests">
-      <Interests />
+      <interests />
     </section>
   </v-container>
 </template>

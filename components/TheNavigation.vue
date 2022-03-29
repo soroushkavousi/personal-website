@@ -126,15 +126,21 @@ export default {
           hash: '#skills',
         },
         {
+          routeName: 'experience',
+          title: 'EXPERIENCE',
+          hash: '#experience',
+        },
+        {
           routeName: 'education',
           title: 'EDUCATION',
           hash: '#education',
         },
         {
-          routeName: 'experience',
-          title: 'EXPERIENCE',
-          hash: '#experience',
+          routeName: 'honors',
+          title: 'HONORS',
+          hash: '#honors',
         },
+
         {
           routeName: 'interests',
           title: 'INTERESTS',

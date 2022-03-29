@@ -37,8 +37,8 @@
           <p>
             Each country has a special diamond that gives magicians a powerful
             ability. Your mission is to study diamonds and upgrade them, and
-            finally, you will gain great power by an effective combination of
-            diamonds by your choice.
+            finally, you will gain great power from an effective combination of
+            diamonds with your choice.
           </p>
         </template>
       </the-project>
