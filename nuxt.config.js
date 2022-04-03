@@ -20,6 +20,10 @@ export default {
         rel: 'stylesheet',
         href: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css',
       },
+      {
+        rel: 'stylesheet',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css',
+      },
     ],
   },
 

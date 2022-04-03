@@ -21,13 +21,27 @@ export default {
     items: [
       {
         title: 'AyanTech',
-        role: 'Backend Developer',
+        role: 'Backend Developer, Blockchain Engineer',
         logo: 'images/logos/AyanTech.png',
         years: 'July 2018 - January 2019',
         projects: [
           {
-            title: 'Telegram Bot',
-            descriptions: [],
+            title:
+              'Responsible for creating a cryptocurrency wallet for the company',
+          },
+          {
+            title:
+              'Responsible for designing and creating a cryptocurrency payment gateway API',
+          },
+          {
+            title:
+              'Responsible for running a Bitcoin Full Node via Bitcoin Core',
+          },
+          {
+            title: 'Responsible for producing documentation for the APIs',
+          },
+          {
+            title: 'Responsible for work with OCRs such as Tesseract OCR',
           },
         ],
       },
@@ -38,21 +52,18 @@ export default {
         years: 'August 2016 - October 2017',
         projects: [
           {
-            title: 'Creating APIs ',
-            descriptions: [
-              'for telegram bots',
-              "for some company's applications",
-              'for consuming from Hamrah Aval Mobile Telecommunication services',
-              'with framework WCF',
-            ],
+            title: 'Responsible for creating and maintaining APIs',
           },
           {
-            title: 'Making desktop applications',
+            title:
+              'Responsible for consuming APIs such as telegram bot API and a mobile telecommunication service',
+          },
+          {
+            title: 'Responsible for designing and making desktop applications',
             descriptions: [
               'for injecting data from excel into the database',
               'for uploading files',
-              'for a job managing system which calls some APIs periodically',
-              'with framework WPF',
+              'for a job managing system that calls some APIs periodically',
             ],
           },
         ],

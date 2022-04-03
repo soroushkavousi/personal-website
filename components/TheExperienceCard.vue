@@ -7,17 +7,20 @@
         height="auto"
       >
         <v-row class="ma-0">
-          <v-col cols="2" class="d-flex justify-center">
+          <v-col md="2" sm="4" cols="6" class="d-flex justify-center">
             <v-img
               width="100"
               height="100"
               contain
               :src="logo"
               class="secondary darken-0"
+              min-width="100"
             ></v-img>
           </v-col>
           <v-col
-            cols="7"
+            md="7"
+            sm="6"
+            cols="6"
             class="
               d-flex
               flex-column
@@ -27,10 +30,12 @@
             "
           >
             <div class="mb-2 text-h5 font-weight-bold">{{ title }}</div>
-            <div>{{ role }}</div>
+            <div class="text-md-overline text-body-2">{{ role }}</div>
           </v-col>
           <v-col
-            cols="3"
+            md="3"
+            sm="12"
+            cols="12"
             class="d-flex justify-end text-overline"
             align-self="center"
           >
@@ -38,14 +43,25 @@
           </v-col>
         </v-row>
         <v-row class="ma-0 my-3">
-          <v-col cols="9">
+          <v-col cols="11">
             <v-list color="primary lighten-1" class="ma-0 pa-0">
               <template v-for="(project, index) in projects">
-                <v-list-item :key="index">
-                  <v-list-item-content>
+                <v-list-item
+                  :key="index"
+                  class="pa-0"
+                  :style="{ 'min-height': '30px' }"
+                >
+                  <v-list-item-content class="pa-1">
                     <v-list-item-title
-                      :class="{ 'mb-3': project.descriptions ? true : false }"
+                      :style="{
+                        'overflow-wrap': 'break-word',
+                        'word-wrap': 'break-word',
+                        'white-space': 'normal',
+                        'line-height': '1.3',
+                      }"
+                      :class="{ 'mb-2': project.descriptions ? true : false }"
                       v-html="'- ' + project.title"
+                      class="text-sm-body-1 text-body-2"
                     ></v-list-item-title>
                     <v-list-item-subtitle v-if="project.descriptions">
                       <div

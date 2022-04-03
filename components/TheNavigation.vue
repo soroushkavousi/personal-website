@@ -140,12 +140,6 @@ export default {
           title: 'HONORS',
           hash: '#honors',
         },
-
-        {
-          routeName: 'interests',
-          title: 'INTERESTS',
-          hash: '#interests',
-        },
       ],
     }
   },

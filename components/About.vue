@@ -81,25 +81,27 @@
               <v-row
                 class="pa-0 mt-4 mb-n3"
                 align="center"
+                justify-md="center"
                 justify="space-around"
               >
-                <div
+                <v-col
+                  cols="1"
                   v-for="(link, i) in links"
                   :key="i"
-                  class="d-flex justify-center mx-4"
+                  class="d-flex justify-center mx-7"
                 >
                   <a :href="link.href">
                     <v-icon
-                      class="mx-3 px-auto"
+                      class="px-auto"
                       v-if="link.icon"
-                      size="55px"
+                      size="45px"
                       color="secondary lighten-2"
                     >
                       {{ link.icon }}
                     </v-icon>
                     <v-img v-else-if="link.image" :src="link.image"> </v-img>
                   </a>
-                </div>
+                </v-col>
               </v-row>
             </v-card-text>
           </v-card>
@@ -114,6 +116,10 @@ export default {
   data() {
     return {
       links: [
+        {
+          href: 'https://t.me/soroushkavousi',
+          icon: 'fa-brands fa-telegram',
+        },
         {
           href: 'https://github.com/soroushkavousi',
           icon: 'devicon-github-original-wordmark',

@@ -25,9 +25,5 @@
     <section class="my-3 py-7" id="honors">
       <honors />
     </section>
-
-    <section class="my-3 py-7" id="interests">
-      <interests />
-    </section>
   </v-container>
 </template>
