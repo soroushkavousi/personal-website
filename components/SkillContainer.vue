@@ -1,17 +1,23 @@
 <template>
   <v-row :id="id" justify="center">
     <v-col>
-      <v-btn text :href="`#${id}`" class="mb-2">
-        <h1
-          class="
-            text-md-h6 text-sm-body-1 text-body-1
-            seccondary--text
-            text--lighten-1
-            font-weight-regular
-          "
-        >
-          {{ title }}
-        </h1>
+      <v-btn
+        text
+        :href="`#${id}`"
+        class="
+          mb-2
+          text-truncate text-left
+          justify-start
+          text-lg-h6 text-md-body-1 text-body-2
+          seccondary--text
+          text--lighten-1
+          font-weight-regular
+          flex-wrap
+        "
+        max-width="100%"
+        width="100%"
+      >
+        {{ title }}
       </v-btn>
       <v-divider></v-divider>
       <v-row class="my-5 px-20 mx-0" align="center" justify="center">
@@ -115,5 +121,5 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 </style>

@@ -25,7 +25,7 @@
         ></skill-container
       ></v-col>
     </v-row>
-    <div class="mx-16">
+    <div class="mx-16 pl-13">
       <v-row align="center" class="mb-1 mx-0 mt-0"
         ><v-card
           width="20"

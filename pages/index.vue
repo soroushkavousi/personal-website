@@ -10,19 +10,19 @@
       <projects />
     </section>
 
-    <section class="my-3 py-7" id="skills">
+    <section class="my-16 py-7" id="skills">
       <skills />
     </section>
 
-    <section class="my-3 py-7" id="experience">
+    <section class="my-16 py-7" id="experience">
       <experience />
     </section>
 
-    <section class="my-3 py-7" id="education">
+    <section class="my-16 py-7" id="education">
       <education />
     </section>
 
-    <section class="my-3 py-7" id="honors">
+    <section class="my-16 py-7" id="honors">
       <honors />
     </section>
   </v-container>
