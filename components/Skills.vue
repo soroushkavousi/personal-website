@@ -2,8 +2,8 @@
   <v-container fluid>
     <h1 class="accent--text text--lighten-2 text-h3 mb-14 ml-16">#SKILLS</h1>
     <v-row
-      justify="space-between"
-      class="my-7"
+      justify="center"
+      class="my-0"
       v-for="(_, rowNumber) in Math.ceil(skillGroups.length / 2)"
       :key="rowNumber"
     >
@@ -13,7 +13,11 @@
           rowNumber * 2 + 2
         )"
         :key="i"
-        class="mx-12"
+        class="mx-5 mb-8"
+        lg="5"
+        md="5"
+        sm="5"
+        cols="10"
         ><skill-container
           :id="skillGroup.id"
           :title="skillGroup.title"
@@ -93,6 +97,11 @@ export default {
           title: 'Frontend',
           skills: [
             {
+              name: 'Vuetify',
+              icon: 'devicon-vuetify-line',
+              isActive: true,
+            },
+            {
               name: 'Nuxt.js',
               icon: 'mdi-nuxt',
               isActive: true,
@@ -112,6 +121,17 @@ export default {
               name: 'CSS',
               icon: 'devicon-css3-plain-wordmark',
               isActive: true,
+            },
+          ],
+        },
+        {
+          id: 'desktop-application-development-skills',
+          title: 'Desktop Application Development',
+          skills: [
+            {
+              name: 'WPF',
+              image: 'images/logos/wpf-logo.png',
+              isActive: false,
             },
           ],
         },
@@ -158,27 +178,6 @@ export default {
           ],
         },
         {
-          id: 'ide-skills',
-          title: 'IDE',
-          skills: [
-            {
-              name: 'Visual Studio',
-              icon: 'devicon-visualstudio-plain',
-              isActive: true,
-            },
-            {
-              name: 'Visual Studio Code',
-              icon: 'devicon-vscode-plain-wordmark',
-              isActive: true,
-            },
-            {
-              name: 'PyCharm',
-              icon: 'devicon-pycharm-plain',
-              isActive: true,
-            },
-          ],
-        },
-        {
           id: 'programing-and-scripting-language-skills',
           title: 'Programing & Scripting Language',
           skills: [
@@ -211,6 +210,27 @@ export default {
               name: 'java',
               icon: 'devicon-java-plain',
               isActive: false,
+            },
+          ],
+        },
+        {
+          id: 'ide-skills',
+          title: 'IDE',
+          skills: [
+            {
+              name: 'Visual Studio',
+              icon: 'devicon-visualstudio-plain',
+              isActive: true,
+            },
+            {
+              name: 'Visual Studio Code',
+              icon: 'devicon-vscode-plain-wordmark',
+              isActive: true,
+            },
+            {
+              name: 'PyCharm',
+              icon: 'devicon-pycharm-plain',
+              isActive: true,
             },
           ],
         },
