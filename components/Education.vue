@@ -1,61 +1,57 @@
 <template>
   <v-container fluid>
     <h1 class="accent--text text--lighten-2 text-h3 mb-14 ml-16">#EDUCATION</h1>
-    <v-row>
-      <v-col cols="6">
-        <v-timeline>
-          <v-timeline-item
-            v-for="(education, i) in educations"
-            :key="i"
-            :color="contentColor1"
-            right
-            fill-dot
+    <v-row justify="center">
+      <v-timeline dense>
+        <v-timeline-item
+          v-for="(education, i) in educations"
+          :key="i"
+          :color="contentColor1"
+          right
+          fill-dot
+          small
+        >
+          <v-card
+            elevation="10"
+            :width="timeLineCardWidth"
+            tile
+            outlined
+            class="ml-5"
           >
             <v-card
-              elevation="10"
-              :width="timeLineCardWidth"
-              :max-width="timeLineCardWidth"
               tile
-              outlined
-              class="ml-10"
+              height="160"
+              color="secondary darken-0"
+              class="d-flex justify-center"
             >
               <v-card
                 tile
-                height="160"
+                flat
                 color="secondary darken-0"
-                class="d-flex justify-center"
+                class="d-flex flex-column justify-center"
+                v-for="(image, i) in education.images"
+                :key="i"
+                :href="image.website"
               >
-                <v-card
-                  tile
-                  color="secondary darken-0"
-                  class="d-flex flex-column justify-center"
-                  v-for="(image, i) in education.images"
-                  :key="i"
-                  :href="image.website"
-                >
-                  <v-img
-                    class="d-inline-block"
-                    :max-width="timeLineCardWidth / education.images.length"
-                    max-height="160"
-                    :src="image.src"
-                    light
-                    contain
-                  ></v-img>
-                </v-card>
+                <v-img
+                  class="d-inline-block"
+                  :max-width="timeLineCardWidth / education.images.length"
+                  max-height="140"
+                  :src="image.src"
+                  light
+                  contain
+                ></v-img>
               </v-card>
-              <v-card-title>
-                <p :class="`${textColor1}`">{{ education.title }}</p>
-              </v-card-title>
-              <v-card-text>
-                <span
-                  v-html="education.location"
-                  :class="`${textColor2}`"
-                ></span>
-              </v-card-text>
             </v-card>
-          </v-timeline-item>
-        </v-timeline>
-      </v-col>
+            <v-card-title class="text-lg-h6 text-body-1 font-weight-bold">
+              <p :class="`${textColor1}`">{{ education.title }}</p>
+            </v-card-title>
+            <v-card-text class="text-lg-body-2 text-md-caption text-caption">
+              <span v-html="education.location" :class="`${textColor2}`"></span>
+            </v-card-text>
+          </v-card>
+        </v-timeline-item>
+      </v-timeline>
     </v-row>
   </v-container>
 </template>
@@ -121,6 +117,30 @@ export default {
     textColor2() {
       return `secondary--text text--lighten-4`
     },
+  },
+  methods: {
+    calculateTimeLineCardWidth() {
+      let width
+      if (window.innerWidth < this.$store.state.sm) {
+        width = window.innerWidth * 0.55
+        return width
+      } else if (window.innerWidth < this.$store.state.md) {
+        width = window.innerWidth * 0.55
+        return width
+      } else {
+        width = window.innerWidth * 0.3
+        return width
+      }
+    },
+    onResize() {
+      this.timeLineCardWidth = this.calculateTimeLineCardWidth()
+    },
+  },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize)
+    })
+    this.onResize()
   },
 }
 </script>
