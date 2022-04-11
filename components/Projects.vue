@@ -71,13 +71,19 @@ export default {
             image: 'images/projects/fireplace-api/swagger-top.png',
             title: 'Swagger Page',
             description: `<p class="ma-0 pa-0">With the swagger UI, you can easily interact with the API and learn it.
-              It shows all routes, inputs, outputs, and errors.
+              It shows all routes, inputs, outputs, models, and errors.
               It also generates a <i><a href="https://api.fireplace.bitiano.com/docs/v0.1/swagger.json" target="_blank">swagger.json</a></i> which describes the schema of the API that can be imported into your app.</p>`,
           },
           {
             image: 'images/projects/fireplace-api/models.png',
             title: 'Models',
             description: '<p>In this picture you can see the whole models.</p>',
+          },
+          {
+            image: 'images/projects/fireplace-api/comment-routes.png',
+            title: 'Comment Routes',
+            description:
+              '<p>In this picture you can see the routes related to the comment model.</p>',
           },
         ],
       },
@@ -89,7 +95,7 @@ export default {
             name: 'APK',
             // icon: 'mdi-account-circle',
             icon: 'devicon-android-plain',
-            address: 'https://api.fireplace.bitiano.com/docs',
+            address: 'http://bitiano.com/power-essentia.apk',
           },
           {
             name: 'GitHub',

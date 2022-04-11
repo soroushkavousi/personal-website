@@ -73,7 +73,7 @@
       <v-icon dense size="50" :style="{}">mdi-chevron-right</v-icon>
     </div>
     <template #append>
-      <div :class="darkModeIconStyle">
+      <!-- <div :class="darkModeIconStyle">
         <v-tooltip v-if="!$vuetify.theme.dark" top>
           <template v-slot:activator="{ on }">
             <v-btn v-on="on" color="primary" small fab @click="darkMode">
@@ -91,7 +91,7 @@
           </template>
           <span>Dark Mode Off</span>
         </v-tooltip>
-      </div>
+      </div> -->
     </template>
   </v-navigation-drawer>
 </template>
