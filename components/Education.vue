@@ -1,6 +1,8 @@
 <template>
   <v-container fluid>
-    <h1 class="accent--text text--lighten-2 text-h3 mb-14 ml-16">#EDUCATION</h1>
+    <h1 class="accent--text text--lighten-2 text-h3 mb-14 ml-16">
+      # EDUCATION
+    </h1>
     <v-row justify="center">
       <v-timeline dense>
         <v-timeline-item
@@ -12,8 +14,10 @@
           small
         >
           <v-card
+            id="test"
             elevation="10"
             :width="timeLineCardWidth"
+            color="primary lighten-0"
             tile
             outlined
             class="ml-5"
@@ -43,7 +47,7 @@
                 ></v-img>
               </v-card>
             </v-card>
-            <v-card-title class="text-lg-h6 text-body-1 font-weight-bold">
+            <v-card-title class="text-lg-h6 text-body-1 font-weight-medium">
               <p :class="`${textColor1}`">{{ education.title }}</p>
             </v-card-title>
             <v-card-text class="text-lg-body-2 text-md-caption text-caption">
@@ -72,7 +76,7 @@ export default {
       educations: [
         {
           date: '2013 - 2019',
-          title: 'B.Sc, Computer Engineering ( Software Engineering )',
+          title: 'B.Sc, Computer Engineering (Software Engineering)',
           images: [
             {
               src: 'images/logos/amirkabir-university-logo.png',

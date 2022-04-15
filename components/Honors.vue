@@ -1,14 +1,15 @@
 <template>
   <v-container fluid>
-    <h1 class="accent--text text--lighten-2 text-h3 mb-14 ml-16">#HONORS</h1>
+    <h1 class="accent--text text--lighten-2 text-h3 mb-14 ml-16"># HONORS</h1>
     <v-row justify="center" class="mb-16 mt-0">
       <v-col xs="10" sm="10" md="10" lg="8">
         <v-card color="primary" tile class="lighten-1 pa-16">
           <v-card-text class="text-h6">
-            - Achieved top rank 0.006
-            <span class="text-body-1">(≈ 1500 / 252,000)</span>
-            in the nationwide University Entrance Exam (Mathematics and Physics
-            2013)
+            - Achieved top rank 0.006 in the nationwide University Entrance Exam
+            (Mathematics and Physics 2013)<span class="text-body-1"
+              >, my rank in region one = 852, in all regions = 1500, and the
+              number of participants ≈ 252000</span
+            >
           </v-card-text>
         </v-card>
       </v-col>

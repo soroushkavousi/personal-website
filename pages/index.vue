@@ -6,8 +6,8 @@
 
     <div class="py-3"></div>
 
-    <section class="my-3 py-7" id="projects">
-      <projects />
+    <section class="my-3 py-7" id="personal-projects">
+      <personal-projects />
     </section>
 
     <section class="my-16 py-7" id="skills">

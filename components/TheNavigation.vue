@@ -116,9 +116,9 @@ export default {
           hash: '#about',
         },
         {
-          routeName: 'projects',
-          title: 'PROJECTS',
-          hash: '#projects',
+          routeName: 'personal-projects',
+          title: 'PERSONAL PROJECTS',
+          hash: '#personal-projects',
         },
         {
           routeName: 'skills',

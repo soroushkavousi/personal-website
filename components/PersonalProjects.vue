@@ -1,6 +1,8 @@
 <template>
   <v-container fluid>
-    <h1 class="accent--text text--lighten-2 text-h3 mb-14 ml-16">#PROJECTS</h1>
+    <h1 class="accent--text text--lighten-2 text-h3 mb-14 ml-16">
+      # PERSONAL PROJECTS
+    </h1>
 
     <v-row justify="center" class="mt-15 px-10">
       <the-project

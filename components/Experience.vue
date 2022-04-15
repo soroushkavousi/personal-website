@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <h1 class="accent--text text--lighten-2 text-h3 mb-14 ml-16">
-      #EXPERIENCE
+      # EXPERIENCE
     </h1>
     <the-experience-card
       v-for="(item, i) in items"

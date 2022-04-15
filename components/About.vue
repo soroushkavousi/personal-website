@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <h1 class="accent--text text--lighten-2 text-h3 mb-10 ml-16">#ABOUT</h1>
+    <h1 class="accent--text text--lighten-2 text-h3 mb-10 ml-16"># ABOUT</h1>
     <v-col cols="12" justify="flex-column justify-space-around">
       <v-row justify="center" class="ma-0 mb-10 align-center">
         <v-col xl="6" lg="8" md="10" sm="10">

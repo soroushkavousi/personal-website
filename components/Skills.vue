@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <h1 class="accent--text text--lighten-2 text-h3 mb-14 ml-16">#SKILLS</h1>
+    <h1 class="accent--text text--lighten-2 text-h3 mb-14 ml-16"># SKILLS</h1>
     <v-row
       justify="center"
       class="my-0"
