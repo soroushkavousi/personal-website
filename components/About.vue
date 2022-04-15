@@ -1,22 +1,29 @@
 <template>
   <v-container fluid>
-    <h1 class="accent--text text--lighten-2 text-h3 mb-14 ml-16">#ABOUT</h1>
+    <h1 class="accent--text text--lighten-2 text-h3 mb-10 ml-16">#ABOUT</h1>
     <v-col cols="12" justify="flex-column justify-space-around">
       <v-row justify="center" class="ma-0 mb-10 align-center">
         <v-col xl="6" lg="8" md="10" sm="10">
           <v-card color="primary" tile class="lighten-1 pa-16 text-subtitle-1">
             <div class="mb-3">
-              Hi, I'm Soroush Kavousi, a passionate
+              I am a passionate
               <span
                 class="font-weight-black accent--text text--lighten-2 ma-0 pa-0"
               >
-                backend and game developer</span
+                backend developer</span
+              >. However, I have used my programming skills in other areas such
+              as
+              <i>
+                game development, web development, blockchain projects, and
+                desktop development</i
               >.
             </div>
-            <div class="mb-3">
-              I love programming because it gives me the power to create new
-              worlds. I believe these worlds can improve people's quality of
-              life.
+            <div>
+              I was born in 1995, and as far as I remember in my whole life, two
+              perpetual subjects have attracted me the most,
+              <i>programming and playing games</i>. In fact, my entire life
+              matters are somehow connected to these two things, and I believe
+              it will not change.
             </div>
           </v-card>
         </v-col>
