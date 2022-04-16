@@ -21,9 +21,9 @@
             <div>
               I was born in 1995, and as far as I remember in my whole life, two
               perpetual subjects have attracted me the most,
-              <i>programming and playing games</i>. In fact, my entire life
-              matters are somehow connected to these two things, and I believe
-              it will not change.
+              <i>programming and playing video games</i>. In fact, my entire
+              life matters are somehow connected to these two things, and I
+              believe it will not change.
             </div>
           </v-card>
         </v-col>
