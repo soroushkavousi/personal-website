@@ -13,12 +13,16 @@
       >
         <template v-slot:description>
           <p>
-            Fireplace API is a web API that is the backend side of the project
-            Fireplace. It contains complex models and various sign-in methods.
+            <b><i>Fireplace</i></b> is a discussion application with
+            communities, posts, and comments, just like Reddit.
           </p>
           <p>
-            Fireplace itself is a discussion application which has communities,
-            posts, and comments just like Reddit.
+            This project, <b><i>Fireplace API</i></b
+            >, provides an API for Fireplace, and it aims to be a real-world
+            example of web API concepts with the <i>ASP.NET Core</i> framework.
+            As I needed to record the knowledge and experience I have learned in
+            my coding history, I created this project for myself and everyone
+            who considers it valuable.
           </p>
         </template>
       </the-project>
@@ -33,14 +37,15 @@
       >
         <template v-slot:description>
           <p>
-            Power Essentia TD is a tower defense 2D game. You play as a magician
-            to fight monsters and defend countries against monsters.
+            Power Essentia TD is a <b>tower defense 2D game</b>. You play as a
+            <b>magician</b> to fight monsters and defend countries against
+            <b>monsters</b>.
           </p>
           <p>
-            Each country has a special diamond that gives magicians a powerful
-            ability. Your mission is to study diamonds and upgrade them, and
-            finally, you will gain great power from an effective combination of
-            diamonds with your choice.
+            Each country has a special <b>diamond</b> that gives magicians a
+            powerful ability. Your mission is to study diamonds and upgrade
+            them, and finally, you will gain great power from an effective
+            combination of diamonds with your choice.
           </p>
         </template>
       </the-project>

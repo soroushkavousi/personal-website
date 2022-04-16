@@ -47,6 +47,7 @@
             </v-card-title>
             <v-card-text
               class="my-2 text-md-body-2 text-sm-subtitle-2 overflow-y-auto"
+              :style="{ 'line-height': '23px' }"
             >
               <slot name="description"></slot>
             </v-card-text>
