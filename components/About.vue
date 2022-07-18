@@ -6,24 +6,18 @@
         <v-col xl="6" lg="8" md="10" sm="10">
           <v-card color="primary" tile class="lighten-1 pa-16 text-subtitle-1">
             <div class="mb-3">
-              I am a passionate
-              <span
-                class="font-weight-black accent--text text--lighten-2 ma-0 pa-0"
-              >
-                backend developer</span
-              >. However, I have used my programming skills in other areas such
-              as
+              I am a passionate <span :class="vit">Backend Developer</span> who
+              was born in 1995. I have studied
+              <span :class="vit">Software Engineering</span> at Amirkabir
+              University of Technology.
+            </div>
+            <div>
+              I love programming and have used my programming skills in other
+              areas such as
               <i>
                 game development, web development, blockchain projects, and
                 desktop development</i
               >.
-            </div>
-            <div>
-              I was born in 1995, and as far as I remember in my whole life, two
-              perpetual subjects have attracted me the most,
-              <i>programming and playing video games</i>. In fact, my entire
-              life matters are somehow connected to these two things, and I
-              believe it will not change.
             </div>
           </v-card>
         </v-col>
@@ -137,6 +131,11 @@ export default {
         },
       ],
     }
+  },
+  computed: {
+    vit() {
+      return `font-weight-black accent--text text--lighten-2 ma-0 pa-0`
+    },
   },
 }
 </script>
