@@ -72,13 +72,13 @@ p a:active {
   color: var(--v-accent-lighten3) !important;
 }
 
-/* ::v-deep i a {
+/* :deep(i a) {
   text-decoration: none;
   color: var(--v-accent-lighten2) !important;
 }
 
-::v-deep p a:hover,
-::v-deep p a:active {
+:deep(p a:hover),
+:deep(p a:active) {
   color: var(--v-accent-lighten3) !important;
 } */
 </style>

@@ -150,27 +150,27 @@ export default {
 </script>
 
 <style scoped>
-::v-deep .vit {
+:deep(.vit) {
   text-decoration: none;
   color: var(--v-accent-lighten2) !important;
 }
 
-::v-deep p > a {
+:deep(p > a) {
   text-decoration: none;
   color: var(--v-secondary-base) !important;
 }
 
-::v-deep p > a:hover,
-::v-deep p > a:active {
+:deep(p > a:hover),
+:deep(p > a:active) {
   color: var(--v-accent-lighten3) !important;
 }
 
-::v-deep .no-content-link {
+:deep(.no-content-link) {
   text-decoration: none;
   color: orange !important;
 }
 
-::v-deep .very-small-text {
+:deep(.very-small-text) {
   font-size: 0.9rem !important;
 }
 </style>

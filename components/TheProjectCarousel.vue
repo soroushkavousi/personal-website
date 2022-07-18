@@ -143,7 +143,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
-::v-deep p {
+:deep(p) {
   height: max-content;
   overflow: auto;
 }
