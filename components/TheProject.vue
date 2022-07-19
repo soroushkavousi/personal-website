@@ -21,7 +21,7 @@
           color="primary darken-1"
           tile
           width="100%"
-          :min-height="600"
+          :min-height="topRowMinHeight"
           :min-width="300"
           :height="$vuetify.breakpoint.smAndDown ? 'auto' : '100%'"
           class="
@@ -132,6 +132,7 @@ export default {
       carouselDialog: false,
       windowWidth: 0,
       dialogHeight: 650,
+      topRowMinHeight: 650,
     }
   },
   computed: {},
@@ -158,7 +159,7 @@ export default {
           this.$store.state.md,
           this.$store.state.lg,
           530,
-          600
+          this.topRowMinHeight - 3
         )
         console.log(`#3 - height: ${height}`)
         return height

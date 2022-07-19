@@ -37,6 +37,14 @@
       >
         <template v-slot:description>
           <p>
+            This game is just a <b>fun project</b> that is developed via
+            <b>Unity 2D</b>. Currently, it takes almost <b>30 minutes</b> to
+            finish it. You can download the APK and play it. I hope you enjoy
+            it.
+          </p>
+          <br />
+          <h3 class="mb-3">Game Summary</h3>
+          <p>
             Power Essentia TD is a <b>tower defense 2D game</b>. You play as a
             <b>magician</b> to fight monsters and defend countries against
             <b>monsters</b>.
