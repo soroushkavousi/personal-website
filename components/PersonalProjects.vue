@@ -40,7 +40,7 @@
             This game is just a <b>fun project</b> that is developed via
             <b>Unity 2D</b>. Currently, it takes almost <b>30 minutes</b> to
             finish it. You can download the APK and play it. I hope you enjoy
-            it.
+            playing it.
           </p>
           <br />
           <h3 class="mb-3">Game Summary</h3>
@@ -53,7 +53,7 @@
             Each country has a special <b>diamond</b> that gives magicians a
             powerful ability. Your mission is to study diamonds and upgrade
             them, and finally, you will gain great power from an effective
-            combination of diamonds with your choice.
+            <b>combination of diamonds</b> with your choice.
           </p>
         </template>
       </the-project>
@@ -120,28 +120,59 @@ export default {
         ],
         views: [
           {
-            image: 'images/projects/power-essentia-td/fight-1.png',
+            image: 'images/projects/power-essentia-td/1.fight-scene.png',
             title: 'Fight Scene 1',
             description: ``,
           },
           {
-            image: 'images/projects/power-essentia-td/fight-3.png',
+            image: 'images/projects/power-essentia-td/2.fight-scene.png',
             title: 'Fight Scene 2',
             description: '',
           },
           {
-            image: 'images/projects/power-essentia-td/fight-4.png',
+            image: 'images/projects/power-essentia-td/3.about.png',
+            title: 'About Dialog',
+            description: '',
+          },
+          {
+            image: 'images/projects/power-essentia-td/4.stone-diamond.png',
+            title: 'Stone Diamond - Diamond Menu',
+            description: '',
+          },
+          {
+            image:
+              'images/projects/power-essentia-td/5.fire-diamond-mastered.png',
+            title: 'Fire Diamond - Diamond Menu',
+            description: '',
+          },
+          {
+            image: 'images/projects/power-essentia-td/6.king-diamond.png',
+            title: 'King Diamond - Diamond Menu',
+            description: '',
+          },
+          {
+            image: 'images/projects/power-essentia-td/7.blood-diamond.png',
+            title: 'Blood Diamond - Diamond Menu',
+            description: '',
+          },
+          {
+            image: 'images/projects/power-essentia-td/8.fight-scene.png',
             title: 'Fight Scene 3',
             description: '',
           },
           {
-            image: 'images/projects/power-essentia-td/diamond-menu-1.png',
-            title: 'Diamond Menu 1',
+            image: 'images/projects/power-essentia-td/9.fight-scene.png',
+            title: 'Fight Scene 4',
             description: '',
           },
           {
-            image: 'images/projects/power-essentia-td/diamond-menu-2.png',
-            title: 'Diamond Menu 2',
+            image: 'images/projects/power-essentia-td/10.fight-scene.png',
+            title: 'Fight Scene 5',
+            description: '',
+          },
+          {
+            image: 'images/projects/power-essentia-td/11.fight-scene.png',
+            title: 'Fight Scene 6',
             description: '',
           },
         ],
