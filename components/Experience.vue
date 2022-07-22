@@ -22,7 +22,7 @@ export default {
       {
         title: 'AyanTech',
         role: 'Backend Developer, Blockchain Engineer',
-        logo: 'images/logos/AyanTech.png',
+        logo: 'http://files.bitiano.com/logos/ayan-tech-logo.png',
         years: 'July 2018 - January 2019',
         projects: [
           {
@@ -48,7 +48,7 @@ export default {
       {
         title: 'AltonTech',
         role: 'Backend Developer, Desktop Application Developer',
-        logo: 'images/logos/AltonTech.png',
+        logo: 'http://files.bitiano.com/logos/alton-tech-logo.png',
         years: 'August 2016 - October 2017',
         projects: [
           {

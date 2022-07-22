@@ -16,7 +16,7 @@
           <v-avatar v-else>
             <v-img
               contain
-              src="images/global/soroush.jpg"
+              src="http://files.bitiano.com/soroush-kavousi/soroush-kavousi-profile.jpg"
               class="mx-auto"
             ></v-img>
           </v-avatar>
@@ -28,7 +28,10 @@
         <v-list nav>
           <v-list-item class="d-flex justify-center ma-0">
             <v-list-item-avatar class="mx-auto" size="150">
-              <v-img src="images/global/soroush.jpg" class="mx-auto"></v-img>
+              <v-img
+                src="http://files.bitiano.com/soroush-kavousi/soroush-kavousi-profile.jpg"
+                class="mx-auto"
+              ></v-img>
             </v-list-item-avatar>
           </v-list-item>
           <v-list-item class="d-flex justify-center mb-14">

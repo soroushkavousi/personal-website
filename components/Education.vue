@@ -79,7 +79,7 @@ export default {
           title: 'B.Sc, Computer Engineering (Software Engineering)',
           images: [
             {
-              src: 'images/logos/amirkabir-university-logo.png',
+              src: 'http://files.bitiano.com/logos/amirkabir-university-logo.png',
               website: 'https://ce.aut.ac.ir/en',
             },
           ],
@@ -90,12 +90,12 @@ export default {
           date: '2009 - 2013',
           images: [
             {
-              src: 'images/logos/nodet-logo.png',
+              src: 'http://files.bitiano.com/logos/nodet-logo.png',
               website:
                 'https://en.wikipedia.org/wiki/National_Organization_for_Development_of_Exceptional_Talents',
             },
             // {
-            //   src: 'images/logos/salam-logo.webp',
+            //   src: 'http://files.bitiano.com/logos/salam-logo.webp',
             //   website: 'http://yousefabad.salamsch.com/hschool',
             // },
           ],

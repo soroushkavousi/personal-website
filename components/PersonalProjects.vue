@@ -83,19 +83,19 @@ export default {
         ],
         views: [
           {
-            image: 'images/projects/fireplace-api/swagger-top.png',
+            image: 'http://files.fireplace.bitiano.com/api/swagger-top.png',
             title: 'Swagger Page',
             description: `<p class="ma-0 pa-0">With the swagger UI, you can easily interact with the API and learn it.
               It shows all routes, inputs, outputs, models, and errors.
               It also generates a <i><a href="https://api.fireplace.bitiano.com/docs/v0.1/swagger.json" target="_blank">swagger.json</a></i> which describes the schema of the API that can be imported into your app.</p>`,
           },
           {
-            image: 'images/projects/fireplace-api/models.png',
+            image: 'http://files.fireplace.bitiano.com/api/models.png',
             title: 'Models',
             description: '<p>In this picture you can see the whole models.</p>',
           },
           {
-            image: 'images/projects/fireplace-api/comment-routes.png',
+            image: 'http://files.fireplace.bitiano.com/api/comment-routes.png',
             title: 'Comment Routes',
             description:
               '<p>In this picture you can see the routes related to the comment model.</p>',
@@ -110,7 +110,8 @@ export default {
             name: 'APK',
             // icon: 'mdi-account-circle',
             icon: 'devicon-android-plain',
-            address: 'http://bitiano.com/power-essentia.apk',
+            address:
+              'http://files.bitiano.com/power-essentia/power-essentia.apk',
           },
           {
             name: 'GitHub',
@@ -120,58 +121,60 @@ export default {
         ],
         views: [
           {
-            image: 'images/projects/power-essentia-td/1.fight-scene.png',
+            image: 'http://files.bitiano.com/power-essentia/1.fight-scene.png',
             title: 'Fight Scene 1',
             description: ``,
           },
           {
-            image: 'images/projects/power-essentia-td/2.fight-scene.png',
+            image: 'http://files.bitiano.com/power-essentia/2.fight-scene.png',
             title: 'Fight Scene 2',
             description: '',
           },
           {
-            image: 'images/projects/power-essentia-td/3.about.png',
+            image: 'http://files.bitiano.com/power-essentia/3.about.png',
             title: 'About Dialog',
             description: '',
           },
           {
-            image: 'images/projects/power-essentia-td/4.stone-diamond.png',
-            title: 'Stone Diamond - Diamond Menu',
+            image:
+              'http://files.bitiano.com/power-essentia/4.stone-diamond.png',
+            title: 'Diamond Menu - Stone Diamond',
             description: '',
           },
           {
             image:
-              'images/projects/power-essentia-td/5.fire-diamond-mastered.png',
-            title: 'Fire Diamond - Diamond Menu',
+              'http://files.bitiano.com/power-essentia/5.fire-diamond-mastered.png',
+            title: 'Diamond Menu - Fire Diamond',
             description: '',
           },
           {
-            image: 'images/projects/power-essentia-td/6.king-diamond.png',
-            title: 'King Diamond - Diamond Menu',
+            image: 'http://files.bitiano.com/power-essentia/6.king-diamond.png',
+            title: 'Diamond Menu - King Diamond',
             description: '',
           },
           {
-            image: 'images/projects/power-essentia-td/7.blood-diamond.png',
-            title: 'Blood Diamond - Diamond Menu',
+            image:
+              'http://files.bitiano.com/power-essentia/7.blood-diamond.png',
+            title: 'Diamond Menu - Blood Diamond',
             description: '',
           },
           {
-            image: 'images/projects/power-essentia-td/8.fight-scene.png',
+            image: 'http://files.bitiano.com/power-essentia/8.fight-scene.png',
             title: 'Fight Scene 3',
             description: '',
           },
           {
-            image: 'images/projects/power-essentia-td/9.fight-scene.png',
+            image: 'http://files.bitiano.com/power-essentia/9.fight-scene.png',
             title: 'Fight Scene 4',
             description: '',
           },
           {
-            image: 'images/projects/power-essentia-td/10.fight-scene.png',
+            image: 'http://files.bitiano.com/power-essentia/10.fight-scene.png',
             title: 'Fight Scene 5',
             description: '',
           },
           {
-            image: 'images/projects/power-essentia-td/11.fight-scene.png',
+            image: 'http://files.bitiano.com/power-essentia/11.fight-scene.png',
             title: 'Fight Scene 6',
             description: '',
           },
