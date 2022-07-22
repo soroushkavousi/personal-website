@@ -91,7 +91,7 @@
         class="d-flex"
         :height="$vuetify.breakpoint.smAndDown ? 'auto' : height"
         :views="views"
-        @viewClicked="viewClicked"
+        @onMaximize="onMaximize"
         ref="carousel"
       ></the-project-carousel>
     </v-row>
@@ -203,7 +203,7 @@ export default {
       console.log(`calculateDialogHeight: ${height}`)
       return height
     },
-    viewClicked(carouselIndex) {
+    onMaximize(carouselIndex) {
       console.log(`carouselIndex: ${carouselIndex}`)
       this.carouselIndex = carouselIndex
       if (this.$refs.dialogCarousel != null) {

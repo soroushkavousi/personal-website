@@ -33,9 +33,12 @@
               :aspect-ratio="viewRatio"
               width="100%"
               height="100%"
-              @click="$emit('viewClicked', index)"
+              @click.stop="openImage(view.image)"
             >
-              <div id="view-maximize-description">
+              <div
+                id="view-maximize-description"
+                @click.stop="$emit('onMaximize', index)"
+              >
                 <v-tooltip top class="mb-n10">
                   <template v-slot:activator="{ on, attrs }">
                     <v-icon
@@ -43,7 +46,7 @@
                       v-on="on"
                       class="mx-auto px-auto"
                       size="35"
-                      color="primary  "
+                      color="primary"
                     >
                       mdi-fullscreen
                     </v-icon>
@@ -92,7 +95,7 @@
 <script>
 export default {
   props: ['height', 'views', 'initialIndex'],
-  emits: ['viewClicked'],
+  emits: ['onMaximize'],
   data() {
     return {
       viewRatio: 16 / 9,
@@ -105,6 +108,9 @@ export default {
   methods: {
     changeIndex(index) {
       this.index = index
+    },
+    openImage(url) {
+      window.open(url, '_blank')
     },
     onResize() {
       if (this.height == 'auto') this.descriptionMaxHeight = 'auto'
