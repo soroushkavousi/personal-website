@@ -58,6 +58,19 @@
         </template>
       </the-project>
     </v-row>
+
+    <v-row justify="center" class="mt-10 px-10">
+      <the-project
+        :title="resumeWebData.title"
+        :stack="resumeWebData.stack"
+        :links="resumeWebData.links"
+        :views="resumeWebData.views"
+      >
+        <template v-slot:description>
+          <p>Resume Web is the web version of my resume.</p>
+        </template>
+      </the-project>
+    </v-row>
   </v-container>
 </template>
 
@@ -176,6 +189,37 @@ export default {
           {
             image: 'http://files.bitiano.com/power-essentia/11.fight-scene.png',
             title: 'Fight Scene 6',
+            description: '',
+          },
+        ],
+      },
+      resumeWebData: {
+        title: '3. Resume Web (This Website)',
+        stack: ['Vuetify', 'Nuxt.js', 'Vue.js', 'Nginx', 'Docker'],
+        links: [
+          {
+            name: 'Website',
+            // icon: 'mdi-account-circle',
+            icon: 'mdi-web',
+            address: 'https://soroushkavousi.bitiano.com',
+          },
+          {
+            name: 'GitHub',
+            icon: 'devicon-github-original',
+            address: 'https://github.com/soroushkavousi/resume-web',
+          },
+        ],
+        views: [
+          {
+            image:
+              'http://files.bitiano.com/soroush-kavousi/resume-web/about.png',
+            title: 'About Section',
+            description: ``,
+          },
+          {
+            image:
+              'http://files.bitiano.com/soroush-kavousi/resume-web/personal-projects.png',
+            title: 'Personal Project Section',
             description: '',
           },
         ],

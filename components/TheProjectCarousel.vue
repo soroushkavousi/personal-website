@@ -46,7 +46,7 @@
                       v-on="on"
                       class="mx-auto px-auto"
                       size="35"
-                      color="primary"
+                      color="accent lighten-1"
                     >
                       mdi-fullscreen
                     </v-icon>

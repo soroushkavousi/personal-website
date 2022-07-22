@@ -36,9 +36,10 @@
           <div>
             <v-card-title
               class="
-                text-xl-h4 text-lg-h5 text-md-h5 text-sm-h4
+                text-xl-h5 text-lg-h5 text-md-h5 text-sm-h4
                 font-weight-black
                 ma-0
+                mb-4
                 accent--text
                 text--darken-1
               "
