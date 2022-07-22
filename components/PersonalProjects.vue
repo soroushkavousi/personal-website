@@ -67,7 +67,11 @@
         :views="resumeWebData.views"
       >
         <template v-slot:description>
-          <p>Resume Web is the web version of my resume.</p>
+          <p>
+            Resume Web is a web application developed via
+            <b><i>Vuetify</i></b> and <b><i>Nuxt.js</i></b
+            >, representing my resume on the web.
+          </p>
         </template>
       </the-project>
     </v-row>
