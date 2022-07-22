@@ -33,7 +33,7 @@
           color="accent lighten-2"
           class="rounded-sm"
         ></v-card>
-        <p class="ml-3 my-0 accent--text text--lighten-2">Currently In Use</p>
+        <p class="ml-3 my-0 accent--text text--lighten-2">Recently Used</p>
       </v-row>
       <v-row align="center" class="mb-1 mx-0 mt-0"
         ><v-card
@@ -42,9 +42,7 @@
           color="secondary darken-2"
           class="rounded-sm"
         ></v-card>
-        <p class="ml-3 my-0 secondary--text text--darken-2">
-          Currently Not In Use
-        </p>
+        <p class="ml-3 my-0 secondary--text text--darken-2">Past Experience</p>
       </v-row>
     </div>
   </v-container>
