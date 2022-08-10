@@ -6,17 +6,16 @@
         <v-col xl="6" lg="8" md="10" sm="10">
           <v-card color="primary" tile class="lighten-1 pa-16 text-subtitle-1">
             <div class="mb-3">
-              I am a passionate <span :class="vit">Backend Developer</span> who
-              was born in 1995. I have studied
-              <span :class="vit">Software Engineering</span> at Amirkabir
-              University of Technology.
+              Hi. I am <span :class="vit">Soroush Kavousi</span>, a passionate
+              <span :class="vit">Backend Developer</span>. I was born in 1995,
+              and I have studied <span :class="vit">Software Engineering</span>.
             </div>
             <div>
-              I love programming and have used my programming skills in other
+              As I love computer programming, I have done programming in many
               areas such as
               <i>
-                game development, web development, blockchain projects, and
-                desktop development</i
+                Game Development, Web Development, Blockchain projects, and
+                Desktop Development</i
               >.
             </div>
           </v-card>
@@ -126,7 +125,7 @@ export default {
           icon: 'devicon-github-original-wordmark',
         },
         {
-          href: '#about',
+          href: 'https://www.linkedin.com/in/soroushkavousi/',
           icon: 'devicon-linkedin-plain',
         },
       ],
