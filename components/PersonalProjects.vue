@@ -107,15 +107,49 @@ export default {
               It also generates a <i><a href="https://api.fireplace.bitiano.com/docs/v0.1/swagger.json" target="_blank">swagger.json</a></i> which describes the schema of the API that can be imported into your app.</p>`,
           },
           {
+            image:
+              'http://files.fireplace.bitiano.com/api/the-architecture.png',
+            title: 'The Architecture - DDD Layers',
+            description:
+              '<p>In this picture, you can see the layers of the API: Core, API, and Infrastructure.</p>',
+          },
+          {
             image: 'http://files.fireplace.bitiano.com/api/models.png',
             title: 'Models',
-            description: '<p>In this picture you can see the whole models.</p>',
+            description:
+              '<p>In this picture, you can see the whole models.</p>',
           },
           {
             image: 'http://files.fireplace.bitiano.com/api/comment-routes.png',
             title: 'Comment Routes',
             description:
-              '<p>In this picture you can see the routes related to the comment model.</p>',
+              '<p>In this picture, you can see the routes related to the comment model.</p>',
+          },
+          {
+            image:
+              'http://files.fireplace.bitiano.com/api/swagger-log-in-with-google.png',
+            title: 'Swagger UI - Log In With Google - The API Access Token',
+            description: `<p>The API supports Google OAuth 2.0, and you can log in with your Gmail in the swagger UI. 
+            However, you can get an access token by logging in with your email address or username and a password. 
+            The access token will be saved in your cookies.</p>`,
+          },
+          {
+            image:
+              'http://files.fireplace.bitiano.com/api/create-a-post-request.png',
+            title: 'Create A Post (Request)',
+            description: '',
+          },
+          {
+            image:
+              'http://files.fireplace.bitiano.com/api/create-a-post-response.png',
+            title: 'Create A Post (Response)',
+            description: '',
+          },
+          {
+            image:
+              'http://files.fireplace.bitiano.com/api/sample-responses.png',
+            title: 'Swagger UI Shows Possible Responses',
+            description: '',
           },
         ],
       },
