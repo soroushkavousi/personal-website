@@ -36,25 +36,39 @@
               @click.stop="openImage(view.image)"
             >
               <div
-                id="view-maximize-description"
-                @click.stop="$emit('onMaximize', index)"
+                v-if="!hideImageButtons"
+                class="
+                  image-button
+                  d-flex
+                  justify-space-between
+                  align-center
+                  px-1
+                  py-1
+                "
+                :style="{ backgroundColor: 'rgba(7, 8, 20, 0.7)' }"
               >
-                <v-tooltip top class="mb-n10">
-                  <template v-slot:activator="{ on, attrs }">
-                    <v-icon
-                      v-bind="attrs"
-                      v-on="on"
-                      class="mx-auto px-auto"
-                      size="35"
-                      color="accent lighten-1"
-                    >
-                      mdi-fullscreen
-                    </v-icon>
-                  </template>
-                  <span class="secondary--text text--lighten-1"
-                    >Full screen</span
-                  >
-                </v-tooltip>
+                <div
+                  v-for="(button, i) in imageButtons"
+                  :key="i"
+                  @click.stop="onImageButtonClicked(button.name, index, view)"
+                  class="mx-1"
+                >
+                  <v-tooltip top class="mb-n11">
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-icon
+                        v-bind="attrs"
+                        v-on="on"
+                        :size="button.size"
+                        color="accent lighten-1"
+                      >
+                        {{ button.icon }}
+                      </v-icon>
+                    </template>
+                    <span class="secondary--text text--lighten-1">
+                      {{ button.tooltip }}
+                    </span>
+                  </v-tooltip>
+                </div>
               </div>
             </v-img>
           </v-responsive>
@@ -94,7 +108,7 @@
 
 <script>
 export default {
-  props: ['height', 'views', 'initialIndex'],
+  props: ['height', 'views', 'initialIndex', 'hideImageButtons'],
   emits: ['onMaximize'],
   data() {
     return {
@@ -103,13 +117,39 @@ export default {
       descriptionMinHeight: 150,
       descriptionMaxHeight: 0,
       index: 0,
+      imageButtons: [
+        {
+          name: 'fullscreen',
+          icon: 'mdi-fullscreen',
+          tooltip: 'Full screen',
+          size: 30,
+        },
+        {
+          name: 'open-in-new',
+          icon: 'mdi-open-in-new',
+          tooltip: 'Open image in a new tab',
+          size: 25,
+        },
+      ],
     }
   },
   methods: {
     changeIndex(index) {
       this.index = index
     },
+    onImageButtonClicked(buttonName, index, view) {
+      console.log(`buttonName: ${buttonName}`)
+      switch (buttonName) {
+        case 'open-in-new':
+          this.openImage(view.image)
+          break
+        case 'fullscreen':
+          this.$emit('onMaximize', index)
+          break
+      }
+    },
     openImage(url) {
+      if (this.hideImageButtons) return
       window.open(url, '_blank')
     },
     onResize() {
@@ -154,9 +194,9 @@ export default {
   overflow: auto;
 }
 
-#view-maximize-description {
+.image-button {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 5px;
+  right: 8px;
 }
 </style>

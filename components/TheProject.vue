@@ -115,6 +115,7 @@
             :views="views"
             @viewClicked="carouselDialog = false"
             :initialIndex="carouselIndex"
+            :hideImageButtons="true"
             ref="dialogCarousel"
           ></the-project-carousel
         ></v-row>
