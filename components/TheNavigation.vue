@@ -175,9 +175,7 @@ export default {
     },
   },
   watch: {
-    'window.innerWidth'(newValue, oldValue) {
-      console.log(`TEST | newValue: ${newValue}`)
-    },
+    'window.innerWidth'(newValue, oldValue) {},
   },
   computed: {
     ...mapGetters(['selectedPageIndex']),

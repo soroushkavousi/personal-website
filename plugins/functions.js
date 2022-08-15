@@ -9,10 +9,8 @@ export default (context, inject) => {
 
   let lastBreakpointName = ''
   function logBreakpoint(currentBreakpointName) {
-    console.log(`lastBreakpointName: ${lastBreakpointName}`)
     if (currentBreakpointName == lastBreakpointName) return
     lastBreakpointName = currentBreakpointName
-    console.log(`Breakpoint CHANGED: ${currentBreakpointName}`)
   }
 
   function calculateCurrentY(cx, x1, x2, y1, y2) {

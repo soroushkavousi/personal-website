@@ -138,7 +138,6 @@ export default {
       this.index = index
     },
     onImageButtonClicked(buttonName, index, view) {
-      console.log(`buttonName: ${buttonName}`)
       switch (buttonName) {
         case 'open-in-new':
           this.openImage(view.image)

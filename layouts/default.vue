@@ -27,20 +27,16 @@ export default {
   },
   watch: {
     $route(to, from) {
-      console.log(`$route: `)
       console.dir(to)
       console.dir(from)
     },
   },
   beforeRouteUpdate(to, from, next) {
-    console.log(`beforeRouteUpdate: `)
     console.dir(to)
     console.dir(from)
     next()
   },
-  created() {
-    console.log('mounted')
-  },
+  created() {},
   methods: {
     onMainContainerClicked() {
       this.$refs.navigation.outsideClicked()

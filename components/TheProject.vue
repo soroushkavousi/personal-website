@@ -143,7 +143,6 @@ export default {
       let height
       if (this.windowWidth < this.$store.state.sm) {
         height = 550
-        console.log(`#1 - height: ${height}`)
         return height
       } else if (this.windowWidth < this.$store.state.md) {
         height = this.$calculateCurrentY(
@@ -153,7 +152,6 @@ export default {
           400,
           600
         )
-        console.log(`#2 - height: ${height}`)
         return height
       } else {
         height = this.$calculateCurrentY(
@@ -163,7 +161,6 @@ export default {
           530,
           this.topRowMinHeight - 3
         )
-        console.log(`#3 - height: ${height}`)
         return height
       }
     },
@@ -202,11 +199,9 @@ export default {
           790
         )
       }
-      console.log(`calculateDialogHeight: ${height}`)
       return height
     },
     onMaximize(carouselIndex) {
-      console.log(`carouselIndex: ${carouselIndex}`)
       this.carouselIndex = carouselIndex
       if (this.$refs.dialogCarousel != null) {
         this.$refs.dialogCarousel.index = this.carouselIndex
@@ -216,7 +211,6 @@ export default {
     closeDialog() {
       this.$refs.carousel.index = this.$refs.dialogCarousel.index
       this.carouselDialog = false
-      console.log('Test')
     },
     onResize() {
       this.windowWidth = window.innerWidth
@@ -225,11 +219,7 @@ export default {
     },
   },
   watch: {
-    carouselIndex(newValue, oldValue) {
-      console.log(
-        `The Project => carouselIndex: ${this.carouselIndex} | newValue: ${newValue} | oldValue: ${oldValue}`
-      )
-    },
+    carouselIndex(newValue, oldValue) {},
     windowWidth(newWidth, oldWidth) {},
   },
   mounted() {
