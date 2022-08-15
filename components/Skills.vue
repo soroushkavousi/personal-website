@@ -128,7 +128,7 @@ export default {
           skills: [
             {
               name: 'WPF',
-              image: 'http://files.bitiano.com/logos/wpf-logo.png',
+              image: 'https://files.bitiano.com/logos/wpf-logo.png',
               isActive: false,
             },
           ],

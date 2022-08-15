@@ -79,7 +79,7 @@ export default {
           title: 'B.Sc, Computer Engineering (Software Engineering)',
           images: [
             {
-              src: 'http://files.bitiano.com/logos/amirkabir-university-logo.png',
+              src: 'https://files.bitiano.com/logos/amirkabir-university-logo.png',
               website: 'https://ce.aut.ac.ir/en',
             },
           ],
@@ -90,20 +90,20 @@ export default {
           date: '2009 - 2013',
           images: [
             {
-              src: 'http://files.bitiano.com/logos/nodet-logo.png',
+              src: 'https://files.bitiano.com/logos/nodet-logo.png',
               website:
                 'https://en.wikipedia.org/wiki/National_Organization_for_Development_of_Exceptional_Talents',
             },
             // {
-            //   src: 'http://files.bitiano.com/logos/salam-logo.webp',
-            //   website: 'http://yousefabad.salamsch.com/hschool',
+            //   src: 'https://files.bitiano.com/logos/salam-logo.webp',
+            //   website: 'https://yousefabad.salamsch.com/hschool',
             // },
           ],
           title: 'High School Diploma in Mathematics and Physics',
           location: `
             <p class="ma-0">Shahid Beheshti (NODET) High School, Gonbad Kavus, Iran.</p>
             <p><a href="https://en.wikipedia.org/wiki/National_Organization_for_Development_of_Exceptional_Talents" class="vit ml-2">- Affiliated with the National Organization for the Development of Exceptional Talents</a></p>
-            <p><a href="http://yousefabad.salamsch.com/hschool">Salam IranZamin High School</a>, Tehran, Iran.</p>`,
+            <p><a href="https://yousefabad.salamsch.com/hschool">Salam IranZamin High School</a>, Tehran, Iran.</p>`,
         },
       ],
     }

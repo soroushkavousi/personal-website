@@ -13,13 +13,13 @@ Resume Web is a web application developed via ***Vuetify*** and ***Nuxt.js***, r
 <br/>
  
 <div align="center">
-  <img src="http://files.bitiano.com/soroush-kavousi/resume-web/about.png" width="90%" />
+  <img src="https://files.bitiano.com/soroush-kavousi/resume-web/about.png" width="90%" />
 </div>
 
 <br/>
  
 <div align="center">
-  <img src="http://files.bitiano.com/soroush-kavousi/resume-web/personal-projects.png" width="90%" />
+  <img src="https://files.bitiano.com/soroush-kavousi/resume-web/personal-projects.png" width="90%" />
 </div>
 
 <br/>

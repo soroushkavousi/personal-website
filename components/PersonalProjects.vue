@@ -100,7 +100,7 @@ export default {
         ],
         views: [
           {
-            image: 'http://files.fireplace.bitiano.com/api/swagger-top.png',
+            image: 'https://files.fireplace.bitiano.com/api/swagger-top.png',
             title: 'Swagger Page',
             description: `<p class="ma-0 pa-0">With the swagger UI, you can easily interact with the API and learn it.
               It shows all routes, inputs, outputs, models, and errors.
@@ -108,26 +108,26 @@ export default {
           },
           {
             image:
-              'http://files.fireplace.bitiano.com/api/the-architecture.png',
+              'https://files.fireplace.bitiano.com/api/the-architecture.png',
             title: 'The Architecture - DDD Layers',
             description:
               '<p>In this picture, you can see the layers of the API: Core, API, and Infrastructure.</p>',
           },
           {
-            image: 'http://files.fireplace.bitiano.com/api/models.png',
+            image: 'https://files.fireplace.bitiano.com/api/models.png',
             title: 'Models',
             description:
               '<p>In this picture, you can see the whole models.</p>',
           },
           {
-            image: 'http://files.fireplace.bitiano.com/api/comment-routes.png',
+            image: 'https://files.fireplace.bitiano.com/api/comment-routes.png',
             title: 'Comment Routes',
             description:
               '<p>In this picture, you can see the routes related to the comment model.</p>',
           },
           {
             image:
-              'http://files.fireplace.bitiano.com/api/swagger-log-in-with-google.png',
+              'https://files.fireplace.bitiano.com/api/swagger-log-in-with-google.png',
             title: 'Swagger UI - Log In With Google - The API Access Token',
             description: `<p>The API supports Google OAuth 2.0, and you can log in with your Gmail in the swagger UI. 
             However, you can get an access token by logging in with your email address or username and a password. 
@@ -135,19 +135,19 @@ export default {
           },
           {
             image:
-              'http://files.fireplace.bitiano.com/api/create-a-post-request.png',
+              'https://files.fireplace.bitiano.com/api/create-a-post-request.png',
             title: 'Create A Post (Request)',
             description: '',
           },
           {
             image:
-              'http://files.fireplace.bitiano.com/api/create-a-post-response.png',
+              'https://files.fireplace.bitiano.com/api/create-a-post-response.png',
             title: 'Create A Post (Response)',
             description: '',
           },
           {
             image:
-              'http://files.fireplace.bitiano.com/api/sample-responses.png',
+              'https://files.fireplace.bitiano.com/api/sample-responses.png',
             title: 'Swagger UI Shows Possible Responses',
             description: '',
           },
@@ -162,7 +162,7 @@ export default {
             // icon: 'mdi-account-circle',
             icon: 'devicon-android-plain',
             address:
-              'http://files.bitiano.com/power-essentia/power-essentia.apk',
+              'https://files.bitiano.com/power-essentia/power-essentia.apk',
           },
           {
             name: 'GitHub',
@@ -172,60 +172,63 @@ export default {
         ],
         views: [
           {
-            image: 'http://files.bitiano.com/power-essentia/1.fight-scene.png',
+            image: 'https://files.bitiano.com/power-essentia/1.fight-scene.png',
             title: 'Fight Scene 1',
             description: ``,
           },
           {
-            image: 'http://files.bitiano.com/power-essentia/2.fight-scene.png',
+            image: 'https://files.bitiano.com/power-essentia/2.fight-scene.png',
             title: 'Fight Scene 2',
             description: '',
           },
           {
-            image: 'http://files.bitiano.com/power-essentia/3.about.png',
+            image: 'https://files.bitiano.com/power-essentia/3.about.png',
             title: 'About Dialog',
             description: '',
           },
           {
             image:
-              'http://files.bitiano.com/power-essentia/4.stone-diamond.png',
+              'https://files.bitiano.com/power-essentia/4.stone-diamond.png',
             title: 'Diamond Menu - Stone Diamond',
             description: '',
           },
           {
             image:
-              'http://files.bitiano.com/power-essentia/5.fire-diamond-mastered.png',
+              'https://files.bitiano.com/power-essentia/5.fire-diamond-mastered.png',
             title: 'Diamond Menu - Fire Diamond',
             description: '',
           },
           {
-            image: 'http://files.bitiano.com/power-essentia/6.king-diamond.png',
+            image:
+              'https://files.bitiano.com/power-essentia/6.king-diamond.png',
             title: 'Diamond Menu - King Diamond',
             description: '',
           },
           {
             image:
-              'http://files.bitiano.com/power-essentia/7.blood-diamond.png',
+              'https://files.bitiano.com/power-essentia/7.blood-diamond.png',
             title: 'Diamond Menu - Blood Diamond',
             description: '',
           },
           {
-            image: 'http://files.bitiano.com/power-essentia/8.fight-scene.png',
+            image: 'https://files.bitiano.com/power-essentia/8.fight-scene.png',
             title: 'Fight Scene 3',
             description: '',
           },
           {
-            image: 'http://files.bitiano.com/power-essentia/9.fight-scene.png',
+            image: 'https://files.bitiano.com/power-essentia/9.fight-scene.png',
             title: 'Fight Scene 4',
             description: '',
           },
           {
-            image: 'http://files.bitiano.com/power-essentia/10.fight-scene.png',
+            image:
+              'https://files.bitiano.com/power-essentia/10.fight-scene.png',
             title: 'Fight Scene 5',
             description: '',
           },
           {
-            image: 'http://files.bitiano.com/power-essentia/11.fight-scene.png',
+            image:
+              'https://files.bitiano.com/power-essentia/11.fight-scene.png',
             title: 'Fight Scene 6',
             description: '',
           },
@@ -250,13 +253,13 @@ export default {
         views: [
           {
             image:
-              'http://files.bitiano.com/soroush-kavousi/resume-web/about.png',
+              'https://files.bitiano.com/soroush-kavousi/resume-web/about.png',
             title: 'About Section',
             description: ``,
           },
           {
             image:
-              'http://files.bitiano.com/soroush-kavousi/resume-web/personal-projects.png',
+              'https://files.bitiano.com/soroush-kavousi/resume-web/personal-projects.png',
             title: 'Personal Project Section',
             description: '',
           },
