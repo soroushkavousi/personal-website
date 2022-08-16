@@ -99,7 +99,7 @@ export default {
             //   website: 'https://yousefabad.salamsch.com/hschool',
             // },
           ],
-          title: 'High School Diploma in Mathematics and Physics',
+          title: 'High School Diploma (Mathematics and Physics)',
           location: `
             <p class="ma-0">Shahid Beheshti (NODET) High School, Gonbad Kavus, Iran.</p>
             <p><a href="https://en.wikipedia.org/wiki/National_Organization_for_Development_of_Exceptional_Talents" class="vit ml-2">- Affiliated with the National Organization for the Development of Exceptional Talents</a></p>

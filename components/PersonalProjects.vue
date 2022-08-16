@@ -13,16 +13,14 @@
       >
         <template v-slot:description>
           <p>
-            <b><i>Fireplace</i></b> is a discussion application with
-            communities, posts, and comments, just like Reddit.
+            <b><i>Fireplace API</i></b> is a web API project developed with the
+            <i>ASP.NET Core</i> framework. It is like a simple version of Reddit
+            API, which has communities, posts, and comments.
           </p>
           <p>
-            This project, <b><i>Fireplace API</i></b
-            >, provides an API for Fireplace, and it aims to be a real-world
-            example of web API concepts with the <i>ASP.NET Core</i> framework.
-            As I needed to record the knowledge and experience I have learned in
-            my coding history, I created this project for myself and everyone
-            who considers it valuable.
+            This project was a practice for me on how to design an API for
+            real-world applications. It also can help me as a template for my
+            future projects.
           </p>
         </template>
       </the-project>
