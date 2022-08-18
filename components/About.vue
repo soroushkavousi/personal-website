@@ -3,19 +3,31 @@
     <h1 class="accent--text text--lighten-2 text-h3 mb-10 ml-16"># ABOUT</h1>
     <v-col cols="12" justify="flex-column justify-space-around">
       <v-row justify="center" class="ma-0 mb-10 align-center">
-        <v-col xl="6" lg="8" md="10" sm="10">
-          <v-card color="primary" tile class="lighten-1 pa-16 text-subtitle-1">
+        <v-col xl="8" lg="9" md="11" sm="12" cols="12">
+          <v-card color="primary" tile class="lighten-1 pa-14 text-subtitle-1">
             <div class="mb-3">
               Hi. I am <span :class="vit">Soroush Kavousi</span>, a passionate
               <span :class="vit">Backend Developer</span>. I was born in 1995,
               and I have studied <span :class="vit">Software Engineering</span>.
             </div>
+            <div class="mb-3">
+              One of my dominant personality traits is
+              <span :class="vit">problem-solving</span>, and I love it. It is
+              common to find me thinking for hours just to solve a problem. For
+              instance, from tackling math questions at school to coding complex
+              patterns and algorithms as a developer, it always pleases me when
+              I can finally solve a problem. Even when playing video games, it
+              is important for me to fully understand the combat system and make
+              a perfect build for defeating the enemies.
+            </div>
             <div>
-              As I love computer programming, I have done programming in many
-              areas such as
-              <i>
-                Game Development, Web Development, Blockchain projects, and
-                Desktop Development</i
+              I <span :class="vit">love computer programming</span> for its
+              <i>problem-solving, creativity, and the technology</i> it brings
+              to help people to solve their life problems. I have experience in
+              programming in many areas such as
+              <i
+                >Backend Development, Game Development, Web Development,
+                Blockchain Solutions, and Desktop Development</i
               >.
             </div>
           </v-card>
