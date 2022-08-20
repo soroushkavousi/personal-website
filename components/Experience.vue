@@ -35,7 +35,7 @@ export default {
           },
           {
             title:
-              'Responsible for running a Bitcoin Full Node via Bitcoin Core',
+              'Responsible for running a Bitcoin Full Node via <b>Bitcoin Core</b>',
           },
           {
             title: 'Responsible for producing documentation for the APIs',

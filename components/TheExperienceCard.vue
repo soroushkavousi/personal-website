@@ -61,7 +61,7 @@
                       }"
                       :class="{ 'mb-2': project.descriptions ? true : false }"
                       v-html="'- ' + project.title"
-                      class="text-sm-body-1 text-body-2"
+                      class="text-sm-body-1 text-body-2 font-weight-light"
                     ></v-list-item-title>
                     <v-list-item-subtitle v-if="project.descriptions">
                       <div
