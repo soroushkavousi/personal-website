@@ -12,13 +12,13 @@
             </div>
             <div class="mb-3">
               One of my dominant personality traits is
-              <span :class="vit">problem-solving</span>, and I love it. When I
-              find an alluring problem, I will not let it go until I can solve
-              it. For instance, from tackling math questions at school to coding
-              complex patterns and algorithms as a developer, it always pleases
-              me when I can finally overcome a problem. Even when playing video
-              games, it attracts me to fully understand the combat system and
-              make a perfect build for defeating the enemies.
+              <span :class="vit">problem-solving</span>. When I find an alluring
+              problem, I will not let it go until I can solve it. For instance,
+              from tackling math questions at school to coding complex patterns
+              and algorithms as a developer, I love the thrilling experience
+              when I can finally overcome a problem. Because of this, I also
+              love finding the perfect build as best as I can while playing
+              video games.
             </div>
             <div>
               I <span :class="vit">love computer programming</span> for its
