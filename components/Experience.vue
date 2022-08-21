@@ -27,21 +27,23 @@ export default {
         projects: [
           {
             title:
-              'Responsible for creating a cryptocurrency wallet for the company',
+              'Responsible for developing a <span class="vit">Cryptocurrency HD Wallet</span> for the company',
+            descriptions: [
+              `<a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki" target="_blank">BIP 32</a>
+               and <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki" target="_blank">BIP 44</a> 
+              were used to generate asymmetric keys from a master key in a hierarchy! (BIP: Bitcoin Improvement Proposal)`,
+              `<a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" target="_blank">BIP 39</a>
+               was used to generate a Mnemonic Code`,
+            ],
+          },
+          {
+            title: `Responsible for running a
+               <a href="https://bitcoin.org/en/full-node#what-is-a-full-node" target="_blank">Bitcoin Full Node</a>
+               via Bitcoin Core`,
           },
           {
             title:
-              'Responsible for designing and creating a cryptocurrency payment gateway API',
-          },
-          {
-            title:
-              'Responsible for running a Bitcoin Full Node via <b>Bitcoin Core</b>',
-          },
-          {
-            title: 'Responsible for producing documentation for the APIs',
-          },
-          {
-            title: 'Responsible for work with OCRs such as Tesseract OCR',
+              'Responsible for designing an API for a <span class="vit">Cryptocurrency Payment Gateway</span>',
           },
         ],
       },
@@ -52,18 +54,20 @@ export default {
         years: 'August 2016 - October 2017',
         projects: [
           {
-            title: 'Responsible for creating and maintaining APIs',
+            title:
+              'Responsible for creating and maintaining <span class="vit">APIs</span>',
           },
           {
             title:
-              'Responsible for consuming APIs such as telegram bot API and a mobile telecommunication service',
+              'Responsible for consuming APIs such as <span class="vit">Telegram Bot API</span> and a <span class="vit">National Mobile Telecommunication Service</span>',
           },
           {
-            title: 'Responsible for designing and making desktop applications',
+            title:
+              'Responsible for designing and making <span class="vit">Desktop Applications</span>',
             descriptions: [
               'for injecting data from excel into the database',
               'for uploading files',
-              'for a job managing system that calls some APIs periodically',
+              'for a job managing system (bot) that calls some APIs periodically',
             ],
           },
         ],
@@ -73,5 +77,5 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 </style>

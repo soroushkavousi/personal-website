@@ -46,6 +46,11 @@ export default {
 </script>
 
 <style>
+.vit {
+  text-decoration: none;
+  color: var(--v-accent-lighten2) !important;
+}
+
 .fill-width {
   width: 100% !important;
 }
@@ -66,6 +71,10 @@ p a {
 p a:hover,
 p a:active {
   color: var(--v-accent-lighten3) !important;
+}
+
+b {
+  font-weight: 600 !important;
 }
 
 /* :deep(i a) {
