@@ -8,7 +8,7 @@
     :min-width="400"
     ref="rootCard"
   >
-    <v-carousel v-model="index" class="fill" height="auto">
+    <v-carousel v-model="index" class="fill" height="auto" :continuous="false">
       <v-carousel-item
         eager
         v-for="(view, i) in views"
@@ -33,7 +33,6 @@
               :aspect-ratio="viewRatio"
               width="100%"
               height="100%"
-              @click.stop="openImage(view.image)"
             >
               <div
                 v-if="!hideImageButtons"
@@ -90,14 +89,17 @@
               overflow-y-auto overflow-x-hidden
             "
           >
-            <v-card-title class="text-sm-body-2 text-lg-body-1 pa-0 ma-0 mb-2">
+            <v-card-title class="text-sm-body-2 text-lg-body-1 pa-0 ma-0 mb-3">
               {{ view.title }}
             </v-card-title>
             <v-card-text
               class="mt-0 mb-0 mx-1 pa-0"
               :style="{ height: 'max-content', 'min-height': '2rem' }"
             >
-              <div v-html="view.description" class="text-caption"></div>
+              <div
+                v-html="view.description"
+                class="text-sm-subtitle-2 text-caption"
+              ></div>
             </v-card-text>
           </v-card>
         </div>
@@ -197,5 +199,13 @@ export default {
   position: absolute;
   bottom: 5px;
   right: 8px;
+}
+
+:deep(.v-window__next) {
+  top: calc(42%) !important;
+}
+
+:deep(.v-window__prev) {
+  top: calc(42%) !important;
 }
 </style>
