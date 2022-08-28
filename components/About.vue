@@ -11,14 +11,14 @@
               and I have studied <span :class="vit">Software Engineering</span>.
             </div>
             <div class="mb-3">
-              One of my dominant personality traits is
-              <span :class="vit">problem-solving</span>. When I find an alluring
-              problem, I will not let it go until I can solve it. For instance,
-              from tackling math questions at school to coding complex patterns
-              and algorithms as a developer, I love the thrilling experience
-              when I can finally overcome a problem. Because of this, I also
-              love finding the perfect build as best as I can while playing
-              video games.
+              I usually think a lot because I love to
+              <span :class="vit">analyze and understand</span> the world around
+              me. When I find an alluring problem, I want to know what is
+              possible solutions. Coding helps me to understand things by
+              recreating them. I always ask myself, what if I were the creator
+              or the manager of this subject? How would I design it? How can I
+              improve it? As my hobby, playing some video games also helped me
+              to have this fantastic analyzing experience.
             </div>
             <div>
               I <span :class="vit">love computer programming</span> for its
