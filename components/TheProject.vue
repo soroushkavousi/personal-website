@@ -2,10 +2,12 @@
   <v-container fluid class="ma-0 pa-0">
     <v-row
       justify="center"
-      :align-content="$vuetify.breakpoint.smAndDown ? 'center' : 'start'"
-      :align="$vuetify.breakpoint.smAndDown ? 'center' : 'start'"
+      :align-content="$store.state.breakpoint.isSmOrDown ? 'center' : 'start'"
+      :align="$store.state.breakpoint.isSmOrDown ? 'center' : 'start'"
       class="my-5"
-      :class="{ 'flex-column': $vuetify.breakpoint.smAndDown ? true : false }"
+      :class="{
+        'flex-column': $store.state.breakpoint.isSmOrDown ? true : false,
+      }"
     >
       <v-col
         xl="4"
@@ -14,7 +16,7 @@
         sm="8"
         class="d-flex justify-center ma-0 pa-0 mb-10"
         :class="{
-          'mr-10': $vuetify.breakpoint.smAndDown ? false : true,
+          'mr-10': $store.state.breakpoint.isSmOrDown ? false : true,
         }"
       >
         <v-card
@@ -23,7 +25,7 @@
           width="100%"
           :min-height="topRowMinHeight"
           :min-width="300"
-          :height="$vuetify.breakpoint.smAndDown ? 'auto' : '100%'"
+          :height="$store.state.breakpoint.isSmOrDown ? 'auto' : '100%'"
           class="
             px-5
             py-4
@@ -58,7 +60,7 @@
             <v-card-text class="">
               <p class="mb-1">Stack:</p>
               <v-chip
-                :small="$vuetify.breakpoint.mdAndDown ? true : false"
+                :small="$store.state.breakpoint.isMdOrDown ? true : false"
                 class="ma-1"
                 v-for="(item, i) in stack"
                 :key="i"
@@ -70,7 +72,7 @@
               <p class="mb-1">Links:</p>
               <v-chip-group column class="mt-0">
                 <v-chip
-                  :small="$vuetify.breakpoint.mdAndDown ? true : false"
+                  :small="$store.state.breakpoint.isMdOrDown ? true : false"
                   class="ma-1"
                   v-for="(link, i) in links"
                   :key="i"
@@ -90,7 +92,7 @@
       </v-col>
       <the-project-carousel
         class="d-flex"
-        :height="$vuetify.breakpoint.smAndDown ? 'auto' : height"
+        :height="$store.state.breakpoint.isSmOrDown ? 'auto' : height"
         :views="views"
         @onMaximize="onMaximize"
         ref="carousel"
@@ -130,77 +132,14 @@ export default {
   data() {
     return {
       height: 550,
-      carouselIndex: 0,
-      carouselDialog: false,
-      windowWidth: 0,
       dialogHeight: 650,
       topRowMinHeight: 650,
+      carouselIndex: 0,
+      carouselDialog: false,
     }
   },
   computed: {},
   methods: {
-    calculateHeight() {
-      let height
-      if (this.windowWidth < this.$store.state.sm) {
-        height = 550
-        return height
-      } else if (this.windowWidth < this.$store.state.md) {
-        height = this.$calculateCurrentY(
-          this.windowWidth,
-          this.$store.state.sm,
-          this.$store.state.md,
-          400,
-          600
-        )
-        return height
-      } else {
-        height = this.$calculateCurrentY(
-          this.windowWidth,
-          this.$store.state.md,
-          this.$store.state.lg,
-          530,
-          this.topRowMinHeight - 3
-        )
-        return height
-      }
-    },
-    calculateDialogHeight() {
-      let height
-      if (this.windowWidth < this.$store.state.xs) {
-        height = this.$calculateCurrentY(
-          this.windowWidth,
-          0,
-          this.$store.state.xs,
-          200,
-          500
-        )
-      } else if (this.windowWidth < this.$store.state.sm) {
-        height = this.$calculateCurrentY(
-          this.windowWidth,
-          this.$store.state.xs,
-          this.$store.state.sm,
-          500,
-          650
-        )
-      } else if (this.windowWidth < this.$store.state.md) {
-        height = this.$calculateCurrentY(
-          this.windowWidth,
-          this.$store.state.sm,
-          this.$store.state.md,
-          700,
-          800
-        )
-      } else {
-        height = this.$calculateCurrentY(
-          this.windowWidth,
-          this.$store.state.md,
-          this.$store.state.lg,
-          750,
-          790
-        )
-      }
-      return height
-    },
     onMaximize(carouselIndex) {
       this.carouselIndex = carouselIndex
       if (this.$refs.dialogCarousel != null) {
@@ -213,26 +152,80 @@ export default {
       this.carouselDialog = false
     },
     onResize() {
-      this.windowWidth = window.innerWidth
-      this.height = this.calculateHeight()
-      this.dialogHeight = this.calculateDialogHeight()
+      this.updateHeight()
+      this.updateDialogHeight()
+    },
+    updateHeight() {
+      if (typeof window == 'undefined') return 550
+
+      if (this.$store.state.breakpoint.isSmOrDown) {
+        this.height = 550
+      } else if (this.$store.state.breakpoint.isMdOrDown) {
+        this.height = this.$calculateCurrentY(
+          window.innerWidth,
+          this.$store.state.breakpoint.sm,
+          this.$store.state.breakpoint.md,
+          400,
+          600
+        )
+      } else {
+        this.height = this.$calculateCurrentY(
+          window.innerWidth,
+          this.$store.state.breakpoint.md,
+          this.$store.state.breakpoint.lg,
+          530,
+          this.topRowMinHeight - 3
+        )
+      }
+    },
+    updateDialogHeight() {
+      if (typeof window == 'undefined') return 650
+
+      if (this.$store.state.breakpoint.isXsOrDown) {
+        this.dialogHeight = this.$calculateCurrentY(
+          window.innerWidth,
+          0,
+          this.$store.state.breakpoint.xs,
+          200,
+          500
+        )
+      } else if (this.$store.state.breakpoint.isSmOrDown) {
+        this.dialogHeight = this.$calculateCurrentY(
+          window.innerWidth,
+          this.$store.state.breakpoint.xs,
+          this.$store.state.breakpoint.sm,
+          500,
+          650
+        )
+      } else if (this.$store.state.breakpoint.isMdOrDown) {
+        this.dialogHeight = this.$calculateCurrentY(
+          window.innerWidth,
+          this.$store.state.breakpoint.sm,
+          this.$store.state.breakpoint.md,
+          700,
+          800
+        )
+      } else {
+        this.dialogHeight = this.$calculateCurrentY(
+          window.innerWidth,
+          this.$store.state.breakpoint.md,
+          this.$store.state.breakpoint.lg,
+          750,
+          790
+        )
+      }
     },
   },
-  watch: {
-    carouselIndex(newValue, oldValue) {},
-    windowWidth(newWidth, oldWidth) {},
-  },
   mounted() {
+    this.index = this.initialIndex
     this.$nextTick(() => {
       window.addEventListener('resize', this.onResize)
     })
     this.onResize()
   },
-
   beforeDestroy() {
     window.removeEventListener('resize', this.onResize)
   },
-  updated() {},
 }
 </script>
 

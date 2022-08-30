@@ -1,26 +1,21 @@
 <template>
-  <v-row :id="id" justify="center">
+  <v-row :id="id" justify="center" dense class="flex-grow-0">
     <v-col>
-      <v-btn
-        text
-        :href="`#${id}`"
+      <div
         class="
-          mb-2
-          text-truncate text-left
-          justify-start
-          text-lg-h6 text-md-body-1 text-body-2
+          mb-4
+          text-left text-lg-h6 text-md-body-1 text-body-1
           seccondary--text
           text--lighten-1
-          font-weight-regular
-          flex-wrap
+          font-weight-light
         "
         max-width="100%"
         width="100%"
       >
         {{ title }}
-      </v-btn>
+      </div>
       <v-divider></v-divider>
-      <v-row class="my-5 px-20 mx-0" align="center" justify="center">
+      <v-row class="mt-10 px-20 mx-0" align="center" justify="center">
         <div
           v-for="(skill, i) in skills"
           :key="i"
@@ -29,7 +24,7 @@
           <v-tooltip bottom>
             <template v-slot:activator="{ on, attrs }">
               <v-icon
-                class="mx-auto px-auto mb-5"
+                class="mx-auto px-auto mb-10"
                 v-if="skill.icon"
                 :size="iconSize"
                 :color="
@@ -41,9 +36,10 @@
                 {{ skill.icon }}
               </v-icon>
               <v-card
+                class="mb-10"
                 v-else-if="skill.image"
-                :width="imageIconSize"
-                :height="imageIconSize"
+                :width="iconSize"
+                :height="iconSize"
                 :color="
                   skill.isActive ? colors.activeShape : colors.inactiveShape
                 "
@@ -73,50 +69,17 @@ export default {
       colors: {
         activeShape: 'accent lighten-2',
         activeText: 'accent--text text--lighten-2',
-        inactiveShape: 'secondary darken-2',
-        inactiveText: 'secondary--text text--darken-2',
+        inactiveShape: 'secondary darken-0',
+        inactiveText: 'secondary--text text--darken-0',
       },
-      iconSize: 55,
-      imageIconSize: 55,
     }
   },
-  methods: {
-    onResize() {
-      this.iconSize = this.calculateIconSize()
-      this.imageIconSize = this.calculateImageIconSize()
+  computed: {
+    iconSize() {
+      if (this.$store.state.breakpoint.isSmOrDown) return 40
+      else if (this.$store.state.breakpoint.isMdOrDown) return 45
+      else return 50
     },
-    calculateIconSize() {
-      let size
-      if (window.innerWidth < this.$store.state.sm) {
-        size = 40
-        return size
-      } else if (window.innerWidth < this.$store.state.md) {
-        size = 45
-        return size
-      } else {
-        size = 55
-        return size
-      }
-    },
-    calculateImageIconSize() {
-      let size
-      if (window.innerWidth < this.$store.state.sm) {
-        size = 50
-        return size
-      } else if (window.innerWidth < this.$store.state.md) {
-        size = 50
-        return size
-      } else {
-        size = 55
-        return size
-      }
-    },
-  },
-  mounted() {
-    this.$nextTick(() => {
-      window.addEventListener('resize', this.onResize)
-    })
-    this.onResize()
   },
 }
 </script>

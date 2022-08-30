@@ -1,6 +1,6 @@
 <template>
   <v-container fluid class="pa-0" id="page-top">
-    <section class="my-3 py-7" id="about">
+    <section class="mb-3 py-7" id="about">
       <about />
     </section>
 

@@ -5,7 +5,7 @@
     :mini-variant-width="miniVariantWidth"
     permanent
     :width="250"
-    :app="$vuetify.breakpoint.mdAndDown ? false : true"
+    :app="true"
     :fixed="true"
     color="primary darken-1"
   >
@@ -45,7 +45,6 @@
               v-for="(section, i) in sections"
               :key="i"
               :to="{ path: '/', hash: section.hash }"
-              router
               exact
               ripple
               :value="section.title"
@@ -100,7 +99,7 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex'
+// import { mapGetters, mapMutations } from 'vuex'
 
 export default {
   props: [],
@@ -109,9 +108,11 @@ export default {
       drawer: true,
       mini: false,
       manualMini: false,
-      manualWidth: 0,
-      selectedItemId: null,
+      lastManualMiniWidth: 0,
+      selectedItemId: '',
+      test: null,
       miniVariantWidth: 56,
+      isScrolling: false,
       sections: [
         {
           routeName: 'about',
@@ -147,38 +148,28 @@ export default {
     }
   },
   methods: {
-    ...mapMutations({
-      setSelectedPageIndex: 'setSelectedPageIndex',
-    }),
     darkMode() {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark
     },
-    minimizeBelowLarge() {
-      if (this.manualWidth == this.$vuetify.breakpoint.width) {
-        return
-      }
-      if (this.$vuetify.breakpoint.mdAndDown) {
-        this.mini = true
-      } else {
-        this.mini = false
-      }
-    },
     outsideClicked() {
-      if (this.mini) return
-      this.manualWidth = 0
-      this.minimizeBelowLarge()
+      this.mini = this.$store.state.breakpoint.isMdOrDown
     },
     doManualOpenOrClose() {
-      this.mini = !this.mini
       this.manualMini = true
-      this.manualWidth = this.$vuetify.breakpoint.width
+      this.lastManualMiniWidth = window.innerWidth
+      this.mini = !this.mini
+    },
+    moveToLastHash() {
+      if (this.$router.currentRoute.hash != '') {
+        window.scrollTo({
+          top: document.querySelector(this.$router.currentRoute.hash).offsetTop,
+          behavior: 'smooth',
+        })
+      }
+      this.isScrolling = false
     },
   },
-  watch: {
-    'window.innerWidth'(newValue, oldValue) {},
-  },
   computed: {
-    ...mapGetters(['selectedPageIndex']),
     navControlStyle() {
       return {
         'd-flex': true,
@@ -200,8 +191,11 @@ export default {
       }
     },
   },
-  mounted() {
-    this.intervalid1 = setInterval(this.minimizeBelowLarge, 100)
+  watch: {
+    '$store.state.breakpoint.isMdOrDown': function (newValue, oldValue) {
+      // if (this.manualMini) return
+      this.mini = newValue
+    },
   },
 }
 </script>

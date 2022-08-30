@@ -1,15 +1,17 @@
 <template>
   <v-app>
     <TheNavigation ref="navigation" />
-    <v-main
-      :style="{
-        'padding-left': $vuetify.breakpoint.mdAndDown ? '56px' : 'auto',
+    <!-- <div>
+    :style="{
+        'padding-left': $store.state.breakpoint.isMdOrDown ? '56px' : 'auto',
       }"
-    >
+      
+      </div> -->
+    <v-main>
       <v-container
         fluid
         fill-height
-        class="primary lighten-0"
+        class="primary lighten-0 py-0"
         @click="onMainContainerClicked"
       >
         <Nuxt />
@@ -21,26 +23,22 @@
 <script>
 export default {
   data() {
-    return {
-      isOutsideClicked: false,
-    }
-  },
-  watch: {
-    $route(to, from) {
-      console.dir(to)
-      console.dir(from)
-    },
-  },
-  beforeRouteUpdate(to, from, next) {
-    console.dir(to)
-    console.dir(from)
-    next()
+    return {}
   },
   created() {},
   methods: {
+    onResize() {
+      this.$store.commit('breakpoint/update', window.innerWidth)
+    },
     onMainContainerClicked() {
       this.$refs.navigation.outsideClicked()
     },
+  },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize)
+    })
+    this.onResize()
   },
 }
 </script>

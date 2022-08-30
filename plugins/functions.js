@@ -1,16 +1,9 @@
 export default (context, inject) => {
   inject('clamp', clamp)
-  inject('logBreakpoint', logBreakpoint)
   inject('calculateCurrentY', calculateCurrentY)
 
   function clamp(num, min, max) {
     return num <= min ? min : num >= max ? max : num
-  }
-
-  let lastBreakpointName = ''
-  function logBreakpoint(currentBreakpointName) {
-    if (currentBreakpointName == lastBreakpointName) return
-    lastBreakpointName = currentBreakpointName
   }
 
   function calculateCurrentY(cx, x1, x2, y1, y2) {

@@ -153,12 +153,18 @@ export default {
       if (this.hideImageButtons) return
       window.open(url, '_blank')
     },
-    onResize() {
-      if (this.height == 'auto') this.descriptionMaxHeight = 'auto'
+    updateDescriptionMaxHeight() {
+      if (this.height == 'auto') {
+        this.descriptionMaxHeight = 'auto'
+        return
+      }
       this.descriptionMaxHeight =
         this.height -
         this.$refs.carousel[0].$el.clientHeight -
         this.controlsHeight
+    },
+    onResize() {
+      this.updateDescriptionMaxHeight()
     },
   },
   mounted() {

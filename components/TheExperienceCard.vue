@@ -44,39 +44,43 @@
         </v-row>
         <v-row class="ma-0 my-3">
           <v-col cols="11">
-            <p>
-              <v-list color="primary lighten-1" class="ma-0 pa-0">
-                <template v-for="(project, index) in projects">
-                  <v-list-item
-                    :key="index"
-                    class="pa-0"
-                    :style="{ 'min-height': '30px' }"
-                  >
-                    <v-list-item-content class="pa-1">
-                      <v-list-item-title
-                        :style="{
-                          'overflow-wrap': 'break-word',
-                          'word-wrap': 'break-word',
-                          'white-space': 'normal',
-                          'line-height': '1.3',
-                        }"
-                        :class="{ 'mb-2': project.descriptions ? true : false }"
-                        v-html="'- ' + project.title"
-                        class="text-sm-body-1 text-body-2 font-weight-light"
-                      ></v-list-item-title>
-                      <v-list-item-subtitle v-if="project.descriptions">
-                        <div
-                          v-for="(description, i) in project.descriptions"
-                          :key="i"
-                          class="ml-5 my-1"
-                          v-html="'- ' + description"
-                        ></div>
-                      </v-list-item-subtitle>
-                    </v-list-item-content>
-                  </v-list-item>
-                </template>
-              </v-list>
-            </p>
+            <client-only>
+              <p>
+                <v-list color="primary lighten-1" class="ma-0 pa-0">
+                  <template v-for="(project, index) in projects">
+                    <v-list-item
+                      :key="index"
+                      class="pa-0"
+                      :style="{ 'min-height': '30px' }"
+                    >
+                      <v-list-item-content class="pa-1">
+                        <v-list-item-title
+                          :style="{
+                            'overflow-wrap': 'break-word',
+                            'word-wrap': 'break-word',
+                            'white-space': 'normal',
+                            'line-height': '1.3',
+                          }"
+                          :class="{
+                            'mb-2': project.descriptions ? true : false,
+                          }"
+                          v-html="'- ' + project.title"
+                          class="text-sm-body-1 text-body-2 font-weight-light"
+                        ></v-list-item-title>
+                        <v-list-item-subtitle v-if="project.descriptions">
+                          <div
+                            v-for="(description, i) in project.descriptions"
+                            :key="i"
+                            class="ml-5 my-1"
+                            v-html="'- ' + description"
+                          ></div>
+                        </v-list-item-subtitle>
+                      </v-list-item-content>
+                    </v-list-item>
+                  </template>
+                </v-list>
+              </p>
+            </client-only>
           </v-col>
         </v-row>
       </v-card>

@@ -64,7 +64,6 @@
 export default {
   data() {
     return {
-      timeLineCardWidth: 550,
       color1Parts: {
         name: 'blue',
         type: 'darken-1',
@@ -121,30 +120,14 @@ export default {
     textColor2() {
       return `secondary--text text--lighten-4`
     },
-  },
-  methods: {
-    calculateTimeLineCardWidth() {
-      let width
-      if (window.innerWidth < this.$store.state.sm) {
-        width = window.innerWidth * 0.55
-        return width
-      } else if (window.innerWidth < this.$store.state.md) {
-        width = window.innerWidth * 0.55
-        return width
-      } else {
-        width = window.innerWidth * 0.3
-        return width
-      }
+    timeLineCardWidth() {
+      if (typeof window == 'undefined') return 550
+      if (this.$store.state.breakpoint.isSmOrDown)
+        return window.innerWidth * 0.55
+      else if (this.$store.state.breakpoint.isMdOrDown)
+        return window.innerWidth * 0.55
+      else return window.innerWidth * 0.3
     },
-    onResize() {
-      this.timeLineCardWidth = this.calculateTimeLineCardWidth()
-    },
-  },
-  mounted() {
-    this.$nextTick(() => {
-      window.addEventListener('resize', this.onResize)
-    })
-    this.onResize()
   },
 }
 </script>
