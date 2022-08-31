@@ -3,7 +3,7 @@
     <h1 class="accent--text text--lighten-2 text-h3 mb-4 ml-16"># ABOUT</h1>
     <v-col cols="12" justify="flex-column justify-space-around">
       <v-row justify="center" class="ma-0 mt-8 mb-10 align-center">
-        <v-col xl="7" lg="9" md="11" sm="12" cols="12">
+        <v-col xl="7" lg="9" md="10" sm="12" cols="12">
           <v-card
             color="primary"
             tile
@@ -28,7 +28,7 @@
         </v-col>
       </v-row>
       <v-row justify="center" class="ma-0 align-center">
-        <v-col xl="3" lg="4" md="6" sm="8" cols="12">
+        <v-col xl="3" lg="4" md="5" sm="8" cols="12">
           <v-card color="primary pt-8" tile class="lighten-1">
             <v-card-title
               class="
