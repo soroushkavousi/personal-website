@@ -2,7 +2,7 @@ export const state = () => ({
   name: 'lg',
   xs: 640,
   sm: 800,
-  md: 1120,
+  md: 1280,
   lg: 1600,
   isXsOrDown: true,
   isSmOrDown: true,
