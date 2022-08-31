@@ -3,27 +3,28 @@
     color="primary lighten-0"
     tile
     class="ma-0 pa-0"
-    :height="height"
-    :width="carouselMaxWidth"
-    :min-width="400"
-    ref="rootCard"
+    height="auto"
+    width="100%"
   >
-    <v-carousel v-model="index" class="fill" height="auto" :continuous="false">
+    <v-carousel
+      v-model="index"
+      class="fill-width"
+      :continuous="false"
+      height="auto"
+    >
       <v-carousel-item
         eager
         v-for="(view, i) in views"
         :key="i"
-        class="fill"
+        class="fill-width"
         :style="carouselItemStyle"
       >
-        <div class="d-flex flex-column fill">
+        <div class="d-flex flex-column fill-width">
           <v-responsive
             :aspect-ratio="viewRatio"
             class="fill-width flex-grow-0 overflow-y-auto"
             width="100%"
             height="auto"
-            :max-height="viewMaxHeight"
-            ref="carousel"
           >
             <v-img
               contain
@@ -41,8 +42,8 @@
                   d-flex
                   justify-space-between
                   align-center
-                  px-1
-                  py-1
+                  px-0
+                  pb-1
                 "
                 :style="{ backgroundColor: 'rgba(7, 8, 20, 0.7)' }"
               >
@@ -58,7 +59,7 @@
                         v-bind="attrs"
                         v-on="on"
                         :size="button.size"
-                        color="accent lighten-1"
+                        color="secondary darken-1"
                       >
                         {{ button.icon }}
                       </v-icon>
@@ -76,9 +77,8 @@
             color="primary lighten-0"
             tile
             width="100%"
-            height="auto"
-            :min-height="descriptionMinHeight"
-            :max-height="descriptionMaxHeight"
+            :height="descriptionHeight + 'px'"
+            :max-height="descriptionHeight + 'px'"
             class="
               px-5
               ma-0
@@ -89,7 +89,7 @@
               overflow-y-auto overflow-x-hidden
             "
           >
-            <v-card-title class="text-sm-body-2 text-lg-body-1 pa-0 ma-0 mb-3">
+            <v-card-title class="text-lg-body-1 text-sm-body-2 pa-0 ma-0 mb-3">
               {{ view.title }}
             </v-card-title>
             <v-card-text
@@ -98,7 +98,12 @@
             >
               <div
                 v-html="view.description"
-                class="text-sm-subtitle-2 text-caption"
+                class="
+                  text-xl-subtitle-2
+                  text-lg-caption
+                  text-md-subtitle-2
+                  text-caption
+                "
               ></div>
             </v-card-text>
           </v-card>
@@ -110,28 +115,28 @@
 
 <script>
 export default {
-  props: ['height', 'views', 'initialIndex', 'hideImageButtons'],
+  props: ['views', 'initialIndex', 'hideImageButtons'],
   emits: ['onMaximize'],
   data() {
     return {
       viewRatio: 16 / 9,
       controlsHeight: 50,
-      descriptionMinHeight: 150,
-      descriptionMaxHeight: 0,
+      descriptionHeight: 150,
       index: 0,
       imageButtons: [
-        {
-          name: 'fullscreen',
-          icon: 'mdi-fullscreen',
-          tooltip: 'Full screen',
-          size: 30,
-        },
         {
           name: 'open-in-new',
           icon: 'mdi-open-in-new',
           tooltip: 'Open image in a new tab',
-          size: 25,
+          size: 20,
         },
+        // <!-- *** Commented codes is for fullscreen view *** -->
+        // {
+        //   name: 'fullscreen',
+        //   icon: 'mdi-fullscreen',
+        //   tooltip: 'Full screen',
+        //   size: 30,
+        // },
       ],
     }
   },
@@ -153,43 +158,16 @@ export default {
       if (this.hideImageButtons) return
       window.open(url, '_blank')
     },
-    updateDescriptionMaxHeight() {
-      if (this.height == 'auto') {
-        this.descriptionMaxHeight = 'auto'
-        return
-      }
-      this.descriptionMaxHeight =
-        this.height -
-        this.$refs.carousel[0].$el.clientHeight -
-        this.controlsHeight
-    },
-    onResize() {
-      this.updateDescriptionMaxHeight()
-    },
   },
   mounted() {
     this.index = this.initialIndex
-    this.$nextTick(() => {
-      window.addEventListener('resize', this.onResize)
-    })
-    this.onResize()
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.onResize)
   },
   computed: {
     carouselItemStyle() {
       return {
         'padding-bottom': `${this.controlsHeight}px !important`,
+        height: 'auto',
       }
-    },
-    viewMaxHeight() {
-      if (this.height == 'auto') return
-      return this.height - this.descriptionMinHeight - this.controlsHeight
-    },
-    carouselMaxWidth() {
-      if (this.height == 'auto') return '100%'
-      return this.viewMaxHeight * this.viewRatio
     },
   },
 }
@@ -203,8 +181,8 @@ export default {
 
 .image-button {
   position: absolute;
-  bottom: 5px;
-  right: 8px;
+  bottom: 0px;
+  right: 0px;
 }
 
 :deep(.v-window__next) {

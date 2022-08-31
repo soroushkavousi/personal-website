@@ -13,14 +13,13 @@
       >
         <template v-slot:description>
           <p>
-            Fireplace API is a <b>web API</b> project developed with the
-            <i>ASP.NET Core</i> framework. It is like a simple version of Reddit
-            API, which has <b>communities, posts, and comments</b>.
+            Fireplace API is a web API project developed with the ASP.NET Core
+            framework. It is like a simple version of Reddit API, which has
+            communities, posts, and comments.
           </p>
           <p>
-            This project was a practice for me on
-            <b>how to design an API for real-world applications</b>. It also can
-            help me as a template for my future projects.
+            This project was a practice for me on how to design an API for
+            real-world applications. It also can be used as a sample.
           </p>
         </template>
       </the-project>
@@ -35,23 +34,20 @@
       >
         <template v-slot:description>
           <p>
-            This game is just a <b>fun project</b> that is developed via
-            <b>Unity 2D</b>. Currently, it takes almost <b>30 minutes</b> to
-            finish it. You can download the APK and play it. I hope you enjoy
-            playing it.
+            This game is just a fun project that is developed via Unity 2D.
+            Currently, it takes almost 30 minutes to finish it. You can download
+            the APK and play it. I hope you enjoy playing it.
           </p>
-          <br />
-          <h3 class="mb-3">Game Summary</h3>
+          <h3 class="mb-3 mt-2">Game Summary</h3>
           <p>
-            Power Essentia TD is a <b>tower defense 2D game</b>. You play as a
-            <b>magician</b> to fight monsters and defend countries against
-            <b>monsters</b>.
+            Power Essentia TD is a Tower Defense 2D game. You play as a magician
+            to fight monsters and defend countries against monsters.
           </p>
           <p>
-            Each country has a special <b>diamond</b> that gives magicians a
-            powerful ability. Your mission is to study diamonds and upgrade
-            them, and finally, you will gain great power from an effective
-            <b>combination of diamonds</b> with your choice.
+            Each country has a special diamond that gives magicians a powerful
+            ability. Your mission is to study diamonds and upgrade them, and
+            finally, you will gain great power from an effective combination of
+            diamonds with your choice.
           </p>
         </template>
       </the-project>
@@ -66,9 +62,8 @@
       >
         <template v-slot:description>
           <p>
-            Resume Web is a web application developed via
-            <b><i>Vuetify</i></b> and <b><i>Nuxt.js</i></b
-            >, representing my resume on the web.
+            Resume Web is a web application developed via Vuetify and Nuxt.js,
+            representing my resume on the web.
           </p>
         </template>
       </the-project>
@@ -85,8 +80,7 @@ export default {
         stack: ['ASP.NET Core', 'PostgreSQL', 'Nginx', 'Docker'],
         links: [
           {
-            name: 'Website',
-            // icon: 'mdi-account-circle',
+            name: 'Swagger',
             icon: 'mdi-web',
             address: 'https://api.fireplace.bitiano.com/docs',
           },
@@ -102,7 +96,7 @@ export default {
             title: 'Swagger Page',
             description: `<p class="ma-0 pa-0">With the swagger UI, you can easily interact with the API and learn it.
               It shows all routes, inputs, outputs, models, and errors.
-              It also generates a <i><a href="https://api.fireplace.bitiano.com/docs/v0.1/swagger.json" target="_blank">swagger.json</a></i> which describes the schema of the API that can be imported into your app.</p>`,
+              It also generates a <a href="https://api.fireplace.bitiano.com/docs/v0.1/swagger.json" target="_blank">swagger.json</a> which describes the schema of the API that can be imported into your app.</p>`,
           },
           {
             image:
@@ -114,8 +108,7 @@ export default {
           {
             image: 'https://files.fireplace.bitiano.com/api/models.png',
             title: 'Models',
-            description:
-              '<p>In this picture, you can see the whole models.</p>',
+            description: '<p>In this picture, you can see the models.</p>',
           },
           {
             image: 'https://files.fireplace.bitiano.com/api/comment-routes.png',
@@ -157,7 +150,6 @@ export default {
         links: [
           {
             name: 'APK',
-            // icon: 'mdi-account-circle',
             icon: 'devicon-android-plain',
             address:
               'https://files.bitiano.com/power-essentia/power-essentia.apk',
@@ -238,7 +230,6 @@ export default {
         links: [
           {
             name: 'Website',
-            // icon: 'mdi-account-circle',
             icon: 'mdi-web',
             address: 'https://soroushkavousi.bitiano.com',
           },
@@ -269,4 +260,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+:deep(a) {
+  text-decoration: none;
+  color: var(--v-secondary-lighten0) !important;
+}
+
+:deep(p a:hover),
+:deep(p a:active) {
+  color: var(--v-accent-lighten3) !important;
+}
 </style>
