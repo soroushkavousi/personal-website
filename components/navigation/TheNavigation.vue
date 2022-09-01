@@ -35,7 +35,7 @@
             </v-list-item-avatar>
           </v-list-item>
           <v-list-item class="d-flex justify-center mb-14">
-            <h1 class="accent--text text--lighten-1 text-h5 font-weight-light">
+            <h1 class="accent--text text--lighten-2 text-h5 font-weight-light">
               Soroush Kavousi
             </h1>
           </v-list-item>

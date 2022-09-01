@@ -9,14 +9,29 @@
     <v-row justify="center" style="height: 750px">
       <v-col cols="9" class="d-flex flex-column justify-space-around">
         <skill-container
-          :id="mainStack.id"
-          :title="mainStack.title"
-          :skills="mainStack.skills"
+          :id="backend.id"
+          :title="backend.title"
+          :skills="backend.skills"
         ></skill-container>
         <skill-container
-          :id="experienceStack.id"
-          :title="experienceStack.title"
-          :skills="experienceStack.skills"
+          :id="tools.id"
+          :title="tools.title"
+          :skills="tools.skills"
+        ></skill-container>
+        <skill-container
+          :id="web.id"
+          :title="web.title"
+          :skills="web.skills"
+        ></skill-container>
+        <skill-container
+          :id="game.id"
+          :title="game.title"
+          :skills="game.skills"
+        ></skill-container>
+        <skill-container
+          :id="desktop.id"
+          :title="desktop.title"
+          :skills="desktop.skills"
         ></skill-container>
       </v-col>
     </v-row>
@@ -27,9 +42,9 @@
 export default {
   data() {
     return {
-      mainStack: {
-        id: 'main-stack',
-        title: 'Main Stack',
+      backend: {
+        id: 'backend',
+        title: 'Backend',
         skills: [
           {
             name: 'C#',
@@ -52,8 +67,44 @@ export default {
             isActive: true,
           },
           {
+            name: 'Python',
+            icon: 'devicon-python-plain-wordmark',
+            isActive: false,
+          },
+          {
+            name: 'Django',
+            icon: 'devicon-django-plain',
+            isActive: false,
+          },
+        ],
+      },
+      tools: {
+        id: 'tools',
+        title: 'Tools',
+        skills: [
+          {
             name: 'Docker',
             icon: 'devicon-docker-plain-wordmark',
+            isActive: true,
+          },
+          {
+            name: 'GitHub',
+            icon: 'devicon-github-original-wordmark',
+            isActive: true,
+          },
+          {
+            name: 'GitLab',
+            icon: 'devicon-gitlab-plain-wordmark',
+            isActive: true,
+          },
+          {
+            name: 'Visual Studio',
+            icon: 'devicon-visualstudio-plain',
+            isActive: true,
+          },
+          {
+            name: 'Visual Studio Code',
+            icon: 'devicon-vscode-plain-wordmark',
             isActive: true,
           },
           {
@@ -67,46 +118,16 @@ export default {
             isActive: true,
           },
           {
-            name: 'Unity',
-            icon: 'mdi-unity',
-            isActive: true,
-          },
-          {
-            name: 'GitHub',
-            icon: 'devicon-github-original-wordmark',
-            isActive: true,
-          },
-          {
-            name: 'Visual Studio',
-            icon: 'devicon-visualstudio-plain',
-            isActive: true,
-          },
-          {
-            name: 'Visual Studio Code',
-            icon: 'devicon-vscode-plain-wordmark',
-            isActive: true,
-          },
-        ],
-      },
-      experienceStack: {
-        id: 'experience-stack',
-        title: 'Experience Stack',
-        skills: [
-          {
-            name: 'Python',
-            icon: 'devicon-python-plain-wordmark',
-            isActive: false,
-          },
-          {
-            name: 'Django',
-            icon: 'devicon-django-plain',
-            isActive: false,
-          },
-          {
             name: 'PyCharm',
             icon: 'devicon-pycharm-plain',
             isActive: false,
           },
+        ],
+      },
+      web: {
+        id: 'web',
+        title: 'Web',
+        skills: [
           {
             name: 'Vuetify',
             icon: 'devicon-vuetify-line',
@@ -122,11 +143,23 @@ export default {
             icon: 'devicon-vuejs-plain-wordmark',
             isActive: false,
           },
+        ],
+      },
+      game: {
+        id: 'game',
+        title: 'Game',
+        skills: [
           {
-            name: 'GitLab',
-            icon: 'devicon-gitlab-plain-wordmark',
-            isActive: false,
+            name: 'Unity',
+            icon: 'mdi-unity',
+            isActive: true,
           },
+        ],
+      },
+      desktop: {
+        id: 'desktop',
+        title: 'Desktop',
+        skills: [
           {
             name: 'WPF',
             image: 'https://files.bitiano.com/logos/wpf-logo.png',

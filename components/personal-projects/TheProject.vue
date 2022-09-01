@@ -21,7 +21,6 @@
       <v-col xl="7" lg="7" md="10" cols="12" class="ma-0 pa-0">
         <the-project-carousel
           :views="views"
-          @onMaximize="onMaximize"
           ref="carousel"
         ></the-project-carousel>
       </v-col>
