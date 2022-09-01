@@ -6,35 +6,120 @@
     >
       # SKILLS
     </h1>
-    <v-row justify="center" style="height: 750px">
-      <v-col cols="9" class="d-flex flex-column justify-space-around">
-        <skill-container
-          :id="backend.id"
-          :title="backend.title"
-          :skills="backend.skills"
-        ></skill-container>
-        <skill-container
-          :id="tools.id"
-          :title="tools.title"
-          :skills="tools.skills"
-        ></skill-container>
-        <skill-container
-          :id="web.id"
-          :title="web.title"
-          :skills="web.skills"
-        ></skill-container>
-        <skill-container
-          :id="game.id"
-          :title="game.title"
-          :skills="game.skills"
-        ></skill-container>
-        <skill-container
-          :id="desktop.id"
-          :title="desktop.title"
-          :skills="desktop.skills"
-        ></skill-container>
-      </v-col>
-    </v-row>
+    <v-col class="d-flex flex-column justify-space-around px-md-10 px-2">
+      <v-row justify="center" class="ma-0 flex-grow-0 mb-12">
+        <v-col xl="9" lg="12" md="12" cols="12">
+          <skill-container
+            :id="backend.id"
+            :title="backend.title"
+            :skills="backend.skills"
+          ></skill-container>
+        </v-col>
+      </v-row>
+      <v-row justify="center" class="ma-0 mb-14 flex-grow-0">
+        <v-col
+          xl="5"
+          lg="7"
+          md="6"
+          cols="12"
+          class="pr-7"
+          :class="{ 'mb-16': $store.state.breakpoint.isSmOrDown }"
+        >
+          <skill-container
+            :id="web.id"
+            :title="web.title"
+            :skills="web.skills"
+          ></skill-container>
+        </v-col>
+        <v-col xl="2" lg="3" md="4" cols="7" class="pr-7">
+          <skill-container
+            :id="game.id"
+            :title="game.title"
+            :skills="game.skills"
+          ></skill-container>
+        </v-col>
+        <v-col xl="2" lg="2" md="2" cols="5">
+          <skill-container
+            :id="desktop.id"
+            :title="desktop.title"
+            :skills="desktop.skills"
+          ></skill-container>
+        </v-col>
+      </v-row>
+      <v-row justify="center" class="ma-0 mt-2 mb-10 flex-grow-0">
+        <v-col xl="9" lg="12" md="12" cols="12">
+          <skill-container
+            :id="tools.id"
+            :title="tools.title"
+            :skills="tools.skills"
+          ></skill-container>
+        </v-col>
+      </v-row>
+      <v-row justify="center" align="center" class="ma-0 d-flex flex-grow-0">
+        <v-col
+          xl="6"
+          lg="8"
+          cols="12"
+          align-self="start"
+          class="d-flex justify-start flex-md-row flex-column"
+        >
+          <div class="d-flex justify-start mr-6 mb-md-0 mb-5">
+            <v-icon
+              class="mx-md-auto mx-0"
+              size="28"
+              color="secondary lighten-3"
+            >
+              mdi-check-circle
+            </v-icon>
+            <p class="d-inline ml-2 my-auto secondary--text text--lighten-2">
+              Design Patterns & Principles - DDD - Agile & Scrum
+            </p>
+          </div>
+          <div class="d-flex justify-start">
+            <v-icon
+              class="mx-md-auto mx-0"
+              size="28"
+              color="secondary lighten-3"
+            >
+              mdi-code-tags-check
+            </v-icon>
+            <p class="d-inline ml-2 my-auto secondary--text text--lighten-2">
+              Mid-Level to Expert
+            </p>
+          </div>
+        </v-col>
+        <v-col
+          xl="3"
+          lg="4"
+          cols="12"
+          align-self="start"
+          class="d-flex justify-lg-end justify-start pl-4"
+        >
+          <div class="mr-6 d-flex justify-center">
+            <v-card
+              width="20"
+              height="20"
+              color="secondary lighten-3"
+              class="d-inline-block rounded-sm my-auto"
+            ></v-card>
+            <p class="d-inline ml-3 my-auto secondary--text text--lighten-2">
+              Recently Used
+            </p>
+          </div>
+          <div class="d-flex justify-center">
+            <v-card
+              width="20"
+              height="20"
+              color="primary lighten-2"
+              class="d-inline-block rounded-sm my-auto"
+            ></v-card>
+            <p class="d-inline ml-3 my-auto primary--text text--lighten-3">
+              Past Experience
+            </p>
+          </div>
+        </v-col>
+      </v-row>
+    </v-col>
   </v-container>
 </template>
 
@@ -47,18 +132,13 @@ export default {
         title: 'Backend',
         skills: [
           {
-            name: 'C#',
-            icon: 'devicon-csharp-plain',
-            isActive: true,
-          },
-          {
             name: '.Net Core',
             icon: 'devicon-dotnetcore-plain',
             isActive: true,
           },
           {
-            name: '<p class="ma-0">PostgreSQL</p><p class="ma-0">pgAdmin</p>',
-            icon: 'devicon-postgresql-plain-wordmark',
+            name: 'C#',
+            icon: 'devicon-csharp-plain',
             isActive: true,
           },
           {
@@ -67,8 +147,23 @@ export default {
             isActive: true,
           },
           {
+            name: 'PostgreSQL',
+            icon: 'devicon-postgresql-plain',
+            isActive: true,
+          },
+          {
+            name: 'MongoDB',
+            icon: 'devicon-mongodb-plain',
+            isActive: false,
+          },
+          {
+            name: 'SQL Server',
+            icon: 'devicon-microsoftsqlserver-plain',
+            isActive: false,
+          },
+          {
             name: 'Python',
-            icon: 'devicon-python-plain-wordmark',
+            icon: 'devicon-python-plain',
             isActive: false,
           },
           {
@@ -76,50 +171,9 @@ export default {
             icon: 'devicon-django-plain',
             isActive: false,
           },
-        ],
-      },
-      tools: {
-        id: 'tools',
-        title: 'Tools',
-        skills: [
           {
-            name: 'Docker',
-            icon: 'devicon-docker-plain-wordmark',
-            isActive: true,
-          },
-          {
-            name: 'GitHub',
-            icon: 'devicon-github-original-wordmark',
-            isActive: true,
-          },
-          {
-            name: 'GitLab',
-            icon: 'devicon-gitlab-plain-wordmark',
-            isActive: true,
-          },
-          {
-            name: 'Visual Studio',
-            icon: 'devicon-visualstudio-plain',
-            isActive: true,
-          },
-          {
-            name: 'Visual Studio Code',
-            icon: 'devicon-vscode-plain-wordmark',
-            isActive: true,
-          },
-          {
-            name: 'Ubuntu',
-            icon: 'devicon-ubuntu-plain-wordmark',
-            isActive: true,
-          },
-          {
-            name: 'Windows',
-            icon: 'devicon-windows8-original',
-            isActive: true,
-          },
-          {
-            name: 'PyCharm',
-            icon: 'devicon-pycharm-plain',
+            name: 'IIS',
+            image: 'https://files.bitiano.com/logos/microsoft-iis.png',
             isActive: false,
           },
         ],
@@ -131,17 +185,32 @@ export default {
           {
             name: 'Vuetify',
             icon: 'devicon-vuetify-line',
-            isActive: false,
+            isActive: true,
           },
           {
             name: 'Nuxt.js',
             icon: 'mdi-nuxt',
-            isActive: false,
+            isActive: true,
           },
           {
             name: 'Vue.js',
-            icon: 'devicon-vuejs-plain-wordmark',
-            isActive: false,
+            icon: 'devicon-vuejs-plain',
+            isActive: true,
+          },
+          {
+            name: 'HTML',
+            icon: 'devicon-html5-plain',
+            isActive: true,
+          },
+          {
+            name: 'CSS',
+            icon: 'devicon-css3-plain',
+            isActive: true,
+          },
+          {
+            name: 'JavaScript',
+            icon: 'devicon-javascript-plain',
+            isActive: true,
           },
         ],
       },
@@ -152,6 +221,11 @@ export default {
           {
             name: 'Unity',
             icon: 'mdi-unity',
+            isActive: true,
+          },
+          {
+            name: 'C#',
+            icon: 'devicon-csharp-plain',
             isActive: true,
           },
         ],
@@ -167,14 +241,56 @@ export default {
           },
         ],
       },
+      tools: {
+        id: 'tools',
+        title: 'Tools & Misc',
+        skills: [
+          {
+            name: 'Docker',
+            icon: 'devicon-docker-plain',
+            isActive: true,
+          },
+          {
+            name: 'GitHub',
+            icon: 'devicon-github-original',
+            isActive: true,
+          },
+          {
+            name: 'GitLab',
+            icon: 'devicon-gitlab-plain',
+            isActive: true,
+          },
+          {
+            name: 'Ubuntu',
+            icon: 'devicon-ubuntu-plain',
+            isActive: true,
+          },
+          {
+            name: 'Windows',
+            icon: 'devicon-windows8-original',
+            isActive: true,
+          },
+          {
+            name: 'Visual Studio',
+            icon: 'devicon-visualstudio-plain',
+            isActive: true,
+          },
+          {
+            name: 'VS Code',
+            icon: 'devicon-vscode-plain',
+            isActive: true,
+          },
+          {
+            name: 'PyCharm',
+            icon: 'devicon-pycharm-plain',
+            isActive: false,
+          },
+        ],
+      },
     }
   },
   methods: {
-    onIntersect(entries, observer) {
-      // console.log('test')
-      // console.dir(entries)
-      // console.dir(observer)
-    },
+    onIntersect(entries, observer) {},
   },
 }
 </script>

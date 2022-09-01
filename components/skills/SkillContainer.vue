@@ -3,8 +3,8 @@
     <v-col>
       <div
         class="
-          mb-4
-          text-left text-lg-h6 text-md-body-1 text-body-1
+          mb-3
+          text-left text-h6
           seccondary--text
           text--lighten-1
           font-weight-light
@@ -15,46 +15,38 @@
         {{ title }}
       </div>
       <v-divider></v-divider>
-      <v-row class="mt-10 px-20 mx-0" align="center" justify="center">
+      <v-row class="mt-6 px-20 mx-0" align="center" justify="center">
         <div
           v-for="(skill, i) in skills"
           :key="i"
-          class="d-flex justify-center mx-4"
+          class="d-flex flex-column justify-center mx-3"
+          :style="{ width: skillWidth + 'px' }"
         >
-          <v-tooltip bottom>
-            <template v-slot:activator="{ on, attrs }">
-              <v-icon
-                class="mx-auto px-auto mb-10"
-                v-if="skill.icon"
-                :size="iconSize"
-                :color="
-                  skill.isActive ? colors.activeShape : colors.inactiveShape
-                "
-                v-bind="attrs"
-                v-on="on"
-              >
-                {{ skill.icon }}
-              </v-icon>
-              <v-card
-                class="mb-10"
-                v-else-if="skill.image"
-                :width="iconSize"
-                :height="iconSize"
-                :color="
-                  skill.isActive ? colors.activeShape : colors.inactiveShape
-                "
-                v-bind="attrs"
-                v-on="on"
-              >
-                <v-img :src="skill.image" width="100%" height="100%" contain>
-                </v-img>
-              </v-card>
-            </template>
-            <span
-              v-html="skill.name"
-              :class="skill.isActive ? colors.activeText : colors.inactiveText"
-            ></span>
-          </v-tooltip>
+          <v-icon
+            class="mx-auto"
+            v-if="skill.icon"
+            :size="iconSize"
+            :color="skill.isActive ? colors.activeShape : colors.inactiveShape"
+          >
+            {{ skill.icon }}
+          </v-icon>
+          <v-card
+            class="pa-1 mx-auto"
+            v-else-if="skill.image"
+            :width="iconSize + 2"
+            :height="iconSize + 2"
+            :color="skill.isActive ? colors.activeShape : 'primary lighten-1'"
+            flat
+            rounded="circle"
+          >
+            <v-img :src="skill.image" width="100%" height="100%" contain />
+          </v-card>
+          <span
+            class="mt-1 mb-6 text-center text-caption font-weight-light"
+            :class="skill.isActive ? colors.activeText : colors.inactiveText"
+          >
+            {{ skill.name }}
+          </span>
         </div>
       </v-row>
     </v-col>
@@ -67,18 +59,21 @@ export default {
   data() {
     return {
       colors: {
-        activeShape: 'accent lighten-2',
-        activeText: 'accent--text text--lighten-2',
-        inactiveShape: 'secondary darken-0',
-        inactiveText: 'secondary--text text--darken-0',
+        activeShape: 'secondary lighten-2',
+        activeText: 'secondary--text text--lighten-2',
+        inactiveShape: 'primary lighten-3',
+        inactiveText: 'primary--text text--lighten-3',
       },
     }
   },
   computed: {
     iconSize() {
-      if (this.$store.state.breakpoint.isSmOrDown) return 40
-      else if (this.$store.state.breakpoint.isMdOrDown) return 45
-      else return 50
+      if (this.$store.state.breakpoint.isSmOrDown) return 35
+      else return 40
+    },
+    skillWidth() {
+      if (this.$store.state.breakpoint.isSmOrDown) return 55
+      else return 60
     },
   },
 }
