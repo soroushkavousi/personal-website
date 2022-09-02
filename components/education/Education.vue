@@ -4,58 +4,64 @@
       # EDUCATION
     </h1>
     <v-row justify="center">
-      <v-timeline dense>
-        <v-timeline-item
-          v-for="(education, i) in educations"
-          :key="i"
-          :color="contentColor1"
-          right
-          fill-dot
-          small
-        >
-          <v-card
-            id="test"
-            elevation="10"
-            :width="timeLineCardWidth"
-            color="primary lighten-0"
-            tile
-            outlined
-            class="ml-5"
+      <v-col xl="5" lg="7" md="8" sm="11" cols="12">
+        <v-timeline dense class="ml-n11">
+          <v-timeline-item
+            v-for="(education, i) in educations"
+            :key="i"
+            :color="contentColor1"
+            right
+            fill-dot
+            small
           >
             <v-card
+              elevation="10"
+              width="100%"
+              color="primary lighten-0"
               tile
-              height="160"
-              color="secondary darken-0"
-              class="d-flex justify-center"
+              outlined
+              class="ml-1"
             >
               <v-card
                 tile
-                flat
-                color="secondary darken-0"
-                class="d-flex flex-column justify-center"
-                v-for="(image, i) in education.images"
-                :key="i"
-                :href="image.website"
+                height="160"
+                color="secondary darken-1"
+                class="d-flex justify-center"
               >
-                <v-img
-                  class="d-inline-block"
-                  :max-width="timeLineCardWidth / education.images.length"
-                  max-height="140"
-                  :src="image.src"
-                  light
-                  contain
-                ></v-img>
+                <v-card
+                  tile
+                  flat
+                  color="secondary darken-1"
+                  class="d-flex flex-column justify-center"
+                  v-for="(image, i) in education.images"
+                  :key="i"
+                  :href="image.website"
+                >
+                  <v-img
+                    class="d-inline-block"
+                    :max-width="timeLineCardWidth / education.images.length"
+                    max-height="140"
+                    :src="image.src"
+                    light
+                    contain
+                  ></v-img>
+                </v-card>
               </v-card>
+              <v-card-title class="text-lg-h6 text-body-1 font-weight-bold">
+                <p :class="`${textColor1}`">{{ education.title }}</p>
+              </v-card-title>
+              <v-card-text
+                class="text-sm-body-2 text-caption font-weight-light"
+              >
+                <span
+                  v-html="education.location"
+                  :class="`${textColor2}`"
+                ></span>
+              </v-card-text>
             </v-card>
-            <v-card-title class="text-lg-h6 text-body-1 font-weight-medium">
-              <p :class="`${textColor1}`">{{ education.title }}</p>
-            </v-card-title>
-            <v-card-text class="text-lg-body-2 text-md-caption text-caption">
-              <span v-html="education.location" :class="`${textColor2}`"></span>
-            </v-card-text>
-          </v-card>
-        </v-timeline-item>
-      </v-timeline>
+          </v-timeline-item>
+        </v-timeline>
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -102,7 +108,7 @@ export default {
           location: `
             <p class="ma-0">Shahid Beheshti (NODET) High School, Gonbad Kavus, Iran.</p>
             <p><a href="https://en.wikipedia.org/wiki/National_Organization_for_Development_of_Exceptional_Talents" class="vit ml-2">- Affiliated with the National Organization for the Development of Exceptional Talents</a></p>
-            <p><a href="https://yousefabad.salamsch.com/hschool">Salam IranZamin High School</a>, Tehran, Iran.</p>`,
+            <p>Salam IranZamin High School, Tehran, Iran.</p>`,
         },
       ],
     }
@@ -119,14 +125,6 @@ export default {
     },
     textColor2() {
       return `secondary--text text--lighten-4`
-    },
-    timeLineCardWidth() {
-      if (typeof window == 'undefined') return 550
-      if (this.$store.state.breakpoint.isSmOrDown)
-        return window.innerWidth * 0.55
-      else if (this.$store.state.breakpoint.isMdOrDown)
-        return window.innerWidth * 0.55
-      else return window.innerWidth * 0.3
     },
   },
 }
@@ -146,14 +144,5 @@ export default {
 :deep(p > a:hover),
 :deep(p > a:active) {
   color: var(--v-accent-lighten3) !important;
-}
-
-:deep(.no-content-link) {
-  text-decoration: none;
-  color: orange !important;
-}
-
-:deep(.very-small-text) {
-  font-size: 0.9rem !important;
 }
 </style>
