@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <h1 class="accent--text text--lighten-2 text-h3 mb-14 ml-16">
+    <h1 class="accent--text text--lighten-2 text-sm-h3 text-h4 mb-14 ml-16">
       # EXPERIENCE
     </h1>
     <the-experience-card
@@ -8,7 +8,7 @@
       :key="i"
       :title="item.title"
       :role="item.role"
-      :logo="item.logo"
+      :website="item.website"
       :years="item.years"
       :projects="item.projects"
     ></the-experience-card>
@@ -20,10 +20,10 @@ export default {
   data: () => ({
     items: [
       {
-        title: 'AyanTech',
-        role: 'Backend Developer, Blockchain Engineer',
-        logo: 'https://files.bitiano.com/logos/ayan-tech-logo.png',
-        years: 'July 2018 - January 2019',
+        title: 'Ayan',
+        role: 'Blockchain Engineer, Backend Developer',
+        website: 'https://ayanco.com/en',
+        years: 'JULY 2018 - JANUARY 2019',
         projects: [
           {
             title:
@@ -50,8 +50,8 @@ export default {
       {
         title: 'AltonTech',
         role: 'Backend Developer, Desktop Application Developer',
-        logo: 'https://files.bitiano.com/logos/alton-tech-logo.png',
-        years: 'August 2016 - October 2017',
+        website: 'http://www.altontech.ir/',
+        years: 'AUGUST 2016 - OCTOBER 2017',
         projects: [
           {
             title:
