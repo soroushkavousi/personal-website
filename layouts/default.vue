@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <TheNavigation ref="navigation" />
+    <TheNavigation />
     <!-- <div>
     :style="{
         'padding-left': $store.state.breakpoint.isMdOrDown ? '56px' : 'auto',
@@ -8,12 +8,7 @@
       
       </div> -->
     <v-main>
-      <v-container
-        fluid
-        fill-height
-        class="primary lighten-0 py-0"
-        @click="onMainContainerClicked"
-      >
+      <v-container fluid fill-height class="primary lighten-0 py-0">
         <Nuxt />
       </v-container>
     </v-main>
@@ -29,9 +24,6 @@ export default {
   methods: {
     onResize() {
       this.$store.commit('breakpoint/update', window.innerWidth)
-    },
-    onMainContainerClicked() {
-      this.$refs.navigation.outsideClicked()
     },
   },
   mounted() {

@@ -8,6 +8,7 @@
     :app="true"
     :fixed="true"
     color="primary darken-1"
+    v-click-outside="outsideClicked"
   >
     <template #prepend>
       <div :class="navControlStyle" @click.stop="doManualOpenOrClose">
@@ -49,7 +50,7 @@
               ripple
               :value="section.title"
               class="mb-1"
-              @click="outsideClicked"
+              @click="onSectionClicked(section.title)"
             >
               <v-list-item-content
                 class="text-center font-weight-light py-1"
@@ -153,6 +154,9 @@ export default {
     },
     outsideClicked() {
       this.mini = this.$store.state.breakpoint.isMdOrDown
+    },
+    onSectionClicked(section) {
+      console.log(`section: ${section}`)
     },
     doManualOpenOrClose() {
       this.manualMini = true
