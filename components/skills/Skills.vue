@@ -1,11 +1,6 @@
 <template>
   <v-container fluid>
-    <h1
-      v-intersect="onIntersect"
-      class="accent--text text--lighten-2 text-h3 mb-10 ml-16"
-    >
-      # SKILLS
-    </h1>
+    <h1 class="accent--text text--lighten-2 text-h3 mb-10 ml-16"># SKILLS</h1>
     <v-col class="d-flex flex-column justify-space-around px-md-10 px-2">
       <v-row justify="center" class="ma-0 flex-grow-0 mb-12">
         <v-col xl="9" lg="12" md="12" cols="12">
@@ -288,9 +283,6 @@ export default {
         ],
       },
     }
-  },
-  methods: {
-    onIntersect(entries, observer) {},
   },
 }
 </script>

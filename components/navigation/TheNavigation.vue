@@ -40,17 +40,15 @@
               Soroush Kavousi
             </h1>
           </v-list-item>
-
           <v-list-item-group v-model="selectedItemId">
             <v-list-item
               v-for="(section, i) in sections"
               :key="i"
-              :to="{ path: '/', hash: section.hash }"
               exact
               ripple
-              :value="section.title"
+              :value="section.hash"
               class="mb-1"
-              @click="onSectionClicked(section.title)"
+              @click="onSectionClicked(section)"
             >
               <v-list-item-content
                 class="text-center font-weight-light py-1"
@@ -100,8 +98,6 @@
 </template>
 
 <script>
-// import { mapGetters, mapMutations } from 'vuex'
-
 export default {
   props: [],
   data() {
@@ -156,7 +152,14 @@ export default {
       this.mini = this.$store.state.breakpoint.isMdOrDown
     },
     onSectionClicked(section) {
-      console.log(`section: ${section}`)
+      this.$store.commit('setSection', {
+        section: `${section.hash}`,
+        isManual: true,
+      })
+      this.$router.push({
+        path: '/',
+        hash: section.hash,
+      })
     },
     doManualOpenOrClose() {
       this.manualMini = true
@@ -199,6 +202,9 @@ export default {
     '$store.state.breakpoint.isMdOrDown': function (newValue, oldValue) {
       // if (this.manualMini) return
       this.mini = newValue
+    },
+    '$store.state.section': function (newValue, oldValue) {
+      this.selectedItemId = newValue
     },
   },
 }
