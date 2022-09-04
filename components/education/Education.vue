@@ -39,7 +39,7 @@
                 >
                   <v-img
                     class="d-inline-block"
-                    :max-width="timeLineCardWidth / education.images.length"
+                    width="100%"
                     max-height="140"
                     :src="image.src"
                     light
