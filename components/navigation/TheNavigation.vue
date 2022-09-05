@@ -4,24 +4,38 @@
     :mini-variant="mini"
     :mini-variant-width="miniVariantWidth"
     permanent
-    :width="250"
-    :app="true"
+    :width="fullWidth"
+    :app="$store.state.breakpoint.isMdOrDown ? false : true"
     :fixed="true"
     color="primary darken-1"
     v-click-outside="outsideClicked"
   >
     <template #prepend>
-      <div :class="navControlStyle" @click.stop="doManualOpenOrClose">
-        <v-btn icon>
-          <v-icon size="50" v-if="mini == false">mdi-chevron-left</v-icon>
-          <v-avatar v-else>
-            <v-img
-              contain
-              src="https://files.bitiano.com/soroush-kavousi/soroush-kavousi-profile.jpg"
-              class="mx-auto"
-            ></v-img>
-          </v-avatar>
+      <div
+        :class="{ 'px-1': !mini }"
+        class="mt-7"
+        @click.stop="doManualOpenOrClose"
+        style="position: absolute; height: 200px; z-index: 100"
+        :style="{ width: (mini ? miniVariantWidth : fullWidth) + 'px' }"
+      >
+        <v-btn
+          plain
+          :ripple="false"
+          tile
+          icon
+          v-if="mini == false"
+          class="fill d-flex justify-end align-start px-4 my-2"
+          width="100%"
+        >
+          <v-icon size="60">mdi-chevron-left</v-icon>
         </v-btn>
+        <v-avatar v-else class="fill-width pl-1">
+          <v-img
+            contain
+            src="https://files.bitiano.com/soroush-kavousi/soroush-kavousi-profile.jpg"
+            class="mx-auto"
+          ></v-img>
+        </v-avatar>
       </div>
     </template>
     <div v-if="mini == false" class="fill-height">
@@ -71,7 +85,7 @@
       class="fill-height d-flex flex-column justify-center"
       @click.stop="doManualOpenOrClose"
     >
-      <v-icon dense size="50" :style="{}">mdi-chevron-right</v-icon>
+      <v-icon dense size="60" :style="{}">mdi-chevron-right</v-icon>
     </div>
     <template #append>
       <!-- <div :class="darkModeIconStyle">
@@ -104,12 +118,9 @@ export default {
     return {
       drawer: true,
       mini: false,
-      manualMini: false,
-      lastManualMiniWidth: 0,
       selectedItemId: '',
-      test: null,
+      fullWidth: 250,
       miniVariantWidth: 56,
-      isScrolling: false,
       sections: [
         {
           routeName: 'about',
@@ -149,7 +160,7 @@ export default {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark
     },
     outsideClicked() {
-      this.mini = this.$store.state.breakpoint.isMdOrDown
+      if (this.$store.state.breakpoint.isMdOrDown) this.mini = true
     },
     onSectionClicked(section) {
       this.$store.commit('setSection', {
@@ -162,31 +173,10 @@ export default {
       })
     },
     doManualOpenOrClose() {
-      this.manualMini = true
-      this.lastManualMiniWidth = window.innerWidth
       this.mini = !this.mini
-    },
-    moveToLastHash() {
-      if (this.$router.currentRoute.hash != '') {
-        window.scrollTo({
-          top: document.querySelector(this.$router.currentRoute.hash).offsetTop,
-          behavior: 'smooth',
-        })
-      }
-      this.isScrolling = false
     },
   },
   computed: {
-    navControlStyle() {
-      return {
-        'd-flex': true,
-        'mt-5': true,
-        'justify-end': this.mini == false,
-        'mr-4': this.mini == false,
-        'justify-center': this.mini == true,
-        'mr-0': this.mini == true,
-      }
-    },
     darkModeIconStyle() {
       return {
         'd-flex': true,
@@ -200,8 +190,15 @@ export default {
   },
   watch: {
     '$store.state.breakpoint.isMdOrDown': function (newValue, oldValue) {
-      // if (this.manualMini) return
+      let currentSection = this.$store.state.section
       this.mini = newValue
+      setTimeout(() => {
+        let sectionOffset = document.querySelector(currentSection).offsetTop
+        window.scrollTo({
+          top: sectionOffset,
+          behavior: 'smooth',
+        })
+      }, 500)
     },
     '$store.state.section': function (newValue, oldValue) {
       this.selectedItemId = newValue

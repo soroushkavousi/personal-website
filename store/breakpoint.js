@@ -19,8 +19,8 @@ export const mutations = {
     else if (width <= state.lg) state.name = 'lg'
     else state.name = 'xl'
 
-    if (state.name != lastName)
-      console.log(`New Breakpoint: ${state.name} with width ${width}`)
+    // if (state.name != lastName)
+    //   console.log(`New Breakpoint: ${state.name} with width ${width}`)
 
     switch (state.name) {
       case 'xs':

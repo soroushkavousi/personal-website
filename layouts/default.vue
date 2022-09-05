@@ -1,14 +1,13 @@
 <template>
   <v-app>
     <TheNavigation />
-    <!-- <div>
-    :style="{
-        'padding-left': $store.state.breakpoint.isMdOrDown ? '56px' : 'auto',
-      }"
-      
-      </div> -->
     <v-main>
-      <v-container fluid fill-height class="primary lighten-0 py-0">
+      <v-container
+        fluid
+        fill-height
+        class="primary lighten-0 py-0"
+        :class="{ 'pl-14': $store.state.breakpoint.isMdOrDown }"
+      >
         <Nuxt />
       </v-container>
     </v-main>
