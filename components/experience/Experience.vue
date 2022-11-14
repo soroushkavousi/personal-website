@@ -43,7 +43,7 @@ export default {
           },
           {
             title:
-              'Responsible for designing an API for a <span class="vit">Cryptocurrency Payment Gateway</span>',
+              'Responsible for designing and developing an API for a <span class="vit">Cryptocurrency Payment Gateway</span>',
           },
         ],
       },
