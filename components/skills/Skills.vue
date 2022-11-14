@@ -1,8 +1,8 @@
 <template>
   <v-container fluid>
-    <h1 class="accent--text text--lighten-2 text-h3 mb-10 ml-16"># SKILLS</h1>
+    <h1 class="accent--text text--lighten-2 text-h3 mb-4 ml-16"># SKILLS</h1>
     <v-col class="d-flex flex-column justify-space-around px-md-10 px-2">
-      <v-row justify="center" class="ma-0 flex-grow-0 mb-12">
+      <v-row justify="center" class="ma-0 flex-grow-0 mb-2">
         <v-col xl="9" lg="12" md="12" cols="12">
           <skill-container
             :id="backend.id"
@@ -11,7 +11,7 @@
           ></skill-container>
         </v-col>
       </v-row>
-      <v-row justify="center" class="ma-0 mb-14 flex-grow-0">
+      <v-row justify="center" class="ma-0 mb-7 flex-grow-0">
         <v-col
           xl="5"
           lg="7"
@@ -41,7 +41,7 @@
           ></skill-container>
         </v-col>
       </v-row>
-      <v-row justify="center" class="ma-0 mt-2 mb-10 flex-grow-0">
+      <v-row justify="center" class="ma-0 mt-2 mb-0 flex-grow-0">
         <v-col xl="9" lg="12" md="12" cols="12">
           <skill-container
             :id="tools.id"
@@ -50,45 +50,23 @@
           ></skill-container>
         </v-col>
       </v-row>
+      <v-row justify="center" class="ma-0 mt-0 mb-4 flex-grow-0">
+        <v-col xl="9" lg="12" md="12" cols="12">
+          <skill-container
+            :id="workflow.id"
+            :title="workflow.title"
+            :skills="workflow.skills"
+          ></skill-container>
+        </v-col>
+      </v-row>
       <v-row justify="center" align="center" class="ma-0 d-flex flex-grow-0">
         <v-col
-          xl="6"
-          lg="8"
+          xl="9"
+          lg="12"
+          md="12"
           cols="12"
           align-self="start"
-          class="d-flex justify-start flex-md-row flex-column"
-        >
-          <div class="d-flex justify-start mr-6 mb-md-0 mb-5">
-            <v-icon
-              class="mx-md-auto mx-0"
-              size="28"
-              color="secondary lighten-3"
-            >
-              mdi-check-circle
-            </v-icon>
-            <p class="d-inline ml-2 my-auto secondary--text text--lighten-2">
-              Design Patterns & Principles - DDD - Agile & Scrum
-            </p>
-          </div>
-          <div class="d-flex justify-start">
-            <v-icon
-              class="mx-md-auto mx-0"
-              size="28"
-              color="secondary lighten-3"
-            >
-              mdi-code-tags-check
-            </v-icon>
-            <p class="d-inline ml-2 my-auto secondary--text text--lighten-2">
-              Mid-Level to Expert
-            </p>
-          </div>
-        </v-col>
-        <v-col
-          xl="3"
-          lg="4"
-          cols="12"
-          align-self="start"
-          class="d-flex justify-lg-end justify-start pl-4"
+          class="d-flex justify-lg-start justify-start pl-4"
         >
           <div class="mr-6 d-flex justify-center">
             <v-card
@@ -279,6 +257,24 @@ export default {
             name: 'PyCharm',
             icon: 'devicon-pycharm-plain',
             isActive: false,
+          },
+        ],
+      },
+      workflow: {
+        id: 'workflow',
+        title: 'Workflow & Concepts',
+        skills: [
+          {
+            text: 'DDD',
+            isActive: true,
+          },
+          {
+            text: 'Agile & Scrum',
+            isActive: true,
+          },
+          {
+            text: 'Design Patterns & Principles',
+            isActive: true,
           },
         ],
       },

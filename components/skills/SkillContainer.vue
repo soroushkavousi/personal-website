@@ -20,7 +20,7 @@
           v-for="(skill, i) in skills"
           :key="i"
           class="d-flex flex-column justify-center mx-3"
-          :style="{ width: skillWidth + 'px' }"
+          :style="{ width: skill.text == null ? skillWidth + 'px' : 'auto' }"
         >
           <v-icon
             class="mx-auto"
@@ -41,7 +41,17 @@
           >
             <v-img :src="skill.image" width="100%" height="100%" contain />
           </v-card>
+          <v-chip
+            v-else-if="skill.text"
+            label
+            class="mb-3 font-weight-bold"
+            :color="skill.isActive ? colors.activeShape : 'primary lighten-1'"
+            text-color="primary"
+          >
+            {{ skill.text }}
+          </v-chip>
           <span
+            v-if="skill.name"
             class="mt-1 mb-6 text-center text-caption font-weight-light"
             :class="skill.isActive ? colors.activeText : colors.inactiveText"
           >
@@ -68,12 +78,12 @@ export default {
   },
   computed: {
     iconSize() {
-      if (this.$store.state.breakpoint.isSmOrDown) return 35
-      else return 40
+      if (this.$store.state.breakpoint.isSmOrDown) return 30
+      else return 35
     },
     skillWidth() {
-      if (this.$store.state.breakpoint.isSmOrDown) return 55
-      else return 60
+      if (this.$store.state.breakpoint.isSmOrDown) return 50
+      else return 55
     },
   },
 }
