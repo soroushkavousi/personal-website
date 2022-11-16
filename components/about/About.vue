@@ -71,17 +71,10 @@
                           "
                           style="word-wrap: break-word"
                         >
-                          SoroushKavousi.me@gmail.com
+                          soroushkavousi.me@gmail.com
                         </a>
                       </p>
                     </div>
-                  </v-row>
-
-                  <v-row align="center">
-                    <div class="pr-3 py-0 text-overline font-weight-regular">
-                      Phone:
-                    </div>
-                    <div class="px-0 py-auto">+98 9120910637</div>
                   </v-row>
                 </v-col>
               </v-row>
