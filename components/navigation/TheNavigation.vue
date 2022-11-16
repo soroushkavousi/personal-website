@@ -29,11 +29,13 @@
         >
           <v-icon size="60">mdi-chevron-left</v-icon>
         </v-btn>
-        <v-avatar v-else class="fill-width pl-1">
+        <v-avatar v-else class="fill-width px-2">
           <v-img
             contain
-            src="https://files.bitiano.com/soroush-kavousi/soroush-kavousi-profile.jpg"
+            aspect-ratio="1"
+            src="https://files.bitiano.com/soroush-kavousi/soroush-kavousi-profile.png"
             class="mx-auto"
+            alt="Soroush Kavousi"
           ></v-img>
         </v-avatar>
       </div>
@@ -41,15 +43,16 @@
     <div v-if="mini == false" class="fill-height">
       <div class="fill-height d-flex flex-column justify-center">
         <v-list nav>
-          <v-list-item class="d-flex justify-center ma-0">
-            <v-list-item-avatar class="mx-auto" size="150">
-              <v-img
-                src="https://files.bitiano.com/soroush-kavousi/soroush-kavousi-profile.jpg"
-                class="mx-auto"
-              ></v-img>
-            </v-list-item-avatar>
+          <v-list-item class="d-flex justify-center ma-0 mb-2">
+            <v-img
+              :style="{ height: `${profilePictureWidth}px` }"
+              contain
+              aspect-ratio="1"
+              src="https://files.bitiano.com/soroush-kavousi/soroush-kavousi-profile.png"
+              alt="Soroush Kavousi"
+            ></v-img>
           </v-list-item>
-          <v-list-item class="d-flex justify-center mb-14">
+          <v-list-item class="d-flex justify-center mb-15">
             <h1 class="accent--text text--lighten-2 text-h5 font-weight-light">
               Soroush Kavousi
             </h1>
@@ -121,6 +124,7 @@ export default {
       selectedItemId: '',
       fullWidth: 250,
       miniVariantWidth: 56,
+      profilePictureWidth: 125,
       sections: [
         {
           routeName: 'about',
