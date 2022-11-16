@@ -88,8 +88,8 @@ export default {
               website: 'https://ce.aut.ac.ir/en',
             },
           ],
-          location: `<p><a href="https://ce.aut.ac.ir/en" class="vit">Amirkabir University of Technology</a>, Tehran, Iran 
-            (<a href="https://www.usnews.com/education/best-global-universities/amirkabir-university-of-technology-aut-506266">Ranked 253th in Computer Science [U.S. News]</a>)</p>`,
+          location: `<p><a href="https://ce.aut.ac.ir/en" class="vit" target="_blank">Amirkabir University of Technology</a>, Tehran, Iran 
+            (<a href="https://www.usnews.com/education/best-global-universities/amirkabir-university-of-technology-aut-506266" target="_blank">Ranked 293th in Computer Science [U.S. News]</a>)</p>`,
         },
         {
           date: '2009 - 2013',
@@ -104,11 +104,11 @@ export default {
             //   website: 'https://yousefabad.salamsch.com/hschool',
             // },
           ],
-          title: 'High School Diploma (Mathematics and Physics)',
+          title: 'High School Diploma, Mathematics and Physics',
           location: `
             <p class="ma-0">Shahid Beheshti (NODET) High School, Gonbad Kavus, Iran.</p>
-            <p><a href="https://en.wikipedia.org/wiki/National_Organization_for_Development_of_Exceptional_Talents" class="vit ml-2">- Affiliated with the National Organization for the Development of Exceptional Talents</a></p>
-            <p>Salam IranZamin High School, Tehran, Iran.</p>`,
+            <p><a href="https://en.wikipedia.org/wiki/National_Organization_for_Development_of_Exceptional_Talents" class="vit ml-2" target="_blank">- Affiliated with the National Organization for the Development of Exceptional Talents</a></p>
+            <p>Salam YousefAbad High School, Tehran, Iran.</p>`,
         },
       ],
     }
