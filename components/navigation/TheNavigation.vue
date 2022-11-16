@@ -12,10 +12,9 @@
   >
     <template #prepend>
       <div
-        :class="{ 'px-1': !mini }"
-        class="mt-7"
+        class="pt-7"
         @click.stop="doManualOpenOrClose"
-        style="position: absolute; height: 200px; z-index: 100"
+        style="position: absolute; height: 100px; z-index: 100; cursor: pointer"
         :style="{ width: (mini ? miniVariantWidth : fullWidth) + 'px' }"
       >
         <v-btn
@@ -24,7 +23,7 @@
           tile
           icon
           v-if="mini == false"
-          class="fill d-flex justify-end align-start px-4 my-2"
+          class="fill d-flex justify-end align-start pr-6 my-2"
           width="100%"
         >
           <v-icon size="60">mdi-chevron-left</v-icon>
@@ -43,7 +42,7 @@
     <div v-if="mini == false" class="fill-height">
       <div class="fill-height d-flex flex-column justify-center">
         <v-list nav>
-          <v-list-item class="d-flex justify-center ma-0 mb-2">
+          <v-list-item class="d-flex justify-centerma-0 mb-2">
             <v-img
               :style="{ height: `${profilePictureWidth}px` }"
               contain
@@ -53,7 +52,7 @@
             ></v-img>
           </v-list-item>
           <v-list-item class="d-flex justify-center mb-15">
-            <h1 class="accent--text text--lighten-2 text-h5 font-weight-light">
+            <h1 class="accent--text text--lighten-2 text-h6 font-weight-light">
               Soroush Kavousi
             </h1>
           </v-list-item>
@@ -86,6 +85,7 @@
     <div
       v-else
       class="fill-height d-flex flex-column justify-center"
+      style="cursor: pointer"
       @click.stop="doManualOpenOrClose"
     >
       <v-icon dense size="60" :style="{}">mdi-chevron-right</v-icon>
@@ -122,9 +122,9 @@ export default {
       drawer: true,
       mini: false,
       selectedItemId: '',
-      fullWidth: 250,
+      fullWidth: 220,
       miniVariantWidth: 56,
-      profilePictureWidth: 125,
+      profilePictureWidth: 115,
       sections: [
         {
           routeName: 'about',
