@@ -13,13 +13,15 @@
       >
         <template v-slot:description>
           <p>
-            Fireplace API is a web API project developed with the ASP.NET Core
-            framework. It is like a simple version of Reddit API, which has
-            communities, posts, and comments.
+            Fireplace API is a Reddit API clone that has communities, posts, and
+            nested comments. This project is just an individual effort to create
+            a real-world Web API with some advanced features.
           </p>
           <p>
-            This project was a practice for me on how to design an API for
-            real-world applications. It also can be used as a sample.
+            The API is developed via ASP.NET Core framework and has many
+            features such as DDD structure, Swagger UI, Integration Testing,
+            various Sign Up Methods, Error Handling, Logging System, Security
+            Features, CICD, and Docker Deployment.
           </p>
         </template>
       </the-project>
@@ -77,7 +79,13 @@ export default {
     return {
       fireplaceApiData: {
         title: '1. Fireplace API',
-        stack: ['ASP.NET Core', 'PostgreSQL', 'Nginx', 'Docker'],
+        stack: [
+          'ASP.NET Core',
+          'PostgreSQL',
+          'Nginx',
+          'GitHub Actions',
+          'Docker',
+        ],
         links: [
           {
             name: 'Swagger',
@@ -106,9 +114,18 @@ export default {
               '<p>In this picture, you can see the layers of the API: Core, API, and Infrastructure.</p>',
           },
           {
-            image: 'https://files.fireplace.bitiano.com/api/models.png',
-            title: 'Models',
-            description: '<p>In this picture, you can see the models.</p>',
+            image:
+              'https://files.fireplace.bitiano.com/api/swagger-sample-execution.png',
+            title: 'Sample Execution',
+            description:
+              '<p>In this picture, you can see a sample execution.</p>',
+          },
+          {
+            image:
+              'https://files.fireplace.bitiano.com/api/various-log-in-sign-up.png',
+            title: 'User Routes',
+            description:
+              '<p>In this picture, you can see the routes related to the user model.</p>',
           },
           {
             image: 'https://files.fireplace.bitiano.com/api/comment-routes.png',
@@ -171,11 +188,7 @@ export default {
             title: 'Fight Scene 2',
             description: '',
           },
-          {
-            image: 'https://files.bitiano.com/power-essentia/3.about.png',
-            title: 'About Dialog',
-            description: '',
-          },
+
           {
             image:
               'https://files.bitiano.com/power-essentia/4.stone-diamond.png',
@@ -220,6 +233,11 @@ export default {
             image:
               'https://files.bitiano.com/power-essentia/11.fight-scene.png',
             title: 'Fight Scene 6',
+            description: '',
+          },
+          {
+            image: 'https://files.bitiano.com/power-essentia/3.about.png',
+            title: 'About Dialog',
             description: '',
           },
         ],
