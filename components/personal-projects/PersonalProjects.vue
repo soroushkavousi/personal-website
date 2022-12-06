@@ -23,6 +23,7 @@
             various Sign Up Methods, Error Handling, Logging System, Security
             Features, CICD, and Docker Deployment.
           </p>
+          <p>Please check the GitHub README for more information.</p>
         </template>
       </the-project>
     </v-row>
