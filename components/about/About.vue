@@ -55,7 +55,7 @@
             >
               <v-row class="mx-0 mt-4 mb-6" align="center" justify="center">
                 <v-col align-self="center" cols="9">
-                  <v-row align="center">
+                  <v-row align="center" justify="center">
                     <div class="pr-3 py-0 text-overline font-weight-regular">
                       Email:
                     </div>
