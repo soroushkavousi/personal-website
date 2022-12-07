@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="ma-0 pa-0">
+  <v-container fluid class="ma-0 pa-0" :id="hash">
     <v-row justify="center" class="mt-5 mb-16" dense>
       <v-col
         xl="4"
@@ -75,7 +75,7 @@
 
 <script>
 export default {
-  props: ['title', 'stack', 'links', 'views'],
+  props: ['title', 'hash', 'stack', 'links', 'views'],
   data() {
     return {
       descriptionHeight: '640px',

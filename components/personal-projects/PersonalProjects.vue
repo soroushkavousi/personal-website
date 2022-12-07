@@ -7,6 +7,7 @@
     <v-row justify="center" class="mt-15 px-10">
       <the-project
         :title="fireplaceApiData.title"
+        :hash="fireplaceApiData.hash"
         :stack="fireplaceApiData.stack"
         :links="fireplaceApiData.links"
         :views="fireplaceApiData.views"
@@ -31,6 +32,7 @@
     <v-row justify="center" class="mt-10 px-10">
       <the-project
         :title="powerEssentiaTdData.title"
+        :hash="powerEssentiaTdData.hash"
         :stack="powerEssentiaTdData.stack"
         :links="powerEssentiaTdData.links"
         :views="powerEssentiaTdData.views"
@@ -64,6 +66,7 @@
     <v-row justify="center" class="mt-10 px-10">
       <the-project
         :title="resumeWebData.title"
+        :hash="resumeWebData.hash"
         :stack="resumeWebData.stack"
         :links="resumeWebData.links"
         :views="resumeWebData.views"
@@ -85,6 +88,7 @@ export default {
     return {
       fireplaceApiData: {
         title: '1. Fireplace API',
+        hash: 'fireplace-api',
         stack: [
           'ASP.NET Core',
           'PostgreSQL',
@@ -169,6 +173,7 @@ export default {
       },
       powerEssentiaTdData: {
         title: '2. Power Essentia TD',
+        hash: 'power-essentia-td',
         stack: ['Unity 2D', 'C#'],
         links: [
           {
@@ -244,6 +249,7 @@ export default {
       },
       resumeWebData: {
         title: '3. Resume Web (This Website)',
+        hash: 'resume-web',
         stack: ['Vuetify', 'Nuxt.js', 'Vue.js', 'Nginx', 'Docker'],
         links: [
           {
