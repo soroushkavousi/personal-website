@@ -3,10 +3,13 @@ export default function (to, from, savedPosition) {
     return savedPosition
   }
   if (to.hash) {
-    return window.scrollTo({
-      top: document.querySelector(to.hash).offsetTop,
-      behavior: 'smooth',
-    })
+    var hashSection = document.querySelector(to.hash)
+    if (hashSection != null) {
+      return window.scrollTo({
+        top: hashSection.offsetTop,
+        behavior: 'smooth',
+      })
+    }
   }
   return window.scrollTo({ top: 0, behavior: 'smooth' })
 }
