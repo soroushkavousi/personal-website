@@ -20,6 +20,27 @@ export default {
   data: () => ({
     items: [
       {
+        title: 'Self Employed',
+        role: 'Backend Developer, Game Developer, Web Developer',
+        website: 'https://soroushkavousi.bitiano.com/#personal-projects',
+        years: 'JUNE 2019 - Current',
+        projects: [
+          {
+            title:
+              'Design and develop <a href="https://soroushkavousi.bitiano.com/#resume-web">Resume Web</a>',
+          },
+          {
+            title: `Design and develop APIs such as <a href="https://soroushkavousi.bitiano.com/#fireplace-api">Fireplace API</a>`,
+          },
+          {
+            title: `Design and develop games such as <a href="https://soroushkavousi.bitiano.com/#power-essentia-td">Power Essentia TD</a>`,
+          },
+          {
+            title: 'Research and develop a project about technical analysis',
+          },
+        ],
+      },
+      {
         title: 'Ayan',
         role: 'Blockchain Engineer, Backend Developer',
         website: 'https://ayanco.com/en',
