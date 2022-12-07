@@ -194,15 +194,17 @@ export default {
   },
   watch: {
     '$store.state.breakpoint.isMdOrDown': function (newValue, oldValue) {
-      let currentSection = this.$store.state.section
       this.mini = newValue
-      setTimeout(() => {
-        let sectionOffset = document.querySelector(currentSection).offsetTop
-        window.scrollTo({
-          top: sectionOffset,
-          behavior: 'smooth',
-        })
-      }, 500)
+      let currentSection = this.$store.state.section
+      if (currentSection != '#none') {
+        setTimeout(() => {
+          let sectionOffset = document.querySelector(currentSection).offsetTop
+          window.scrollTo({
+            top: sectionOffset,
+            behavior: 'smooth',
+          })
+        }, 500)
+      }
     },
     '$store.state.section': function (newValue, oldValue) {
       this.selectedItemId = newValue

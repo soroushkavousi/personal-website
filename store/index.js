@@ -1,5 +1,5 @@
 export const state = () => ({
-  section: '#about',
+  section: '#none',
   manualSection: '',
 })
 
