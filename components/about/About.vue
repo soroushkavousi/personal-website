@@ -7,14 +7,18 @@
           <v-card
             color="primary"
             tile
-            class="lighten-1 pa-12 text-md-subtitle-1 text-subtitle-2"
+            class="lighten-1 pa-14 text-md-subtitle-1 text-subtitle-2 text-justify"
           >
             <div class="mb-5">
               Hi. I'm <span :class="vit">Soroush Kavousi</span>, a passionate
               <span :class="vit">Backend Developer</span>. I was born in 1995,
-              and I have studied Software Engineering. I also have experience in
-              other areas such as Game Development, Blockchain, and Web
-              Development.
+              and I have studied Software Engineering.
+            </div>
+            <div class="mb-5">
+              I love coding and creating softwares with structured,
+              maintainable, and performant code. I have tested my programming
+              skills in many areas, such as backend development, cryptocurrency
+              solutions, game development, and web development.
             </div>
             <div>
               <code
@@ -31,27 +35,11 @@
         <v-col xl="3" lg="4" md="5" sm="8" cols="12">
           <v-card color="primary pt-8" tile class="lighten-1">
             <v-card-title
-              class="
-                text-h4
-                font-weight-light
-                secondary--text
-                text--darken-2
-                ma-0
-                pa-0
-                d-flex
-                justify-center
-              "
+              class="text-h4 font-weight-light secondary--text text--darken-2 ma-0 pa-0 d-flex justify-center"
               >Contact</v-card-title
             >
             <v-card-text
-              class="
-                secondary--text
-                text--lighten-2
-                ma-0
-                pa-0
-                d-flex
-                flex-column flex-grow-1
-              "
+              class="secondary--text text--lighten-2 ma-0 pa-0 d-flex flex-column flex-grow-1"
             >
               <v-row class="mx-0 mt-4 mb-6" align="center" justify="center">
                 <v-col align-self="center" cols="9">
@@ -63,12 +51,7 @@
                       <p class="ma-0 pa-0">
                         <a
                           href="mailto:soroushkavousi.me@gmail.com"
-                          class="
-                            text-md-body-2 text-subtitle-2
-                            px-0
-                            py-auto
-                            font-weight-light
-                          "
+                          class="text-md-body-2 text-subtitle-2 px-0 py-auto font-weight-light"
                           style="word-wrap: break-word"
                         >
                           soroushkavousi.me@gmail.com
@@ -101,7 +84,7 @@
           </v-card>
         </v-col>
       </v-row>
-      <v-row class="my-16"></v-row>
+      <v-row class="my-11"></v-row>
     </v-col>
   </v-container>
 </template>
@@ -133,7 +116,6 @@ export default {
   },
 }
 </script>
-
 
 <style scoped>
 p a {
