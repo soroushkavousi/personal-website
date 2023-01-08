@@ -3,11 +3,11 @@
     <h1 class="accent--text text--lighten-2 text-h3 mb-4 ml-16"># ABOUT</h1>
     <v-col cols="12" justify="flex-column justify-space-around">
       <v-row justify="center" class="ma-0 mt-8 mb-10 align-center">
-        <v-col xl="7" lg="9" md="10" sm="12" cols="12">
+        <v-col xl="6" lg="9" md="10" sm="12" cols="12">
           <v-card
             color="primary"
             tile
-            class="lighten-1 pa-14 text-md-subtitle-1 text-subtitle-2 text-justify"
+            class="lighten-1 py-15 px-16 text-md-subtitle-1 text-subtitle-2"
           >
             <div class="mb-5">
               Hi. I'm <span :class="vit">Soroush Kavousi</span>, a passionate
