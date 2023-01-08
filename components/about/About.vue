@@ -15,10 +15,11 @@
               and I have studied Software Engineering.
             </div>
             <div class="mb-5">
-              I love coding and creating softwares with structured,
-              maintainable, and performant code. I have tested my programming
-              skills in many areas, such as backend development, cryptocurrency
-              solutions, game development, and web development.
+              I love coding and creating software, especially with structured,
+              maintainable, performant, and up-to-date code. Generally, I have
+              tested my programming skills in many areas, such as backend
+              development, cryptocurrency solutions, game development, and web
+              development.
             </div>
             <div>
               <code
