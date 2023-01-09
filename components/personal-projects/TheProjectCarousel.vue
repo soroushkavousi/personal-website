@@ -26,6 +26,8 @@
             width="100%"
             height="auto"
           >
+            <v-overlay :absolute="true" :value="true" :opacity="0.25">
+            </v-overlay>
             <v-img
               contain
               :src="view.image"
@@ -37,14 +39,7 @@
             >
               <div
                 v-if="!hideImageButtons"
-                class="
-                  image-button
-                  d-flex
-                  justify-space-between
-                  align-center
-                  px-0
-                  pb-1
-                "
+                class="image-button d-flex justify-space-between align-center px-0 pb-1"
                 :style="{ backgroundColor: 'rgba(7, 8, 20, 0.7)' }"
               >
                 <div
@@ -79,15 +74,7 @@
             width="100%"
             :height="descriptionHeight + 'px'"
             :max-height="descriptionHeight + 'px'"
-            class="
-              px-5
-              ma-0
-              py-3
-              d-flex
-              flex-column
-              justify-content-center justify-center
-              overflow-y-auto overflow-x-hidden
-            "
+            class="px-5 ma-0 py-3 d-flex flex-column justify-content-center justify-center overflow-y-auto overflow-x-hidden"
           >
             <v-card-title class="text-lg-body-1 text-sm-body-2 pa-0 ma-0 mb-3">
               {{ view.title }}
@@ -98,12 +85,7 @@
             >
               <div
                 v-html="view.description"
-                class="
-                  text-xl-subtitle-2
-                  text-lg-caption
-                  text-md-subtitle-2
-                  text-caption
-                "
+                class="text-xl-subtitle-2 text-lg-caption text-md-subtitle-2 text-caption"
               ></div>
             </v-card-text>
           </v-card>

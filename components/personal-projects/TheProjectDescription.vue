@@ -4,36 +4,15 @@
     tile
     width="100%"
     height="100%"
-    class="
-      pl-6
-      pr-5
-      py-6
-      d-flex
-      flex-column
-      justify-space-between
-      overflow-y-auto
-    "
+    class="pl-6 pr-5 py-6 d-flex flex-column justify-space-between overflow-y-auto"
   >
     <v-card-title
-      class="
-        text-xl-h5 text-lg-h5 text-md-h5 text-h6
-        font-weight-black
-        ma-0
-        mb-0
-        accent--text
-        text--lighten-1
-      "
+      class="text-xl-h5 text-lg-h5 text-md-h5 text-h6 font-weight-black ma-0 mb-0 accent--text text--lighten-1"
     >
       {{ title }}
     </v-card-title>
     <v-card-text
-      class="
-        my-2
-        text-md-body-2 text-sm-subtitle-2
-        secondary--text
-        d-flex
-        flex-column flex-grow-1
-      "
+      class="my-2 text-md-body-2 text-sm-subtitle-2 secondary--text d-flex flex-column flex-grow-1 text-justify"
       :style="{ 'line-height': '23px' }"
     >
       <slot name="description" class=""></slot>
@@ -87,5 +66,4 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
-</style>
+<style lang="css" scoped></style>

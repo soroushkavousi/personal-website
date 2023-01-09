@@ -112,7 +112,7 @@ export default {
           {
             image: 'https://files.fireplace.bitiano.com/api/swagger-top.png',
             title: 'Swagger Page',
-            description: `<p class="ma-0 pa-0">With the swagger UI, you can easily interact with the API and learn it.
+            description: `<p class="ma-0 pa-0">With the swagger UI, you can interact with the API and learn it.
               It shows all routes, inputs, outputs, models, and errors.
               It also generates a <a href="https://api.fireplace.bitiano.com/docs/v0.1/swagger.json" target="_blank">swagger.json</a> which describes the schema of the API that can be imported into your app.</p>`,
           },
