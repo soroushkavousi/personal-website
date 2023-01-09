@@ -21,9 +21,10 @@
               development, cryptocurrency solutions, game development, and web
               development.
             </div>
-            <div>
+            <div class="text-caption">
               <code
-                class="text-md-body-2 text-caption font-weight-light px-2 py-1"
+                class="font-weight-light px-2 py-1"
+                :style="{ 'line-height': '1.55rem' }"
               >
                 var myInterests = new List&#60;string&#62; { "coding", "gaming",
                 "technology", "learning", "creating" };
@@ -49,7 +50,10 @@
                       Email:
                     </div>
                     <div>
-                      <p class="ma-0 pa-0">
+                      <p
+                        class="ma-0 pa-0"
+                        :style="{ 'padding-bottom': '2px !important' }"
+                      >
                         <a
                           href="mailto:soroushkavousi.me@gmail.com"
                           class="text-md-body-2 text-subtitle-2 px-0 py-auto font-weight-light"
