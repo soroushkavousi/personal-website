@@ -88,8 +88,9 @@ export default {
               website: 'https://ce.aut.ac.ir/en',
             },
           ],
-          location: `<p><a href="https://ce.aut.ac.ir/en" class="vit" target="_blank">Amirkabir University of Technology</a>, Tehran, Iran 
-            (<a href="https://www.usnews.com/education/best-global-universities/amirkabir-university-of-technology-aut-506266" target="_blank">Ranked 293th in Computer Science [U.S. News]</a>)</p>`,
+          location: `<p class="ma-0"><a href="https://ce.aut.ac.ir/en" class="vit" target="_blank">Amirkabir University of Technology</a>, Tehran, Iran</p>
+            <p class="ma-0 ml-2">- <a href="https://www.usnews.com/education/best-global-universities/amirkabir-university-of-technology-aut-506266" target="_blank">Ranked 293th in Computer Science [U.S. News]</a></p>
+            <p class="ml-2">- <a href="https://www.scimagoir.com/rankings.php?sector=Higher+educ.&country=IRN&ranking=Overall&area=1700" target="_blank">Top 3 high-ranked universities in the country</a></p>`,
         },
         {
           date: '2009 - 2013',
