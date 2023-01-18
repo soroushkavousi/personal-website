@@ -11,14 +11,7 @@
           <v-col
             lg="8"
             cols="12"
-            class="
-              d-flex
-              flex-column
-              justify-center
-              secondary--text
-              text--darken-1
-              pb-0
-            "
+            class="d-flex flex-column justify-center secondary--text text--darken-1 pb-0"
           >
             <div class="mb-0 text-h6 font-weight-bold">{{ role }}</div>
             <div class="text-md-overline text-body-2 font-weight-bold">
@@ -31,15 +24,7 @@
             lg="4"
             sm="12"
             cols="12"
-            class="
-              pa-lg-3
-              pt-lg-4
-              py-0
-              d-flex
-              justify-end
-              text-overline
-              font-weight-light
-            "
+            class="pa-lg-3 pt-lg-4 py-0 d-flex justify-end text-overline font-weight-light"
             align-self="start"
             :style="{
               'font-size': $store.state.breakpoint.isMdOrDown
@@ -64,7 +49,7 @@
                       <v-list-item-content class="px-0 pt-0 pb-2">
                         <v-list-item-title
                           v-html="'- ' + project.title"
-                          class="text-lg-body-1 text-body-2 font-weight-light"
+                          class="text-lg-body-2 text-body-2 font-weight-light"
                           :style="{
                             'white-space': 'normal',
                             'line-height': '1.3',
@@ -72,7 +57,7 @@
                         ></v-list-item-title>
                         <v-list-item-subtitle
                           v-if="project.descriptions"
-                          class="mt-1"
+                          class="mt-1 text-lg-subtitle-2 text-caption"
                           :style="{
                             'white-space': 'normal',
                           }"
