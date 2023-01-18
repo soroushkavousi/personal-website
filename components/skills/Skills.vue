@@ -11,7 +11,25 @@
           ></skill-container>
         </v-col>
       </v-row>
-      <v-row justify="center" class="ma-0 mb-7 flex-grow-0">
+      <v-row justify="center" class="ma-0 mt-0 mb-4 flex-grow-0">
+        <v-col xl="9" lg="12" md="12" cols="12">
+          <skill-container
+            :id="workflow.id"
+            :title="workflow.title"
+            :skills="workflow.skills"
+          ></skill-container>
+        </v-col>
+      </v-row>
+      <v-row justify="center" class="ma-0 mt-2 mb-0 flex-grow-0">
+        <v-col xl="9" lg="12" md="12" cols="12">
+          <skill-container
+            :id="tools.id"
+            :title="tools.title"
+            :skills="tools.skills"
+          ></skill-container>
+        </v-col>
+      </v-row>
+      <v-row justify="center" class="ma-0 mb-2 flex-grow-0">
         <v-col
           xl="5"
           lg="7"
@@ -38,24 +56,6 @@
             :id="desktop.id"
             :title="desktop.title"
             :skills="desktop.skills"
-          ></skill-container>
-        </v-col>
-      </v-row>
-      <v-row justify="center" class="ma-0 mt-2 mb-0 flex-grow-0">
-        <v-col xl="9" lg="12" md="12" cols="12">
-          <skill-container
-            :id="tools.id"
-            :title="tools.title"
-            :skills="tools.skills"
-          ></skill-container>
-        </v-col>
-      </v-row>
-      <v-row justify="center" class="ma-0 mt-0 mb-4 flex-grow-0">
-        <v-col xl="9" lg="12" md="12" cols="12">
-          <skill-container
-            :id="workflow.id"
-            :title="workflow.title"
-            :skills="workflow.skills"
           ></skill-container>
         </v-col>
       </v-row>
@@ -155,6 +155,11 @@ export default {
         id: 'web',
         title: 'Web',
         skills: [
+          // {
+          //   name: 'Tailwind CSS 2',
+          //   icon: 'devicon-tailwindcss-plain',
+          //   isActive: true,
+          // },
           {
             name: 'Vuetify',
             icon: 'devicon-vuetify-line',
@@ -224,13 +229,28 @@ export default {
             isActive: true,
           },
           {
+            name: 'Git',
+            icon: 'devicon-git-plain',
+            isActive: true,
+          },
+          {
             name: 'GitHub',
             icon: 'devicon-github-original',
             isActive: true,
           },
           {
+            name: 'GitHub Action',
+            image: 'https://files.bitiano.com/logos/github-actions.png',
+            isActive: true,
+          },
+          {
             name: 'GitLab',
             icon: 'devicon-gitlab-plain',
+            isActive: true,
+          },
+          {
+            name: 'Jira',
+            icon: 'devicon-jira-plain',
             isActive: true,
           },
           {
@@ -269,11 +289,43 @@ export default {
             isActive: true,
           },
           {
-            text: 'Agile & Scrum',
+            text: 'CICD',
             isActive: true,
           },
           {
             text: 'Design Patterns & Principles',
+            isActive: true,
+          },
+          {
+            text: 'Agile & Scrum',
+            isActive: true,
+          },
+          {
+            text: 'Dependency Injection',
+            isActive: true,
+          },
+          {
+            text: 'Trunk-based development',
+            isActive: true,
+          },
+          {
+            text: 'Automated Testing (Unit Test, Integration Test)',
+            isActive: true,
+          },
+          {
+            text: 'Microservices',
+            isActive: true,
+          },
+          {
+            text: 'UML',
+            isActive: true,
+          },
+          {
+            text: 'SOLID',
+            isActive: true,
+          },
+          {
+            text: 'REST API',
             isActive: true,
           },
         ],
@@ -283,5 +335,4 @@ export default {
 }
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
