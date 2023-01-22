@@ -9,7 +9,12 @@
         {{ title }}
       </div>
       <v-divider></v-divider>
-      <v-row class="mt-6 px-lg-3 px-1 mx-0" align="center" justify="center">
+      <v-row
+        justify="center"
+        align="center"
+        class="mt-6 px-1 mx-0"
+        :class="[skills[0].text == null ? 'px-lg-0' : 'px-lg-16']"
+      >
         <div
           v-for="(skill, i) in skills"
           :key="i"
@@ -41,7 +46,7 @@
           <v-chip
             v-else-if="skill.text"
             label
-            class="mb-3 font-weight-bold text-caption"
+            class="mb-4 font-weight-bold text-caption"
             :color="skill.isActive ? colors.activeShape : 'primary lighten-1'"
             text-color="primary"
           >

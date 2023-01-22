@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <h1 class="accent--text text--lighten-2 text-h3 mb-6 ml-16"># SKILLS</h1>
+    <h1 class="accent--text text--lighten-2 text-h3 mb-4 ml-16"># SKILLS</h1>
     <v-col class="d-flex flex-column justify-space-around px-md-10 px-2">
       <v-row justify="center" class="ma-0 flex-grow-0 mb-2">
         <v-col xl="9" lg="12" md="12" cols="12">
@@ -11,7 +11,7 @@
           ></skill-container>
         </v-col>
       </v-row>
-      <v-row justify="center" class="ma-0 mt-0 mb-4 flex-grow-0">
+      <v-row justify="center" class="ma-0 mt-0 mb-3 flex-grow-0">
         <v-col xl="9" lg="12" md="12" cols="12">
           <skill-container
             :id="workflow.id"
@@ -20,7 +20,7 @@
           ></skill-container>
         </v-col>
       </v-row>
-      <v-row justify="center" class="ma-0 mt-2 mb-0 flex-grow-0">
+      <v-row justify="center" class="ma-0 mt-0 mb-2 flex-grow-0">
         <v-col xl="9" lg="12" md="12" cols="12">
           <skill-container
             :id="tools.id"
@@ -32,8 +32,8 @@
       <v-row justify="center" class="ma-0 mb-2 flex-grow-0">
         <v-col
           xl="5"
-          lg="7"
-          md="6"
+          lg="8"
+          md="7"
           cols="12"
           class="pr-7"
           :class="{ 'mb-16': $store.state.breakpoint.isSmOrDown }"
@@ -44,14 +44,14 @@
             :skills="web.skills"
           ></skill-container>
         </v-col>
-        <v-col xl="2" lg="3" md="4" cols="7" class="pr-7">
+        <v-col xl="3" lg="3" md="4" cols="8" class="pr-7">
           <skill-container
             :id="game.id"
             :title="game.title"
             :skills="game.skills"
           ></skill-container>
         </v-col>
-        <v-col xl="2" lg="2" md="2" cols="5">
+        <v-col xl="1" lg="1" md="1" cols="4">
           <skill-container
             :id="desktop.id"
             :title="desktop.title"
@@ -285,7 +285,11 @@ export default {
         title: 'Workflow & Concepts',
         skills: [
           {
-            text: 'DDD',
+            text: 'Agile & Scrum',
+            isActive: true,
+          },
+          {
+            text: 'Trunk-based Development',
             isActive: true,
           },
           {
@@ -293,27 +297,28 @@ export default {
             isActive: true,
           },
           {
-            text: 'Design Patterns & Principles',
+            text: 'Integration Testing',
             isActive: true,
           },
           {
-            text: 'Agile & Scrum',
-            isActive: true,
-          },
-          {
-            text: 'Dependency Injection',
-            isActive: true,
-          },
-          {
-            text: 'Trunk-based development',
-            isActive: true,
-          },
-          {
-            text: 'Automated Testing (Unit Test, Integration Test)',
+            text: 'Unit Testing',
             isActive: true,
           },
           {
             text: 'Microservices',
+            isActive: true,
+          },
+          {
+            text: 'DDD',
+            isActive: true,
+          },
+          {
+            text: 'Design Patterns & Principles',
+            isActive: true,
+          },
+
+          {
+            text: 'REST API',
             isActive: true,
           },
           {
@@ -325,7 +330,7 @@ export default {
             isActive: true,
           },
           {
-            text: 'REST API',
+            text: 'Dependency Injection',
             isActive: true,
           },
         ],
