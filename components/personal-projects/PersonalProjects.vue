@@ -1,10 +1,10 @@
 <template>
   <v-container fluid>
-    <h1 class="accent--text text--lighten-2 text-h3 mb-14 ml-16">
+    <h1 class="accent--text text--lighten-2 text-h3 mb-15 ml-16">
       # PERSONAL PROJECTS
     </h1>
 
-    <v-row justify="center" class="mt-15 px-10">
+    <v-row justify="center" class="mt-0 px-10">
       <the-project
         :title="fireplaceApiData.title"
         :hash="fireplaceApiData.hash"
@@ -24,12 +24,14 @@
             various Sign Up Methods, Error Handling, Logging System, Security
             Features, CICD, and Docker Deployment.
           </p>
-          <p>Please check the GitHub README for more information.</p>
+          <p class="mb-1">
+            Please check the GitHub README for more information.
+          </p>
         </template>
       </the-project>
     </v-row>
 
-    <v-row justify="center" class="mt-10 px-10">
+    <v-row justify="center" class="mt-0 px-10">
       <the-project
         :title="powerEssentiaTdData.title"
         :hash="powerEssentiaTdData.hash"
@@ -52,7 +54,7 @@
             diamonds. So the war heroes took on a new mission to learn how to
             use diamonds from magicians.
           </p>
-          <p>
+          <p class="mb-1">
             Magicians of each country have their own special, unique diamond.
             You, as a hero, travel to different countries to learn how to use
             these diamonds. Each diamond you learn gives you supernatural power
@@ -63,7 +65,7 @@
       </the-project>
     </v-row>
 
-    <v-row justify="center" class="mt-10 px-10">
+    <v-row justify="center" class="mt-0 px-10">
       <the-project
         :title="resumeWebData.title"
         :hash="resumeWebData.hash"
@@ -72,7 +74,7 @@
         :views="resumeWebData.views"
       >
         <template v-slot:description>
-          <p>
+          <p class="mb-1">
             Resume Web is a web application developed via Vuetify and Nuxt.js,
             representing my resume on the web.
           </p>

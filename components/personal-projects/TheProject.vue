@@ -1,6 +1,6 @@
 <template>
   <v-container fluid class="ma-0 pa-0" :id="hash">
-    <v-row justify="center" class="mt-5 mb-16" dense>
+    <v-row justify="center" class="my-10" dense>
       <v-col
         xl="4"
         lg="4"
@@ -18,7 +18,7 @@
           </template>
         </the-project-description>
       </v-col>
-      <v-col xl="7" lg="7" md="10" cols="12" class="ma-0 pa-0">
+      <v-col xl="6" lg="7" md="10" cols="12" class="ma-0 pa-0">
         <the-project-carousel
           :views="views"
           ref="carousel"

@@ -12,7 +12,7 @@
       {{ title }}
     </v-card-title>
     <v-card-text
-      class="my-2 text-md-body-2 text-sm-subtitle-2 secondary--text d-flex flex-column flex-grow-1 text-justify"
+      class="mt-3 mb-8 py-0 text-md-body-2 text-sm-subtitle-2 secondary--text d-flex flex-column flex-grow-1 text-justify overflow-y-auto"
       :style="{ 'line-height': '23px' }"
     >
       <slot name="description" class=""></slot>

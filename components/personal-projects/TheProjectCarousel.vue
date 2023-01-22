@@ -28,6 +28,34 @@
           >
             <v-overlay :absolute="true" :value="true" :opacity="0.25">
             </v-overlay>
+            <div
+              v-if="!hideImageButtons"
+              class="image-button-bar d-flex justify-space-between align-center px-0 pb-1"
+              :style="{ backgroundColor: 'rgba(7, 8, 20, 0.7)' }"
+            >
+              <div
+                v-for="(button, i) in imageButtons"
+                :key="i"
+                @click.stop="onImageButtonClicked(button.name, index, view)"
+                class="mx-1"
+              >
+                <v-tooltip top class="mb-n11">
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-icon
+                      v-bind="attrs"
+                      v-on="on"
+                      :size="button.size"
+                      color="secondary darken-1"
+                    >
+                      {{ button.icon }}
+                    </v-icon>
+                  </template>
+                  <span class="secondary--text text--lighten-1">
+                    {{ button.tooltip }}
+                  </span>
+                </v-tooltip>
+              </div>
+            </div>
             <v-img
               contain
               :src="view.image"
@@ -37,34 +65,6 @@
               width="100%"
               height="100%"
             >
-              <div
-                v-if="!hideImageButtons"
-                class="image-button d-flex justify-space-between align-center px-0 pb-1"
-                :style="{ backgroundColor: 'rgba(7, 8, 20, 0.7)' }"
-              >
-                <div
-                  v-for="(button, i) in imageButtons"
-                  :key="i"
-                  @click.stop="onImageButtonClicked(button.name, index, view)"
-                  class="mx-1"
-                >
-                  <v-tooltip top class="mb-n11">
-                    <template v-slot:activator="{ on, attrs }">
-                      <v-icon
-                        v-bind="attrs"
-                        v-on="on"
-                        :size="button.size"
-                        color="secondary darken-1"
-                      >
-                        {{ button.icon }}
-                      </v-icon>
-                    </template>
-                    <span class="secondary--text text--lighten-1">
-                      {{ button.tooltip }}
-                    </span>
-                  </v-tooltip>
-                </div>
-              </div>
             </v-img>
           </v-responsive>
 
@@ -161,10 +161,11 @@ export default {
   overflow: auto;
 }
 
-.image-button {
+.image-button-bar {
   position: absolute;
   bottom: 0px;
   right: 0px;
+  z-index: 10;
 }
 
 :deep(.v-window__next) {
