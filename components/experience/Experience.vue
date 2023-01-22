@@ -37,7 +37,7 @@ export default {
           },
           {
             title:
-              'Researched and developed a project about <span class="vit">Technical Analysis</span>',
+              'Researched and developed a project about Technical Analysis',
           },
         ],
       },
@@ -49,11 +49,10 @@ export default {
         projects: [
           {
             title:
-              'Designed and developed an API for a <span class="vit">Cryptocurrency Payment Gateway</span>',
+              'Designed and developed an API for a Cryptocurrency Payment Gateway',
           },
           {
-            title:
-              'Designed and developed a <span class="vit">Cryptocurrency HD Wallet</span>',
+            title: 'Designed and developed a Cryptocurrency HD Wallet',
             descriptions: [
               `<a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki" target="_blank">BIP 32</a>
                and <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki" target="_blank">BIP 44</a> 
@@ -68,7 +67,7 @@ export default {
           },
           {
             title:
-              'Worked with <span class="vit">OCR libraries</span> such as Tesseract to read data from national paper bills',
+              'Worked with OCR libraries such as Tesseract to read data from national paper bills',
           },
         ],
       },
@@ -80,31 +79,28 @@ export default {
         projects: [
           {
             title:
-              'Developed <span class="vit">backend APIs for several Android applications</span> in education, books & reference, and music & audio categories',
+              'Developed backend APIs for several Android applications in education, books & reference, and music & audio categories',
           },
           {
             title:
-              'Developed a <span class="vit">backend API for registering users in a mobile service</span> via National Mobile Telecommunication Service API',
+              'Developed a backend API for registering users in a mobile service via National Mobile Telecommunication Service API',
           },
           {
             title:
-              'Developed <span class="vit">Application Gateway API</span> for connecting clients to multiple internal APIs',
+              'Developed Application Gateway API for connecting clients to multiple internal APIs',
           },
           {
-            title:
-              'Developed a <span class="vit">polling bot in Telegram</span> via Telegram Bot API',
+            title: 'Developed a polling bot in Telegram via Telegram Bot API',
           },
           {
-            title:
-              '<span class="vit">Spoke at a conference</span> in the company about Telegram Bot',
+            title: 'Spoke at a conference in the company about Telegram Bot',
           },
 
           {
-            title: 'Ran an <span class="vit">FTP client</span> via FluentFTP',
+            title: 'Ran an FTP client via FluentFTP',
           },
           {
-            title:
-              'Designed and developed <span class="vit">desktop applications</span>',
+            title: 'Designed and developed desktop applications',
             descriptions: [
               'For injecting data from excel into the database',
               'For uploading files',

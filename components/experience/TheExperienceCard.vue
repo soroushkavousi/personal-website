@@ -104,4 +104,13 @@ export default {
 .invisible-link:active {
   color: var(--v-accent-lighten3) !important;
 }
+
+:deep(a) {
+  color: var(--v-secondary-lighten2) !important;
+}
+
+:deep(a:hover),
+:deep(a:active) {
+  color: var(--v-accent-lighten2) !important;
+}
 </style>
