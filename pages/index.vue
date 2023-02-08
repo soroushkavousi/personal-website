@@ -13,7 +13,7 @@
       <about />
     </section>
 
-    <div class="py-3"></div>
+    <div class="py-10"></div>
 
     <section
       class="my-3 py-8"
