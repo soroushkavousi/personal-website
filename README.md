@@ -1,6 +1,6 @@
 # Resume Web
 
-Resume Web is a web application developed via ***Vuetify*** and ***Nuxt.js***, representing my resume on the web.
+Resume Web is a web application developed with ***Vuetify*** and ***Nuxt.js***, representing my resume on the web.
 
 <br/>
 
