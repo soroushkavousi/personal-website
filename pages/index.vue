@@ -1,7 +1,7 @@
 <template>
   <v-container fluid class="pa-0" id="page-top">
     <section
-      class="mb-3 py-7"
+      class="mb-0 py-8"
       id="about"
       v-intersect="{
         handler: onIntersect,
@@ -16,7 +16,7 @@
     <div class="py-3"></div>
 
     <section
-      class="my-3 py-7"
+      class="my-3 py-8"
       id="personal-projects"
       v-intersect="{
         handler: onIntersect,
@@ -29,7 +29,7 @@
     </section>
 
     <section
-      class="my-16 py-7"
+      class="my-16 py-8"
       id="skills"
       v-intersect="{
         handler: onIntersect,
@@ -42,7 +42,7 @@
     </section>
 
     <section
-      class="my-16 py-7"
+      class="my-16 py-8"
       id="experience"
       v-intersect="{
         handler: onIntersect,
@@ -55,7 +55,7 @@
     </section>
 
     <section
-      class="my-16 py-7"
+      class="my-16 py-8"
       id="education"
       v-intersect="{
         handler: onIntersect,
@@ -68,7 +68,7 @@
     </section>
 
     <section
-      class="my-16 py-7"
+      class="my-16 py-8"
       id="honors"
       v-intersect="{
         handler: onIntersect,

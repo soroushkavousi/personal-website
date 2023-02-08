@@ -1,26 +1,49 @@
 <template>
   <v-container fluid>
-    <h1 class="accent--text text--lighten-2 text-h3 mb-4 ml-16"># ABOUT</h1>
-    <v-col cols="12" justify="flex-column justify-space-around">
-      <v-row justify="center" class="ma-0 mt-8 mb-10 align-center">
-        <v-col xl="6" lg="9" md="10" sm="12" cols="12">
+    <h1 class="accent--text text--lighten-2 text-h3 mb-lg-16 mb-0 ml-16">
+      # ABOUT
+    </h1>
+    <v-col cols="12" justify="flex-column justify-space-around py-0">
+      <v-row justify="center" class="ma-0 mt-2 mb-10 align-center">
+        <v-col
+          xl="7"
+          lg="7"
+          md="10"
+          sm="12"
+          cols="12"
+          class="mx-xl-16 mx-lg-8 my-lg-0 my-10"
+        >
           <v-card
             color="primary"
             tile
             class="lighten-1 py-15 px-16 text-md-subtitle-1 text-subtitle-2"
           >
             <div class="mb-5">
-              Hi. I'm <span :class="vit">Soroush Kavousi</span>, a passionate
-              <span :class="vit">Backend Developer</span>. I was born in 1995,
-              and I have studied Software Engineering.
+              When playing a video game, I always ask myself, what is the best
+              build I can get? Or what is the best approach I can take for this
+              mission? Sometimes it immerses me for hours to discover.
             </div>
+
             <div class="mb-5">
-              I love coding and creating software, especially with structured,
-              maintainable, performant, and up-to-date code. Generally, I have
-              tested my programming skills in many areas, such as backend
-              development, cryptocurrency solutions, game development, and web
-              development.
+              The question of "Is there a better way?" is not just limited to my
+              games; my entire life is about it. To find a high-quality
+              approach, we should try to understand the system by thinking,
+              searching, and testing. This is what I do when I am coding.
             </div>
+
+            <div class="mb-5">
+              I'm a passionate <span :class="vit">Backend Developer</span> with
+              over six years of experience. I graduated in software engineering
+              at one of the top universities in my country. I also have tested
+              my programming skills in other areas, such as cryptocurrency
+              solutions, game development, and web development.
+            </div>
+
+            <div class="mb-5">
+              I don't want to be the best; I want to do the best I can. I'm
+              currently looking for a remote position in ASP.NET Core web API.
+            </div>
+
             <div class="text-caption">
               <code
                 class="font-weight-light px-2 py-1"
@@ -32,8 +55,6 @@
             </div>
           </v-card>
         </v-col>
-      </v-row>
-      <v-row justify="center" class="ma-0 align-center">
         <v-col xl="3" lg="4" md="5" sm="8" cols="12">
           <v-card color="primary pt-8" tile class="lighten-1">
             <v-card-title
