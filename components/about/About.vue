@@ -33,7 +33,7 @@
 
             <div class="mb-5">
               I'm a passionate <span :class="vit">Backend Developer</span> with
-              over six years of experience. I graduated in software engineering
+              over four years of experience. I graduated in software engineering
               at one of the top universities in my country. I also have tested
               my programming skills in other areas, such as cryptocurrency
               solutions, game development, and web development.
