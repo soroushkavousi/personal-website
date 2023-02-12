@@ -40,8 +40,8 @@
             </div>
 
             <div class="mb-5">
-              I don't want to be the best; I want to do the best I can. I'm
-              currently looking for a remote position in ASP.NET Core web API.
+              I'm currently looking for a remote position as a backend developer
+              in ASP.NET Core web API.
             </div>
 
             <div class="text-caption">
