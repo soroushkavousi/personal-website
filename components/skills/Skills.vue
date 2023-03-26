@@ -72,22 +72,22 @@
             <v-card
               width="20"
               height="20"
-              color="secondary lighten-3"
+              color="secondary darken-0"
               class="d-inline-block rounded-sm my-auto"
             ></v-card>
-            <p class="d-inline ml-3 my-auto secondary--text text--lighten-2">
-              Recently Used
+            <p class="d-inline ml-3 my-auto secondary--text text--darken-0">
+              Proficient
             </p>
           </div>
           <div class="d-flex justify-center">
             <v-card
               width="20"
               height="20"
-              color="primary lighten-2"
+              color="primary lighten-4"
               class="d-inline-block rounded-sm my-auto"
             ></v-card>
-            <p class="d-inline ml-3 my-auto primary--text text--lighten-3">
-              Past Experience
+            <p class="d-inline ml-3 my-auto primary--text text--lighten-5">
+              Have Experience
             </p>
           </div>
         </v-col>
@@ -115,13 +115,13 @@ export default {
             isActive: true,
           },
           {
-            name: 'Nginx',
-            icon: 'devicon-nginx-original',
+            name: 'PostgreSQL',
+            icon: 'devicon-postgresql-plain',
             isActive: true,
           },
           {
-            name: 'PostgreSQL',
-            icon: 'devicon-postgresql-plain',
+            name: 'SQL Server',
+            icon: 'devicon-microsoftsqlserver-plain',
             isActive: true,
           },
           {
@@ -130,9 +130,19 @@ export default {
             isActive: false,
           },
           {
-            name: 'SQL Server',
-            icon: 'devicon-microsoftsqlserver-plain',
-            isActive: false,
+            name: 'Nginx',
+            icon: 'devicon-nginx-original',
+            isActive: true,
+          },
+          {
+            name: 'IIS',
+            image: 'https://files.bitiano.com/logos/microsoft-iis.png',
+            isActive: true,
+          },
+          {
+            name: 'GraphQL',
+            icon: 'devicon-graphql-plain',
+            isActive: true,
           },
           {
             name: 'Python',
@@ -142,11 +152,6 @@ export default {
           {
             name: 'Django',
             icon: 'devicon-django-plain',
-            isActive: false,
-          },
-          {
-            name: 'IIS',
-            image: 'https://files.bitiano.com/logos/microsoft-iis.png',
             isActive: false,
           },
         ],
@@ -163,32 +168,32 @@ export default {
           {
             name: 'Vuetify',
             icon: 'devicon-vuetify-line',
-            isActive: true,
+            isActive: false,
           },
           {
             name: 'Nuxt.js',
             icon: 'mdi-nuxt',
-            isActive: true,
+            isActive: false,
           },
           {
             name: 'Vue.js',
             icon: 'devicon-vuejs-plain',
-            isActive: true,
+            isActive: false,
           },
           {
             name: 'HTML',
             icon: 'devicon-html5-plain',
-            isActive: true,
+            isActive: false,
           },
           {
             name: 'CSS',
             icon: 'devicon-css3-plain',
-            isActive: true,
+            isActive: false,
           },
           {
             name: 'JavaScript',
             icon: 'devicon-javascript-plain',
-            isActive: true,
+            isActive: false,
           },
         ],
       },
@@ -254,12 +259,12 @@ export default {
             isActive: true,
           },
           {
-            name: 'Ubuntu',
+            name: 'Ubuntu Server',
             icon: 'devicon-ubuntu-plain',
             isActive: true,
           },
           {
-            name: 'Windows',
+            name: 'Windows Server',
             icon: 'devicon-windows8-original',
             isActive: true,
           },
@@ -285,15 +290,15 @@ export default {
         title: 'Workflow & Concepts',
         skills: [
           {
-            text: 'Agile & Scrum',
-            isActive: true,
-          },
-          {
-            text: 'Trunk-based Development',
+            text: 'DDD',
             isActive: true,
           },
           {
             text: 'CICD',
+            isActive: true,
+          },
+          {
+            text: 'Trunk-based Development',
             isActive: true,
           },
           {
@@ -305,20 +310,23 @@ export default {
             isActive: true,
           },
           {
-            text: 'Microservices',
+            text: 'Agile & Scrum',
             isActive: true,
           },
           {
-            text: 'DDD',
+            text: 'Microservices',
             isActive: true,
           },
           {
             text: 'Design Patterns & Principles',
             isActive: true,
           },
-
           {
             text: 'REST API',
+            isActive: true,
+          },
+          {
+            text: 'GraphQL',
             isActive: true,
           },
           {

@@ -37,7 +37,7 @@
             v-else-if="skill.image"
             :width="iconSize + 2"
             :height="iconSize + 2"
-            :color="skill.isActive ? colors.activeShape : 'primary lighten-1'"
+            :color="skill.isActive ? colors.activeShape : 'primary lighten-2'"
             flat
             rounded="circle"
           >
@@ -71,10 +71,10 @@ export default {
   data() {
     return {
       colors: {
-        activeShape: 'secondary lighten-2',
-        activeText: 'secondary--text text--lighten-2',
-        inactiveShape: 'primary lighten-3',
-        inactiveText: 'primary--text text--lighten-3',
+        activeShape: 'secondary darken-0',
+        activeText: 'secondary--text text--darken-0',
+        inactiveShape: 'primary lighten-4',
+        inactiveText: 'primary--text text--lighten-5',
       },
     }
   },
