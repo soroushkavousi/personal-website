@@ -20,9 +20,9 @@
           </p>
           <p>
             The API is developed via ASP.NET Core framework and has many
-            features such as DDD structure, Swagger UI, Integration Testing,
-            various Sign Up Methods, Error Handling, Logging System, Security
-            Features, CICD, and Docker Deployment.
+            features such as DDD structure, Swagger UI, integration testing,
+            various sign-up methods, error handling, logging system, security
+            features, CICD, and docker deployment.
           </p>
           <p class="mb-1">
             Please check the GitHub README for more information.
@@ -92,22 +92,35 @@ export default {
         title: '1. Fireplace API',
         hash: 'fireplace-api',
         stack: [
+          'REST API',
+          'GraphQL',
           'ASP.NET Core',
           'PostgreSQL',
+          'Swagger',
           'Nginx',
-          'GitHub Actions',
+          'CICD',
           'Docker',
+          'GitHub Actions',
+          'Google OAuth 2.0',
+          'Gmail API',
+          'NLog',
+          'xUnit',
         ],
         links: [
-          {
-            name: 'Swagger',
-            icon: 'mdi-web',
-            address: 'https://api.fireplace.bitiano.com/docs',
-          },
           {
             name: 'GitHub',
             icon: 'devicon-github-original',
             address: 'https://github.com/soroushkavousi/fireplace-api',
+          },
+          {
+            name: 'Swagger',
+            icon: 'mdi-web',
+            address: 'https://api.fireplace.bitiano.com/swagger',
+          },
+          {
+            name: 'GraphQL',
+            icon: 'mdi-web',
+            address: 'https://api.fireplace.bitiano.com/graphql',
           },
         ],
         views: [
@@ -117,6 +130,19 @@ export default {
             description: `<p class="ma-0 pa-0">With the swagger UI, you can interact with the API and learn it.
               It shows all routes, inputs, outputs, models, and errors.
               It also generates a <a href="https://api.fireplace.bitiano.com/docs/v0.1/swagger.json" target="_blank">swagger.json</a> which describes the schema of the API that can be imported into your app.</p>`,
+          },
+          {
+            image:
+              'https://files.fireplace.bitiano.com/api/graphql-playground.png',
+            title:
+              'The GraphQL Playground, an interactive and graphical IDE for GraphQL',
+            description: `<p class="ma-0 pa-0">
+              <ul>
+                <li>With GraphQL you can prevent over-fetching and under-fetching</li>
+                <li>With GraphQL you can call multiple API actions with just a request</li>
+                <li>With GraphQL playground you can check all the schema you can call</li>
+                <li>Supports community posts, post comments, self posts, self comments, joined communities, and more</li>
+              </ul></p>`,
           },
           {
             image:
@@ -147,6 +173,18 @@ export default {
           },
           {
             image:
+              'https://files.fireplace.bitiano.com/api/response-bad-request.png',
+            title: 'The Error Schema',
+            description: `<p class="ma-0 pa-0">
+              <ul>
+                <li>Error code is unique to a pair of error type and error field</li>
+                <li>Error types are ALREADY_EXISTS, INVALID_FORMAT, AUTHENTICATION_FAILED, and etc</li>
+                <li>Error field refers to the item that caused the error</li>
+                <li>Error client messages are stored in the database</li>
+              </ul></p>`,
+          },
+          {
+            image:
               'https://files.fireplace.bitiano.com/api/swagger-log-in-with-google.png',
             title: 'Swagger UI - Log In With Google - The API Access Token',
             description: `<p>The API supports Google OAuth 2.0, and you can log in with your Gmail in the swagger UI. 
@@ -165,12 +203,6 @@ export default {
             title: 'Create A Post (Response)',
             description: '',
           },
-          {
-            image:
-              'https://files.fireplace.bitiano.com/api/sample-responses.png',
-            title: 'Swagger UI Shows Possible Responses',
-            description: '',
-          },
         ],
       },
       powerEssentiaTdData: {
@@ -179,15 +211,15 @@ export default {
         stack: ['Unity 2D', 'C#'],
         links: [
           {
+            name: 'GitHub',
+            icon: 'devicon-github-original',
+            address: 'https://github.com/soroushkavousi/power-essentia-unity',
+          },
+          {
             name: 'APK',
             icon: 'devicon-android-plain',
             address:
               'https://files.bitiano.com/power-essentia/power-essentia.apk',
-          },
-          {
-            name: 'GitHub',
-            icon: 'devicon-github-original',
-            address: 'https://github.com/soroushkavousi/power-essentia-unity',
           },
         ],
         views: [
@@ -255,14 +287,14 @@ export default {
         stack: ['Vuetify', 'Nuxt.js', 'Vue.js', 'Nginx', 'Docker'],
         links: [
           {
-            name: 'Website',
-            icon: 'mdi-web',
-            address: 'https://soroushkavousi.bitiano.com',
-          },
-          {
             name: 'GitHub',
             icon: 'devicon-github-original',
             address: 'https://github.com/soroushkavousi/resume-web',
+          },
+          {
+            name: 'Website',
+            icon: 'mdi-web',
+            address: 'https://soroushkavousi.bitiano.com',
           },
         ],
         views: [

@@ -23,8 +23,9 @@
         <v-chip-group column class="mt-0">
           <span class="my-auto ml-2 mr-2">Stack:</span>
           <v-chip
-            :small="$store.state.breakpoint.isSmOrDown ? true : false"
-            class="mx-1 my-2 py-4"
+            :small="$store.state.breakpoint.isMdOrDown ? false : true"
+            :x-small="$store.state.breakpoint.isMdOrDown ? true : false"
+            class="mx-1 my-2 py-md-3 py-2"
             v-for="(item, i) in stack"
             :key="i"
             >{{ item }}

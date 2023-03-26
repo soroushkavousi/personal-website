@@ -26,7 +26,7 @@
             width="100%"
             height="auto"
           >
-            <v-overlay :absolute="true" :value="true" :opacity="0.25">
+            <v-overlay :absolute="true" :value="true" :opacity="0.15">
             </v-overlay>
             <div
               v-if="!hideImageButtons"
