@@ -16,43 +16,68 @@
           <v-card
             color="primary"
             tile
-            class="lighten-1 py-15 px-16 text-md-subtitle-1 text-subtitle-2"
+            class="lighten-1 pt-15 pb-13 px-16 text-md-subtitle-1 text-subtitle-2"
           >
             <div class="mb-5">
-              When playing a video game, I always ask myself, what is the best
-              build I can get? Or what is the best approach I can take for this
-              mission? Sometimes it immerses me for hours to discover.
+              I am a <span :class="vit">Backend Developer</span> with over 4
+              years of experience, and I have studied software engineering. I am
+              passionate about learning and coding with the latest tools and
+              technology. It thrills me when I can create high-quality software
+              with advanced features.
+            </div>
+
+            <div class="mb-5">
+              Besides backend development, I also have tested my programming
+              skills in other areas, such as web development, cryptocurrency
+              solutions, and game development.
+            </div>
+
+            <div class="mb-5">
+              If you ask about my personality, I would say that when I play a
+              video game, I always ask myself, what is the best build I can get?
+              Or what is the best approach I can take for this mission?
+              Sometimes it immerses me for hours to discover.
             </div>
 
             <div class="mb-5">
               The question of "Is there a better way?" is not just limited to my
-              games; my entire life is about it. To find a high-quality
-              approach, we should try to understand the system by thinking,
-              searching, and testing. This is what I do when I am coding.
+              games; my entire life is about it. I always want to understand a
+              system to find a high-quality approach. I would think, search, and
+              test many times for that. This approach is exactly what I do when
+              I am coding.
             </div>
 
-            <div class="mb-5">
-              I'm a passionate <span :class="vit">Backend Developer</span> with
-              over four years of experience. I graduated in software engineering
-              at one of the top universities in my country. I also have tested
-              my programming skills in other areas, such as cryptocurrency
-              solutions, game development, and web development.
-            </div>
-
-            <div class="mb-5">
-              I'm currently looking for a remote position as a backend developer
-              in ASP.NET Core web API.
-            </div>
-
-            <div class="text-caption">
+            <div class="text-caption mb-8">
               <code
                 class="font-weight-light px-2 py-1"
                 :style="{ 'line-height': '1.55rem' }"
               >
-                var myInterests = new List&#60;string&#62; { "coding", "gaming",
-                "technology", "learning", "creating" };
+                var myInterests = new List&#60;string&#62; { "coding",
+                "technology", "learning", "creating", "gaming" };
               </code>
             </div>
+
+            <p
+              class="ma-0 d-flex flex-shrink-1 flex-grow-0"
+              style="margin-left: -2.5px !important"
+            >
+              <v-hover v-slot="{ hover }">
+                <a
+                  class="d-flex justify-start align-center flex-shrink-1 flex-grow-0"
+                  href="https://files.bitiano.com/soroush-kavousi-cv.pdf"
+                  target="_blank"
+                >
+                  <v-icon
+                    :size="30"
+                    :color="hover ? 'accent lighten-1' : 'secondary darken-0'"
+                    class="mr-1"
+                  >
+                    mdi-file-download
+                  </v-icon>
+                  Download soroush-kavousi-cv.pdf
+                </a>
+              </v-hover>
+            </p>
           </v-card>
         </v-col>
         <v-col xl="3" lg="4" md="5" sm="8" cols="12">
@@ -94,16 +119,19 @@
                   :key="i"
                   :href="link.href"
                   class="mx-3 mb-9"
+                  target="_blank"
                 >
-                  <v-icon
-                    class="px-auto"
-                    v-if="link.icon"
-                    size="45px"
-                    color="secondary lighten-2"
-                  >
-                    {{ link.icon }}
-                  </v-icon>
-                  <v-img v-else-if="link.image" :src="link.image"> </v-img>
+                  <v-hover v-slot="{ hover }">
+                    <v-icon
+                      class="px-auto"
+                      v-if="link.icon"
+                      size="45px"
+                      :color="hover ? 'accent lighten-1' : 'secondary darken-0'"
+                    >
+                      {{ link.icon }}
+                    </v-icon>
+                    <v-img v-else-if="link.image" :src="link.image"> </v-img>
+                  </v-hover>
                 </a>
               </v-row>
             </v-card-text>
