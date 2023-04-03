@@ -96,6 +96,7 @@ export default {
           'GraphQL',
           'ASP.NET Core',
           'PostgreSQL',
+          'Redis',
           'Swagger',
           'Nginx',
           'CICD',

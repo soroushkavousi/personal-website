@@ -125,9 +125,14 @@ export default {
             isActive: true,
           },
           {
-            name: 'MongoDB',
-            icon: 'devicon-mongodb-plain',
-            isActive: false,
+            name: 'Redis',
+            icon: 'devicon-redis-plain',
+            isActive: true,
+          },
+          {
+            name: 'GraphQL',
+            icon: 'devicon-graphql-plain',
+            isActive: true,
           },
           {
             name: 'Nginx',
@@ -140,9 +145,9 @@ export default {
             isActive: true,
           },
           {
-            name: 'GraphQL',
-            icon: 'devicon-graphql-plain',
-            isActive: true,
+            name: 'MongoDB',
+            icon: 'devicon-mongodb-plain',
+            isActive: false,
           },
           {
             name: 'Python',

@@ -4,7 +4,7 @@
     tile
     width="100%"
     height="100%"
-    class="pl-6 pr-5 py-6 d-flex flex-column justify-space-between overflow-y-auto"
+    class="pa-7 d-flex flex-column justify-space-between overflow-y-auto"
   >
     <v-card-title
       class="text-xl-h5 text-lg-h5 text-md-h5 text-h6 font-weight-black ma-0 mb-0 accent--text text--lighten-1"
