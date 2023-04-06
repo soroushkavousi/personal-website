@@ -20,14 +20,13 @@
           >
             <div class="mb-5">
               I am a <span :class="vit">Backend Developer</span> with over 4
-              years of experience, and I have studied software engineering. I am
-              passionate about learning and coding with the latest tools and
-              technology. It thrills me when I can create high-quality software
-              with advanced features.
+              years of experience. I am passionate about exploring cutting-edge
+              tools and techniques to develop a high-performance, scalable, and
+              reliable system.
             </div>
 
             <div class="mb-5">
-              Besides backend development, I also have tested my programming
+              Apart from backend development, I have also tested my programming
               skills in other areas, such as web development, cryptocurrency
               solutions, and game development.
             </div>
@@ -40,11 +39,10 @@
             </div>
 
             <div class="mb-5">
-              The question of "Is there a better way?" is not just limited to my
-              games; my entire life is about it. I always want to understand a
-              system to find a high-quality approach. I would think, search, and
-              test many times for that. This approach is exactly what I do when
-              I am coding.
+              The question "Is there a better way?" is important to me. I always
+              want to understand a system to find a high-quality approach. For
+              that, I would think, search, and test many times to discover. And
+              this is exactly what I do when I am coding.
             </div>
 
             <div class="text-caption mb-8">
