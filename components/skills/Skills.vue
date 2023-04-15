@@ -125,6 +125,11 @@ export default {
             isActive: true,
           },
           {
+            name: 'MongoDB',
+            icon: 'devicon-mongodb-plain',
+            isActive: true,
+          },
+          {
             name: 'Redis',
             icon: 'devicon-redis-plain',
             isActive: true,
@@ -143,11 +148,6 @@ export default {
             name: 'IIS',
             image: 'https://files.bitiano.com/logos/microsoft-iis.png',
             isActive: true,
-          },
-          {
-            name: 'MongoDB',
-            icon: 'devicon-mongodb-plain',
-            isActive: false,
           },
           {
             name: 'Python',
