@@ -1,10 +1,10 @@
-# Resume Web
+# Personal Website
 
-Resume Web is a web application developed with ***Vuetify*** and ***Nuxt.js***, representing my resume on the web.
+A personal website built using Vue.js, Nuxt.js, and Vuetify.
 
 <br/>
 
-[**Check the website**](https://soroushkavousi.bitiano.com/)
+[**View the website**](https://soroushkavousi.bitiano.com/)
 
 <br/>
  
