@@ -1,7 +1,7 @@
 <template>
   <v-container fluid class="pa-0" id="page-top">
     <section
-      class="mb-0 py-7"
+      class="mb-16 py-7"
       id="about"
       v-intersect="{
         handler: onIntersect,
@@ -13,7 +13,7 @@
       <about />
     </section>
 
-    <div class="py-10"></div>
+    <div class="py-13"></div>
 
     <section
       class="my-3 py-7"

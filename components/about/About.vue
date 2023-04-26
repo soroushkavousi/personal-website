@@ -3,7 +3,11 @@
     <h1 class="accent--text text--lighten-2 text-h3 mb-lg-16 mb-0 ml-16">
       # ABOUT
     </h1>
-    <v-col cols="12" justify="flex-column justify-space-around py-0">
+    <v-col
+      cols="12"
+      class="d-flex flex-column justify-center"
+      :style="{ 'min-height': sectionMinHeight + 'px' }"
+    >
       <v-row justify="center" class="ma-0 mt-2 mb-10 align-center">
         <v-col
           xl="7"
@@ -16,36 +20,22 @@
           <v-card
             color="primary"
             tile
-            class="lighten-1 pt-15 pb-13 px-16 text-md-subtitle-1 text-subtitle-2"
+            class="lighten-1 pt-md-15 pb-md-13 px-md-16 pa-10 text-md-subtitle-1 text-subtitle-2 font-weight-light"
           >
             <div class="mb-5">
-              I am a <span :class="vit">Backend Developer</span> with over 4
-              years of experience. I am passionate about exploring cutting-edge
-              tools and techniques to develop a high-performance, scalable, and
-              reliable system.
+              I am a <span :class="vit">Backend Developer</span> with 3 years of
+              experience. And a software engineer who has explored other areas
+              such as game development, web development, and cryptocurrency
+              solutions.
             </div>
 
             <div class="mb-5">
-              Apart from backend development, I have also tested my programming
-              skills in other areas, such as web development, cryptocurrency
-              solutions, and game development.
+              Learning new tools, designs, and techniques, and thinking about
+              how I can combine them perfectly is something I extremely enjoy.
+              It is because I love to create fantastic systems.
             </div>
 
-            <div class="mb-5">
-              If you ask about my personality, I would say that when I play a
-              video game, I always ask myself, what is the best build I can get?
-              Or what is the best approach I can take for this mission?
-              Sometimes it immerses me for hours to discover.
-            </div>
-
-            <div class="mb-5">
-              The question "Is there a better way?" is important to me. I always
-              want to understand a system to find a high-quality approach. For
-              that, I would think, search, and test many times to discover. And
-              this is exactly what I do when I am coding.
-            </div>
-
-            <div class="text-caption mb-8">
+            <div class="text-md-subtitle-2 text-caption mb-8">
               <code
                 class="font-weight-light px-2 py-1"
                 :style="{ 'line-height': '1.55rem' }"
@@ -62,7 +52,7 @@
               <v-hover v-slot="{ hover }">
                 <a
                   class="d-flex justify-start align-center flex-shrink-1 flex-grow-0"
-                  href="https://files.bitiano.com/soroush-kavousi-cv.pdf"
+                  href="https://files.bitiano.com/soroush-kavousi-resume.pdf"
                   target="_blank"
                 >
                   <v-icon
@@ -72,7 +62,7 @@
                   >
                     mdi-file-download
                   </v-icon>
-                  Download soroush-kavousi-cv.pdf
+                  Download soroush-kavousi-resume.pdf
                 </a>
               </v-hover>
             </p>
@@ -90,8 +80,8 @@
               <v-row class="mx-0 mt-4 mb-6" align="center" justify="center">
                 <v-col align-self="center" cols="9">
                   <v-row align="center" justify="center">
-                    <div class="pr-3 py-0 text-overline font-weight-regular">
-                      Email:
+                    <div class="pr-3 py-0 text-overline font-weight-light">
+                      EMAIL:
                     </div>
                     <div>
                       <p
@@ -100,7 +90,7 @@
                       >
                         <a
                           href="mailto:soroushkavousi.me@gmail.com"
-                          class="text-md-body-2 text-subtitle-2 px-0 py-auto font-weight-light"
+                          class="text-md-subtitle-2 text-subtitle-1 px-0 py-auto font-weight-light"
                           style="word-wrap: break-word"
                         >
                           soroushkavousi.me@gmail.com
@@ -128,7 +118,6 @@
                     >
                       {{ link.icon }}
                     </v-icon>
-                    <v-img v-else-if="link.image" :src="link.image"> </v-img>
                   </v-hover>
                 </a>
               </v-row>
@@ -136,7 +125,6 @@
           </v-card>
         </v-col>
       </v-row>
-      <v-row class="my-11"></v-row>
     </v-col>
   </v-container>
 </template>
@@ -145,11 +133,8 @@
 export default {
   data() {
     return {
+      sectionMinHeight: 600,
       links: [
-        {
-          href: 'https://t.me/soroushkavousi',
-          icon: 'fa-brands fa-telegram',
-        },
         {
           href: 'https://github.com/soroushkavousi',
           icon: 'devicon-github-original-wordmark',
@@ -158,12 +143,16 @@ export default {
           href: 'https://www.linkedin.com/in/soroushkavousi/',
           icon: 'devicon-linkedin-plain',
         },
+        {
+          href: 'https://t.me/soroushkavousi',
+          icon: 'fa-brands fa-telegram',
+        },
       ],
     }
   },
   computed: {
     vit() {
-      return `font-weight-black accent--text text--lighten-2 ma-0 pa-0`
+      return `font-weight-bold accent--text text--lighten-2 ma-0 pa-0`
     },
   },
 }
