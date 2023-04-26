@@ -46,8 +46,9 @@
           <v-chip
             v-else-if="skill.text"
             label
-            class="mb-4 font-weight-bold text-caption"
+            class="mb-4 text-caption"
             :color="skill.isActive ? colors.activeShape : 'primary lighten-1'"
+            style="font-weight: 600 !important"
             text-color="primary"
           >
             {{ skill.text }}

@@ -11,21 +11,21 @@
           ></skill-container>
         </v-col>
       </v-row>
-      <v-row justify="center" class="ma-0 mt-0 mb-3 flex-grow-0">
-        <v-col xl="9" lg="12" md="12" cols="12">
-          <skill-container
-            :id="workflow.id"
-            :title="workflow.title"
-            :skills="workflow.skills"
-          ></skill-container>
-        </v-col>
-      </v-row>
       <v-row justify="center" class="ma-0 mt-0 mb-2 flex-grow-0">
         <v-col xl="9" lg="12" md="12" cols="12">
           <skill-container
             :id="tools.id"
             :title="tools.title"
             :skills="tools.skills"
+          ></skill-container>
+        </v-col>
+      </v-row>
+      <v-row justify="center" class="ma-0 mt-0 mb-3 flex-grow-0">
+        <v-col xl="9" lg="12" md="12" cols="12">
+          <skill-container
+            :id="workflow.id"
+            :title="workflow.title"
+            :skills="workflow.skills"
           ></skill-container>
         </v-col>
       </v-row>
@@ -87,7 +87,7 @@
               class="d-inline-block rounded-sm my-auto"
             ></v-card>
             <p class="d-inline ml-3 my-auto primary--text text--lighten-5">
-              Have Experience
+              Prior experience / Familiar with
             </p>
           </div>
         </v-col>
@@ -135,6 +135,11 @@ export default {
             isActive: true,
           },
           {
+            name: 'REST API',
+            image: 'https://files.bitiano.com/logos/rest-api.png',
+            isActive: true,
+          },
+          {
             name: 'GraphQL',
             icon: 'devicon-graphql-plain',
             isActive: true,
@@ -171,8 +176,8 @@ export default {
           //   isActive: true,
           // },
           {
-            name: 'Vuetify',
-            icon: 'devicon-vuetify-line',
+            name: 'Vue.js',
+            icon: 'devicon-vuejs-plain',
             isActive: false,
           },
           {
@@ -181,8 +186,8 @@ export default {
             isActive: false,
           },
           {
-            name: 'Vue.js',
-            icon: 'devicon-vuejs-plain',
+            name: 'Vuetify',
+            icon: 'devicon-vuetify-line',
             isActive: false,
           },
           {
@@ -207,7 +212,7 @@ export default {
         title: 'Game',
         skills: [
           {
-            name: 'Unity',
+            name: 'Unity 2D',
             icon: 'mdi-unity',
             isActive: true,
           },
@@ -231,11 +236,16 @@ export default {
       },
       tools: {
         id: 'tools',
-        title: 'Tools & Misc',
+        title: 'Tools',
         skills: [
           {
             name: 'Docker',
             icon: 'devicon-docker-plain',
+            isActive: true,
+          },
+          {
+            name: 'Docker Compose',
+            image: 'https://files.bitiano.com/logos/docker-compose.png',
             isActive: true,
           },
           {
@@ -264,6 +274,11 @@ export default {
             isActive: true,
           },
           {
+            name: 'AWS',
+            image: 'https://files.bitiano.com/logos/aws.png',
+            isActive: true,
+          },
+          {
             name: 'Ubuntu Server',
             icon: 'devicon-ubuntu-plain',
             isActive: true,
@@ -273,37 +288,22 @@ export default {
             icon: 'devicon-windows8-original',
             isActive: true,
           },
-          {
-            name: 'Visual Studio',
-            icon: 'devicon-visualstudio-plain',
-            isActive: true,
-          },
-          {
-            name: 'VS Code',
-            icon: 'devicon-vscode-plain',
-            isActive: true,
-          },
-          {
-            name: 'PyCharm',
-            icon: 'devicon-pycharm-plain',
-            isActive: false,
-          },
         ],
       },
       workflow: {
         id: 'workflow',
-        title: 'Workflow & Concepts',
+        title: 'Concepts & Methodologies',
         skills: [
+          {
+            text: 'CI/CD',
+            isActive: true,
+          },
           {
             text: 'DDD',
             isActive: true,
           },
           {
-            text: 'CICD',
-            isActive: true,
-          },
-          {
-            text: 'Trunk-based Development',
+            text: 'Microservices',
             isActive: true,
           },
           {
@@ -315,23 +315,19 @@ export default {
             isActive: true,
           },
           {
-            text: 'Agile & Scrum',
+            text: 'Trunk-based Development',
             isActive: true,
           },
           {
-            text: 'Microservices',
+            text: 'CDN',
             isActive: true,
           },
           {
-            text: 'Design Patterns & Principles',
+            text: 'Design Patterns',
             isActive: true,
           },
           {
-            text: 'REST API',
-            isActive: true,
-          },
-          {
-            text: 'GraphQL',
+            text: 'Design Principles',
             isActive: true,
           },
           {
@@ -343,7 +339,11 @@ export default {
             isActive: true,
           },
           {
-            text: 'Dependency Injection',
+            text: 'Agile',
+            isActive: true,
+          },
+          {
+            text: 'Scrum',
             isActive: true,
           },
         ],
