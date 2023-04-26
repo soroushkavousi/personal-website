@@ -1,17 +1,11 @@
 @font-face {
   font-family: 'OpenSans';
-  font-style: normal;
-  font-weight: 300;
   src: url('~assets/fonts/OpenSans.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'JetBrainsMono-Regular';
   src: url('~assets/fonts/JetBrainsMono-Regular.ttf') format('truetype');
-}
-
-* {
-  font-family: 'OpenSans';
 }
 
 code {

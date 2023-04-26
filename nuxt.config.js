@@ -26,17 +26,13 @@ export default {
       },
       {
         rel: 'stylesheet',
-        href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
       },
     ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    '@/assets/css/main.css',
-    // 'devicon/devicon.min.css',
-    // 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css',
-  ],
+  css: ['@/assets/css/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: ['~/plugins/functions.js'],
