@@ -4,13 +4,14 @@
       # EXPERIENCE
     </h1>
     <the-experience-card
-      v-for="(item, i) in items"
+      v-for="(experience, i) in experiences"
       :key="i"
-      :title="item.title"
-      :role="item.role"
-      :website="item.website"
-      :years="item.years"
-      :projects="item.projects"
+      :company="experience.company"
+      :location="experience.location"
+      :role="experience.role"
+      :website="experience.website"
+      :years="experience.years"
+      :highlights="experience.highlights"
     ></the-experience-card>
   </v-container>
 </template>
@@ -18,94 +19,105 @@
 <script>
 export default {
   data: () => ({
-    items: [
+    experiences: [
       {
-        title: 'Self Employed',
+        company: 'Professional development',
+        location: 'Tehran, Iran',
         role: 'Backend Developer, Game Developer, Web Developer',
         website: 'https://soroushkavousi.bitiano.com/#personal-projects',
-        years: 'APRIL 2021 - CURRENT',
-        projects: [
+        years: 'APRIL 2020 - PRESENT',
+        highlights: [
           {
-            title: `Designed and developed <a href="https://soroushkavousi.bitiano.com/#fireplace-api">Fireplace API</a>`,
+            title: `Developed <a href="https://github.com/soroushkavousi/fireplace-api">Fireplace API</a>, 
+              <b>a fully-featured ASP.NET Core Web API sample</b> that is also <b>a Reddit API clone</b> with communities, 
+              posts, and nested comments. The API supports many features such as DDD structure, Swagger UI, 
+              integration testing, various authentication methods, error handling, logging system, caching system, 
+              security features, CI/CD, and Docker deployment.`,
           },
           {
-            title: `Designed and developed games such as <a href="https://soroushkavousi.bitiano.com/#power-essentia-td">Power Essentia TD</a>`,
+            title: `Created <a href="https://github.com/soroushkavousi/power-essentia-unity">Power Essentia TD</a>, 
+              <b>a 2D tower defense game in Unity</b> where the player, as an archer, protects people from monsters 
+              using magical diamonds.`,
           },
           {
-            title:
-              'Designed and developed <a href="https://soroushkavousi.bitiano.com/#resume-web">Resume Web</a>',
+            title: `Launched an open-source <a href="https://soroushkavousi.bitiano.com">Personal Website</a> 
+            using <b>Vue.js</b>, <b>Nuxt.js</b>, and <b>Vuetify</b>.`,
           },
           {
-            title:
-              'Researched and developed a project about Technical Analysis',
+            title: `Implemented <b>a backtesting bot for analyzing cryptocurrency markets</b> using <b>Python</b> 
+            and <b>Matplotlib</b>. The bot collects historical candlestick data from popular cryptocurrency exchanges 
+            and tests various technical analysis strategies described by a combination of indicators, 
+            oscillators, and money management methods.`,
           },
         ],
       },
       {
-        title: 'Ayan',
+        company: 'Ayan',
+        location: 'Tehran, Iran',
         role: 'Backend Developer, Blockchain Engineer',
         website: 'https://ayanco.com/en',
         years: 'JULY 2018 - JANUARY 2019',
-        projects: [
+        highlights: [
           {
-            title:
-              'Designed and developed an API for a Cryptocurrency Payment Gateway',
+            title: `Designed and developed the API of Cryptino, <b>a cryptocurrency payment gateway</b> 
+            that raised <b>an initial fund of 100,000$</b> from a national bank.`,
           },
           {
-            title: 'Designed and developed a Cryptocurrency HD Wallet',
-            descriptions: [
-              `<a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki" target="_blank">BIP 32</a>
-               and <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki" target="_blank">BIP 44</a> 
-              were used to generate asymmetric keys from a master key in a hierarchy! (BIP: Bitcoin Improvement Proposal)`,
-              `<a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" target="_blank">BIP 39</a>
-               was used to generate a mnemonic code`,
-            ],
+            title: `Created <b>a cryptocurrency HD wallet</b> by implementing BIP 32, 
+            BIP 44 (generating asymmetric keys from a master key in a hierarchy), 
+            and BIP 39 (generating a mnemonic code as a human-readable key seed).`,
           },
           {
-            title: `Ran a new
-               <a href="https://bitcoin.org/en/full-node#what-is-a-full-node" target="_blank">Bitcoin full node</a> via Bitcoin Core`,
+            title: `<b>Accelerated and secured</b> blockchain operations, such as sending transactions, 
+            by running <b>a local Bitcoin full node</b> via Bitcoin Core.`,
           },
           {
-            title:
-              'Worked with OCR libraries such as Tesseract to read data from national paper bills',
+            title: `<b>Maintained</b> web crawlers for regional support of <b>Ghabzino</b>, 
+            a leading national bill management platform <b>with 1M+ Google Play downloads</b>.`,
+          },
+          {
+            title: `Extracted data from national paper bills using OCR libraries such as Tesseract.`,
+          },
+          {
+            title: `<b>Guided</b> a new backend team member through learning the structure of projects.`,
           },
         ],
       },
       {
-        title: 'AltonTech',
+        company: 'AltonTech',
+        location: 'Tehran, Iran',
         role: 'Backend Developer, Desktop Application Developer',
         website: 'http://www.altontech.ir/',
         years: 'AUGUST 2016 - OCTOBER 2017',
-        projects: [
+        highlights: [
           {
-            title:
-              'Developed backend APIs for several Android applications in education, books & reference, and music & audio categories',
+            title: `Connected end users to <b>more than 10 microservices</b> by providing an application gateway API.`,
           },
           {
-            title:
-              'Developed a backend API for registering users in a mobile service via National Mobile Telecommunication Service API',
+            title: `<b>Decreased response time</b> of backend APIs and <b>controlled the request rate</b>
+            of calling external services by establishing <b>a job scheduler system.</b>`,
           },
           {
-            title:
-              'Developed Application Gateway API for connecting clients to multiple internal APIs',
+            title: `Built an API for registering users in a national mobile service.`,
           },
           {
-            title: 'Developed a polling bot in Telegram via Telegram Bot API',
+            title: `<b>Automated transferring reports</b> from an external FTP server to an internal one by 
+            introducing an intermediary <b>FTP client.</b>`,
           },
           {
-            title: 'Spoke at a conference in the company about Telegram Bot',
-          },
-
-          {
-            title: 'Ran an FTP client via FluentFTP',
+            title: `<b>Accelerated the marketing workflow</b> by implementing desktop applications used 
+            for uploading mass multimedia files and transferring bulk data from datasheets to databases.`,
           },
           {
-            title: 'Designed and developed desktop applications',
-            descriptions: [
-              'For injecting data from excel into the database',
-              'For uploading files',
-              'For a task managing system (bot) that runs tasks stored in the database periodically',
-            ],
+            title: `Built the backend API for Salehin, an Android application featuring 
+            national ceremonies encyclopedia.`,
+          },
+          {
+            title: `Implemented <b>a Telegram bot</b> used for creating and sharing polls. The bot API was 
+            also responsible for receiving and storing the user choices in the polls.`,
+          },
+          {
+            title: `<b>Lectured</b> at a company-internal conference about the features of Telegram Bot API.`,
           },
         ],
       },

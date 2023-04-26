@@ -2,23 +2,43 @@
   <v-row justify="center" no-gutters>
     <v-col xl="8" lg="10" md="10" cols="12">
       <v-card
-        class="primary lighten-1 mb-10 pa-8"
+        class="primary lighten-1 mb-10 pa-10"
         width="100%"
         height="auto"
         tile
       >
         <v-row class="ma-0 mb-6">
-          <v-col
-            lg="8"
-            cols="12"
-            class="d-flex flex-column justify-center secondary--text text--darken-1 pb-0"
-          >
-            <div class="mb-0 text-h6 font-weight-bold">{{ role }}</div>
-            <div class="text-md-overline text-body-2 font-weight-bold">
-              <a :href="website" target="_blank" class="invisible-link">
-                {{ title }}</a
+          <v-col lg="8" cols="12" class="mb-3 py-0">
+            <v-row class="ma-0 mb-1">
+              <a
+                :href="website"
+                target="_blank"
+                class="company"
+                :class="{
+                  'company-lg': !$store.state.breakpoint.isMdOrDown,
+                }"
               >
-            </div>
+                {{ company }}
+              </a>
+              <div
+                class="location"
+                :class="{
+                  'location-lg': !$store.state.breakpoint.isMdOrDown,
+                }"
+              >
+                , {{ location }}
+              </div>
+            </v-row>
+            <v-row class="ma-0">
+              <div
+                class="role"
+                :class="{
+                  'role-lg': !$store.state.breakpoint.isMdOrDown,
+                }"
+              >
+                {{ role }}
+              </div>
+            </v-row>
           </v-col>
           <v-col
             lg="4"
@@ -40,38 +60,37 @@
             <client-only>
               <p class="ma-0">
                 <v-list color="primary lighten-1" class="ma-0 pa-0">
-                  <template v-for="(project, index) in projects">
-                    <v-list-item
-                      :key="index"
-                      class="pa-0"
-                      style="min-height: auto"
-                    >
-                      <v-list-item-content class="px-0 pt-0 pb-2">
-                        <v-list-item-title
-                          v-html="'- ' + project.title"
-                          class="text-lg-body-2 text-body-2 font-weight-light"
-                          :style="{
-                            'white-space': 'normal',
-                            'line-height': '1.3',
-                          }"
-                        ></v-list-item-title>
-                        <v-list-item-subtitle
-                          v-if="project.descriptions"
-                          class="mt-1 text-lg-subtitle-2 text-caption"
-                          :style="{
-                            'white-space': 'normal',
-                          }"
-                        >
-                          <div
-                            v-for="(description, i) in project.descriptions"
-                            :key="i"
-                            class="ml-5 my-1"
-                            v-html="'- ' + description"
-                          ></div>
-                        </v-list-item-subtitle>
-                      </v-list-item-content>
-                    </v-list-item>
-                  </template>
+                  <v-list-item
+                    class="pa-0"
+                    style="min-height: auto"
+                    v-for="(highlight, index) in highlights"
+                    :key="index"
+                  >
+                    <v-list-item-content class="px-0 pt-0 pb-2">
+                      <v-list-item-title
+                        v-html="'- ' + highlight.title"
+                        class="highlight-title"
+                        :class="{
+                          'highlight-title-lg':
+                            !$store.state.breakpoint.isMdOrDown,
+                        }"
+                      ></v-list-item-title>
+                      <v-list-item-subtitle
+                        v-if="highlight.descriptions"
+                        class="mt-1 text-lg-subtitle-2 text-caption"
+                        :style="{
+                          'white-space': 'normal',
+                        }"
+                      >
+                        <div
+                          v-for="(description, i) in highlight.descriptions"
+                          :key="i"
+                          class="ml-5 my-1"
+                          v-html="'- ' + description"
+                        ></div>
+                      </v-list-item-subtitle>
+                    </v-list-item-content>
+                  </v-list-item>
                 </v-list>
               </p>
             </client-only>
@@ -84,7 +103,7 @@
 
 <script>
 export default {
-  props: ['title', 'role', 'website', 'years', 'projects'],
+  props: ['company', 'location', 'role', 'website', 'years', 'highlights'],
   data() {
     return {}
   },
@@ -96,21 +115,67 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.invisible-link {
+.company {
+  display: inline;
+  font-size: 1.1rem !important;
+  font-weight: 600;
+  line-height: 1.3;
+  font-family: 'OpenSans' !important;
   color: var(--v-secondary) !important;
 }
+.company-lg {
+  font-size: 1.2rem !important;
+}
 
-.invisible-link:hover,
-.invisible-link:active {
+.company:hover,
+.company:active {
   color: var(--v-accent-lighten3) !important;
 }
 
+.location {
+  display: inline;
+  font-size: 1.1rem !important;
+  font-weight: 300;
+  line-height: 1.3;
+  font-family: 'OpenSans' !important;
+}
+.location-lg {
+  font-size: 1.2rem !important;
+}
+
+.role {
+  font-size: 0.8rem !important;
+  font-weight: 400;
+  line-height: 1.3;
+  font-family: 'OpenSans' !important;
+}
+.role-lg {
+  font-size: 0.9rem !important;
+}
+
+.highlight-title {
+  font-size: 0.9rem !important;
+  font-weight: 300;
+  line-height: 1.45;
+  white-space: normal;
+  font-family: 'OpenSans' !important;
+  color: rgba(255, 255, 255, 0.6);
+}
+.highlight-title-lg {
+  font-size: 1rem !important;
+}
+
 :deep(a) {
-  color: var(--v-secondary-lighten2) !important;
+  color: var(--v-accent-lighten3) !important;
+  font-weight: 600;
 }
 
 :deep(a:hover),
 :deep(a:active) {
-  color: var(--v-accent-lighten2) !important;
+  color: var(--v-accent-lighten4) !important;
+}
+
+:deep(b) {
+  color: rgba(255, 255, 255, 0.85) !important;
 }
 </style>
