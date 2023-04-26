@@ -26,7 +26,7 @@
             width="100%"
             height="auto"
           >
-            <v-overlay :absolute="true" :value="true" :opacity="0.15">
+            <v-overlay :absolute="true" :value="true" :opacity="0.2">
             </v-overlay>
             <div
               v-if="!hideImageButtons"
@@ -85,7 +85,7 @@
             >
               <div
                 v-html="view.description"
-                class="text-xl-subtitle-2 text-lg-caption text-md-subtitle-2 text-caption"
+                class="text-xl-subtitle-2 text-lg-caption text-md-subtitle-2 text-caption font-weight-light"
               ></div>
             </v-card-text>
           </v-card>

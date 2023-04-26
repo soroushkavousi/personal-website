@@ -12,7 +12,7 @@
       {{ title }}
     </v-card-title>
     <v-card-text
-      class="mt-3 mb-8 py-0 text-md-body-2 text-sm-subtitle-2 secondary--text d-flex flex-column flex-grow-1 text-justify overflow-y-auto"
+      class="mt-3 mb-8 py-0 text-md-body-2 text-sm-subtitle-2 secondary--text d-flex flex-column flex-grow-1 text-justify overflow-y-auto font-weight-light"
       :style="{ 'line-height': '23px' }"
     >
       <slot name="description" class=""></slot>
@@ -43,7 +43,7 @@
             :key="i"
             :href="link.address"
             target="_blank"
-            color="accent"
+            color="accent darken-1"
           >
             <v-avatar left>
               <v-icon dense> {{ link.icon }}</v-icon>

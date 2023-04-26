@@ -14,15 +14,16 @@
       >
         <template v-slot:description>
           <p>
-            Fireplace API is a Reddit API clone that has communities, posts, and
-            nested comments. This project is just an individual effort to create
-            a real-world Web API with some advanced features.
+            Fireplace API is
+            <b>a fully-featured ASP.NET Core Web API sample</b>
+            that is also <b>a Reddit API clone</b> that has communities, posts,
+            and nested comments.
           </p>
           <p>
-            The API is developed via ASP.NET Core framework and has many
-            features such as DDD structure, Swagger UI, integration testing,
-            various sign-up methods, error handling, logging system, security
-            features, CICD, and docker deployment.
+            The API supports many features such as DDD structure, Swagger UI,
+            integration testing, various authentication methods, error handling,
+            logging system, caching system, security features, CI/CD, and Docker
+            deployment.
           </p>
           <p class="mb-1">
             Please check the GitHub README for more information.
@@ -41,10 +42,10 @@
       >
         <template v-slot:description>
           <p>
-            Power Essentia TD is a tower defense 2D game developed via Unity. It
-            is just a personal, fun project, and it takes almost 30 minutes to
-            finish it. You can download the APK and play it. I hope you enjoy
-            playing it.
+            Power Essentia TD is <b>a 2D tower defense game</b> developed via
+            Unity. It is a personal project and takes almost 30 minutes to
+            finish the game. You can download the APK and play it. I hope you
+            enjoy playing it.
           </p>
           <h3 class="mb-3 mt-2">Game Story</h3>
           <p>
@@ -67,16 +68,15 @@
 
     <v-row justify="center" class="mt-0 px-10">
       <the-project
-        :title="resumeWebData.title"
-        :hash="resumeWebData.hash"
-        :stack="resumeWebData.stack"
-        :links="resumeWebData.links"
-        :views="resumeWebData.views"
+        :title="personalWebsiteData.title"
+        :hash="personalWebsiteData.hash"
+        :stack="personalWebsiteData.stack"
+        :links="personalWebsiteData.links"
+        :views="personalWebsiteData.views"
       >
         <template v-slot:description>
           <p class="mb-1">
-            Resume Web is a web application developed via Vuetify and Nuxt.js,
-            representing my resume on the web.
+            A personal website built using Vue.js, Nuxt.js, and Vuetify.
           </p>
         </template>
       </the-project>
@@ -99,7 +99,7 @@ export default {
           'Redis',
           'Swagger',
           'Nginx',
-          'CICD',
+          'CI/CD',
           'Docker',
           'GitHub Actions',
           'Google OAuth 2.0',
@@ -128,9 +128,9 @@ export default {
           {
             image: 'https://files.fireplace.bitiano.com/api/swagger-top.png',
             title: 'Swagger Page',
-            description: `<p class="ma-0 pa-0">With the swagger UI, you can interact with the API and learn it.
+            description: `<p class="ma-0 pa-0">With the swagger UI, you can <b>interact with the REST API and discover it</b>.
               It shows all routes, inputs, outputs, models, and errors.
-              It also generates a <a href="https://api.fireplace.bitiano.com/docs/v0.1/swagger.json" target="_blank">swagger.json</a> which describes the schema of the API that can be imported into your app.</p>`,
+              It also provides a <a href="https://api.fireplace.bitiano.com/swagger/v1/swagger.json" target="_blank">swagger.json</a> which describes the schema of the API that can be imported to your project.</p>`,
           },
           {
             image:
@@ -140,7 +140,7 @@ export default {
             description: `<p class="ma-0 pa-0">
               <ul>
                 <li>With GraphQL you can prevent over-fetching and under-fetching</li>
-                <li>With GraphQL you can call multiple API actions with just a request</li>
+                <li>With GraphQL you can call multiple API actions with just one request</li>
                 <li>With GraphQL playground you can check all the schema you can call</li>
                 <li>Supports community posts, post comments, self posts, self comments, joined communities, and more</li>
               </ul></p>`,
@@ -150,7 +150,7 @@ export default {
               'https://files.fireplace.bitiano.com/api/the-architecture.png',
             title: 'The Architecture - DDD Layers',
             description:
-              '<p>In this picture, you can see the layers of the API: Core, API, and Infrastructure.</p>',
+              '<p>In this picture, you can see the layers of the API: Domain, Application, and Infrastructure.</p>',
           },
           {
             image:
@@ -282,15 +282,15 @@ export default {
           },
         ],
       },
-      resumeWebData: {
-        title: '3. Resume Web (This Website)',
-        hash: 'resume-web',
-        stack: ['Vuetify', 'Nuxt.js', 'Vue.js', 'Nginx', 'Docker'],
+      personalWebsiteData: {
+        title: '3. Personal Website (This Website)',
+        hash: 'personal-website',
+        stack: ['Vue.js', 'Nuxt.js', 'Vuetify', 'Nginx', 'Docker'],
         links: [
           {
             name: 'GitHub',
             icon: 'devicon-github-original',
-            address: 'https://github.com/soroushkavousi/resume-web',
+            address: 'https://github.com/soroushkavousi/personal-website',
           },
           {
             name: 'Website',
