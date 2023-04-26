@@ -7,8 +7,8 @@
           <v-card-text
             class="text-md-body-1 text-body-2 font-weight-light pa-0"
           >
-            - Achieved top rank 0.6% in the nationwide
-            <span class="font-weight-bold">University Entrance Exam</span>
+            - Achieved <b>top rank 0.6%</b> in the nationwide
+            <b>University Entrance Exam</b>
             for Mathematics and Physics 2013<span
               class="text-caption font-weight-light"
             >
@@ -25,5 +25,4 @@
 export default {}
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
