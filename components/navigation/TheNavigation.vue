@@ -56,7 +56,7 @@
               Soroush Kavousi
             </h1>
           </v-list-item>
-          <v-list-item-group v-model="selectedItemId">
+          <v-list-item-group v-model="currentSectionHash">
             <v-list-item
               v-for="(section, i) in sections"
               :key="i"
@@ -66,15 +66,13 @@
               class="mb-1"
               @click="onSectionClicked(section)"
             >
-              <v-list-item-content
-                class="text-center font-weight-light py-1"
-                :class="{
-                  'text--disabled': section.routeName !== $route.name,
-                }"
-              >
+              <v-list-item-content class="text-center py-1">
                 <v-list-item-title
                   v-text="section.title"
-                  class="text-overline secondary--text"
+                  class="text-overline secondary--text font-weight-regular"
+                  :class="{
+                    'font-weight-bold': section.hash == currentSectionHash,
+                  }"
                 />
               </v-list-item-content>
             </v-list-item>
@@ -121,7 +119,7 @@ export default {
     return {
       drawer: true,
       mini: false,
-      selectedItemId: '',
+      currentSectionHash: '',
       fullWidth: 220,
       miniVariantWidth: 56,
       profilePictureWidth: 115,
@@ -207,7 +205,7 @@ export default {
       }
     },
     '$store.state.section': function (newValue, oldValue) {
-      this.selectedItemId = newValue
+      this.currentSectionHash = newValue
     },
   },
 }
