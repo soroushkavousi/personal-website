@@ -24,7 +24,7 @@
           >
             <div class="mb-5">
               I am a <span :class="vit">Backend Developer</span> with 3 years of
-              experience. And a software engineer who has explored other areas
+              experience and a software engineer who has explored other areas
               such as game development, web development, and cryptocurrency
               solutions.
             </div>
