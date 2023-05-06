@@ -23,16 +23,9 @@
             class="lighten-1 pt-md-15 pb-md-13 px-md-16 pa-10 text-md-subtitle-1 text-subtitle-2 font-weight-light"
           >
             <div class="mb-5">
-              I am a <span :class="vit">Backend Developer</span> with 3 years of
-              experience and a software engineer who has explored other areas
-              such as game development, web development, and cryptocurrency
-              solutions.
-            </div>
-
-            <div class="mb-5">
-              Learning new tools, designs, and techniques, and thinking about
-              how I can combine them perfectly is something I extremely enjoy.
-              It is because I love to create fantastic systems.
+              I am a <span :class="vit">Backend Developer</span> who enjoys
+              learning and combining cutting-edge tools, designs, and new
+              technologies to create high-quality systems.
             </div>
 
             <div class="text-md-subtitle-2 text-caption mb-8">
