@@ -15,9 +15,9 @@
         <template v-slot:description>
           <p>
             Fireplace API is
-            <b>a fully-featured ASP.NET Core Web API sample</b>
-            that is also <b>a Reddit API clone</b> that has communities, posts,
-            and nested comments.
+            <b>a fully-featured ASP.NET Core Web API sample</b>, and
+            <b>a Reddit API clone</b> that has communities, posts, and nested
+            comments.
           </p>
           <p>
             The API supports many features such as DDD structure, Swagger UI,
