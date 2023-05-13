@@ -135,6 +135,16 @@ export default {
             isActive: true,
           },
           {
+            name: 'gRPC',
+            image: 'https://files.bitiano.com/logos/grpc.png',
+            isActive: true,
+          },
+          {
+            name: 'RabbitMQ',
+            image: 'https://files.bitiano.com/logos/rabbitmq.png',
+            isActive: true,
+          },
+          {
             name: 'REST API',
             image: 'https://files.bitiano.com/logos/rest-api.png',
             isActive: true,
